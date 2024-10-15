@@ -14,3 +14,6 @@ write.csv(nvda_close, file="nvda_close_prices.csv", row.names=FALSE)
 plot(nvda_close, main = "NVIDIA Closing Prices", 
      xlab = "Date", ylab = "Price (USD)", 
      type = "l", col = "blue")
+
+
+# Test
