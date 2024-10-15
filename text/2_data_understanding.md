@@ -3,4 +3,5 @@
 - News von 2 Jahren
 
 ##### News Datenquelle
-Bloomberg
+Admir: Bloomberg oder was anderes
+Paul: sucht auch eine quelle
