@@ -13,6 +13,9 @@ https://otterly.ai/blog/knowledge-cutoff/
 (GPT 3.5 Januar 2022)
 
 #### papers
+Learning to Generate Explainable Stock Predictions using Self-Reflective Large Language Models:
+https://arxiv.org/html/2402.03659v3
+
 Stock Price Prediction with CNN-LSTM Network:  
 https://gavinguan95.github.io/files/Stock_Price_Prediction_with_CNN-LSTM_Network.pdf
 
