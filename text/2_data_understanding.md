@@ -18,3 +18,14 @@ extracting features from text and prices simultaneously and then integrating the
 ##### News Datenquelle
 Admir: Bloomberg oder was anderes
 Paul: sucht auch eine quelle
+
+#### Tweet Daten
+The tweets of dataset 1 and dataset 2 are collected on Twitter, reflecting the current investors’
+perception of stock market. Based on the degree of discussion, the 88
+stocks with the highest capital scale rankings were selected for the time
+period from January 1, 2014, to January 1, 2016, in dataset, where
+tweets were derived from valid critical text data on stocks published by
+stock traders on Twitter. In addition, the dataset is currently recognized
+financial data used for stock price prediction, and it has been widely
+ used in many research results (Xu et al., 2020; Xu & Cohen, 2018).
+ (TEAnet Kap. 5.1)

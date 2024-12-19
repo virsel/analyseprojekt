@@ -21,6 +21,7 @@
 (https://www.sciencedirect.com/science/article/pii/S0957417422006170?via%3Dihub Kap. related work)
 
 #### foschungsfrage
+1.
 - In summary, using an improved hybrid DL framework to analyze stock-related financial data is an effective way to improve the results of stock market forecasting. There is a need for such a combined framework that can not only extract deep features of text and stock prices but also effectively fuse the extracted features, thereby comprehensively improving the accuracy of prediction and increasing the application value.
 (https://www.sciencedirect.com/science/article/pii/S0957417422006170?via%3Dihub Kap. related work) 
 Wie können wir das erreichen?
@@ -28,6 +29,13 @@ Wie können wir das erreichen?
 - lässt sich dct mit hilfe von news verbessern?
  DCT besser als TEAnet (nutzt news)
  (https://www.researchgate.net/publication/385328306_Deep_Convolutional_Transformer_Network_for_Stock_Movement_Prediction Kap. 4.4)
+2. 
+ Because the stock market is very complex,
+ the use of knowledge graphs and other strategies to study the relation
+ships between different stocks is one of the main research problems that
+ we will address in the future.
+ (TEAnet Kap. 6)
+ domain stock mix besser als wilder mix?
 
 #### Hypothesen
 - we hypothesize that using deeper textual semantic information will be more advantageous than using only historical stock prices. Accordingly, we wish to design an effective network structure that can process time series financial data and select and learn the necessary information from the corresponding text.

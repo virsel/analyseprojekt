@@ -1,0 +1,371 @@
+\newpage
+\section{Erstellung eines Dokumentenkorpus}
+Die Umsetzung erfolgt in logischen Schritten und orientiert sich dabei am Prozessmodell \ac{CRISP-DM}. 
+Im ersten Schritt (Kap. \ref{sec:data_ingestion}) werden Patentdaten gemäß der Zielvorgabe beschaffen. Wie bereits im Kapitel \ref{sec:einleitung} angedeutet, beschränkt man sich auf die Regionen Europa, Nordamerika und Ostasien, wobei lediglich Daten bezüglich bedeutender Länder einbezogen werden. Als sinnvoller zeitlicher Rahmen in Bezug auf das Veröffentlichungsdatum der zu untersuchenden Patente wurde 2022-Q1 bis einschließlich 2024-Q2 festgelegt. Der Grund dafür ist, dass lediglich aktuelle Innovationen für die Forschungsfrage relevant sind. Außerdem verkürzt sich die Entwicklungszeit bezüglich technischer Neuheiten zunehmend, so dass ein Zeitfenster von ca. $2,5$ Jahren in der Vergangenheit genügend Aussagekraft besitzt. 
+
+\subsection{Datenbeschaffung}\label{sec:data_ingestion}
+Als Datenquelle wird das in Kapitel \ref{sec:depatisnet} behandelte Online-Recherchetool DEPATISnet verwendet. Dabei stehen verschiedene Recherchemodi zur Verfügung. Als besonders zielführend hat sich der Expertenmodus erwiesen, bei dem komplexe syntaktische Suchanfragen möglich sind. Dabei erfolgt die Formulierung der Suchkriterien in Form einer Zeichenfolge, in der eine Vielzahl an nützlichen Operatoren und Platzhaltern zur Effizienzsteigerung einsetzbar sind \footcite[S. 10-15]{dpma_hilfe}.
+
+\textbf{Trefferlistenkonfiguration}
+
+Über die Trefferlistenkonfiguration lassen sich relevante Patentattribute wählen, welche bei der Suche in den Resultaten erscheinen sollen. Folgende Attribute werden angefordert: 
+\begin{itemize}
+	\item Veröffentlichungsnummer
+	\item Veröffentlichungsdatum
+	\item IPC-Hauptklasse
+	\item IPC-Neben-/Indexklassen
+	\item Titel
+	\item Zusammenfassung
+\end{itemize}
+
+\textbf{Suchkriterien}
+
+Um gemäß der Forschungsfrage lediglich Patente mit Bezug zum Bereich Robotik als Resultate zu erhalten, wird dementsprechend eine Bedingung formuliert, welche innerhalb des Titel (TI) Attributs und der Zusammenfassung (AB) dahingehend prüft (Code \ref{lst:search}, Zeile 1-3).
+\begin{lstlisting}[caption={Eingabe für Expertenrecherche auf DEPATISnet}, label=lst:search, captionpos=t]
+	(TI = (robot? OR telerobot? OR exoskeleton? OR ((bionic OR intelligent?)(2A)prosthet?))
+	OR 
+	AB = (robot? OR telerobot? OR exoskeleton? OR ((bionic OR intelligent?)(2A)prosthet?)))
+	AND (Pub >= <Startdatum> AND Pub <= <Enddatum>)
+	AND AC = (<(OR verknüpfte) Ländercode(s)>)
+\end{lstlisting}
+\vspace{-1.3em}
+\normalsize{Quelle: Eigene Darstellung}
+
+Dies erfolgt unter Zuhilfenahme von Operatoren und dem Platzhalter \verb|?|, welcher 0 bis mehrere beliebige Zeichen ersetzt. Bei \verb|2A| handelt es sich um einen Nachbarschaftsoperator, welcher einen wahren Rückgabewert liefert, falls beide Operanden mit einem maximalen Abstand von 2 Wörtern zueinander im Text vorkommen. Aus dem Suchstring geht hervor, dass nicht nur explizit die Begriffe \verb|robot?| bzw. \verb|telerobot?| zur Filterung verwendet werden, sondern auch die Begriffe \verb|exoskeleton?| und \verb|prosthet?|, wobei bei Letzterem als Bedingung ein Vorkommen des Wortes \verb|bionic| oder \verb|intelligent?| in naher Nachbarschaft festgelegt wird. Diese beiden Themenfelder sind eng mit Robotik verwandt, da diese in vielen technischen Bereichen, wie zum Beispiel mechanische Bewegung, sehr ähnliche Herausforderungen bewältigen. 
+
+Die Anzahl der möglichen Resultate ist seitens DEPATISnet auf 10.000 begrenzt \footcite[Vgl.][S. 158]{dpma_hilfe}. Daher werden diese mit Hilfe des Attributs Veröffentlichungsdatum (Pub) in passenden Intervallen heruntergeladen (Code \ref{lst:search}, Zeile 4), so dass das Zielintervall 2022-Q1 bis 2024-Q2 erfüllt ist.
+
+Eine Filterung nach Regionen erfolgt über das Attribut Anmeldeland (AC). Damit werden jeweils die bedeutendsten Länder bzw. Patentämter mittels Codes selektiert (Code \ref{lst:search}, Zeile 5). 
+\renewcommand{\arraystretch}{1.2} % Adjust the row height
+\begin{table}[H]
+	\caption{Trefferanzahl bei regionaler Filterung mittels Ländercodes}
+	\label{tbl:depatis_treffer}
+	\begin{tabularx}{\textwidth}{X|l}
+		\hline
+		\textbf{Ländercodes} & \textbf{Trefferanzahl}\\
+		\hline
+		Europa & 11.421 \\ 
+		\hspace{2em}European Patent Office (EP) & \hspace{2em}8.073 \\
+		\hspace{2em}Deutschland (DE) & \hspace{2em}1.937 \\
+		\hspace{2em}United Kingdom (GB) & \hspace{2em}727 \\
+		\hspace{2em}Frankreich (FR) & \hspace{2em}558  \\
+		\hspace{2em}Spanien (ES) & \hspace{2em}166 \\
+		\hline
+		Nordamerika & 20.541 \\ 
+		\hspace{2em}United States (US) &  \\
+		\hline
+		Ostasien & 110.120 \\ 
+		\hspace{2em}China (CN) &  \\
+		\hline
+	\end{tabularx} \\
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{table}
+Für die Region Europa werden die 5 bedeutendsten Länder bzw. Patentämter berücksichtigt. Aufgrund der Beschränkung auf einen Vertreter aus den Regionen Nordamerika und Ostasien werden diese im Verlauf der Arbeit auch mit USA respektive China referenziert.
+
+\textbf{Download} 
+
+Zum Herunterladen der Treffer stehen seitens DEPATISnet die Formate CSV, XLSX und PDF zur Verfügung. Als praktikabel und robust hat sich XLSX erwiesen. Das CSV-Format hingegen ist aufgrund von '';'' als Trennzeichen und textueller Werte ohne Ummantelung (z.B. mit '') problematisch. Daher werden die Daten aus DEPATISnet im XLSX-Format heruntergeladen.
+
+\subsection{Aggregierung}
+
+Aufgrund der Begrenzungsproblematik hinsichtlich maximaler Trefferanzahl in DEPATISnet von $10.000$, erfolgt nach dem Download noch eine programmatische Aggregierung der Dateninkremente. Dabei wird aus den Excel-Teildaten eine CSV-Datei erzeugt, wobei die Region als differenzierendes Attribut hinzugefügt wird. Der resultierende Dokumentenkorpus hat eine Größe von $160\text{MB}$.
+
+\newpage
+\section{Erstellung von Datenkorpora}
+Kapitel \ref{sec:data_prep} befasst sich mit Datenaufbereitung, bei der es darum geht, den Dokumentenkorpus von Dubletten und anderen Anomalien zu bereinigen. Anschließend werden Datenkorpora passend zum Anwendungszweck abgeleitet. Für die Analyse bezüglich der Forschungsfrage resultiert zum einen ein Datenkorpus mit IPC-Werten (Kap. \ref{sec:data_korp_ipc}) und zum anderen einer mit manuell modellierten Themen (Kap. \ref{sec:topic_modeling}).
+
+
+\subsection{Datenaufbereitung}\label{sec:data_prep}
+
+Bei der Datenaufbereitung wird eine Pipeline durchlaufen. Im ersten Schritt werden ungültige Beobachtungen entfernt und anschließend erfolgt eine Filterung bezüglich Veröffentlichungsdatum, so dass lediglich Zeilen im einschließenden Bereich 2022-Q1 bis 2024-Q2 übrig bleiben (Abb. \ref{fig:data_prep_filter}). Letzteres ist notwendig, auch wenn dies bereits bei der Suchanfrage auf \ac{DEPATIS}net umgesetzt wurde (Kap. \ref{sec:data_ingestion} Code \ref{lst:search}). 
+\begin{figure}[H]
+	\caption{Filterung}
+	\includegraphics[width=1.\textwidth]{data_prep_filter}
+	\label{fig:data_prep_filter}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+Als Nächstes werden die Textattribute Titel und Abstrakt auf die Sprache Englisch und alternativ Deutsch reduziert. Dies entspricht den Schritten 3-4 in Abbildung \ref{fig:data_prep_sprache_text}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.9\textwidth]{data_prep_sprache_text}
+	\caption{Sprachbezogene Textreduzierung}
+	\label{fig:data_prep_sprache_text}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+Anschließend werden Abstrakt-Duplikate entfernt und es erfolgt eine Kumulation der Textattribute zu einem ''text'' Attribut, wobei der Titel mit einem Punkt vom Abstrakt getrennt vorangestellt wird (Abb. \ref{fig:data_prep_sprache_text} Schritte 5-6).
+
+\subsection{Datenkorpus für \ac{IPC}-Analysen}\label{sec:data_korp_ipc}
+
+Trotz dessen, dass bei einer \ac{IPC}-Analyse gemäß der Forschungsfrage keine Titel und Abstrakt Daten von Patenten notwendig sind, wird hierbei an den Schritt 6 aus Abbildung \ref{fig:data_prep_sprache_text} angeknüpft. Denn der vorher stattfindende Vorgang 5 ist wichtig, um logische Patent-Wiederholungen auszuschließen, welche in der Praxis vorgekommen sind. 
+
+Als 7. Schritt erfolgt eine Komplexitätsreduktion, indem das Attribut ''ipc'' eingeführt wird, welches die \ac{IPC}-Hauptklasse und alternativ die erste \ac{IPC}-Nebenklasse repräsentiert. Anschließend erfolgt mit Hilfe eines Python-Pakets namens ''wipo\_ipc'' \footcite{wipo_ipc} eine Titelauflösung von IPC-Symbole, bei der Zeilen ohne resultierenden gültigen Wert entfernt werden (Abb. \ref{fig:data_prep_dokucorp_ipcanalyse}). 
+\begin{figure}[H]
+	\caption{IPC Titelauflößung u. Zeilenlöschung}
+	\includegraphics[width=.95\textwidth]{data_prep_dokucorp_ipcanalyse}
+	\label{fig:data_prep_dokucorp_ipcanalyse}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+Abschließend lässt sich ein Datenkorpus für \ac{IPC}-Analysen ableiten, welcher aus den Attributen Veröffentlichungsnummer (''id''), Veröffentlichungsdatum (''pub\_date''), Region (''region'') und \ac{IPC}-Titel (''ipc\_title'') besteht. Als Speicherformat wird CSV gewählt und die Größe beträgt $12\text{MB}$.
+
+\subsection{Datenkorpus für Themenmodellierung mit BERTopic}\label{sec:datakorp_for_topicmodel}
+
+In Kapitel \ref{sec:bertopic} wurde bereits über den modularen Aufbau der BERTopic-Vorgehensweise informiert. Demnach werden im ersten Schritt aus Textdaten Embeddings generiert. Dieser Vorgang wird im Falle von Parameter-Finetuning wiederholt \footcite{website:bertopic_bestpractices}. Die Erzeugung von Embeddings ist im Falle der Projektarbeit unabhängig vom Finetuning und kann demnach bereits im Datenkorpus umgesetzt sein, wodurch viel Rechenaufwand eingespart wird. Bevor dieser Umwandlungsschritt vollzogen wird, erfolgt zunächst eine Bereinigung der Textdaten, so dass beispielsweise Sonderzeichen inklusive Klammerausdrücke entfernt sind (Abb. \ref{fig:data_prep_datakorpu_topicmodel}). Das Ziel ist die Herstellung einer sauberen Satzstruktur mit Berücksichtigung von Sprachsonderheiten, damit beim Embedding mittels Sprachmodell bestmögliche Ergebnisse erreicht werden.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.85\textwidth]{data_prep_datakorpu_topicmodel}
+	\caption{Text zu Embeddings für Themenmodellierung}
+	\label{fig:data_prep_datakorpu_topicmodel}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+Aufgrund dessen, dass sowohl deutsche als auch englische Texte vorkommen, wird das multilinguale Sprachmodell ''distiluse-base-multilingual-cased-v1'' verwendet \footcite{website:st_bert_models}. Dieses erzeugt eine Vektordarstellung mit $512$ Dimensionen zu jedem Text. Zudem wird für das Clustering mit BERTopic eine Darstellung mit weniger Dimensionen erzeugt. Dies erfolgt durch Anwendung von \ac{UMAP}\footcite{umap}, wobei Darstellungen mit $5$ Komponenten resultieren. Der letztendliche Datenkorpus für eine Themenmodellierung beinhaltet die Attribute Veröffentlichungsdatum (''id''), Text, 512D-Embeddings (''emb512d'') und 5D-Embeddings (''emb5d''). Als Speicherformat wird CSV gewählt und die Größe beträgt $1.4\text{GB}$.
+
+\subsection{Datenkorpus für Analysen modellierter Themen}\label{sec:topic_modeling}
+
+Der erste Schritt beinhaltet das Clustering der 5D-Embeddings in dem Datenkorpus aus Kapitel \ref{sec:datakorp_for_topicmodel}. Dafür wird \ac{HDBSCAN} verwendet \footcite{hdbscan}. Als Mindestgröße für Themenblöcke werden $30$ Patente angegeben. Die Anzahl resultierender Gruppierungen ergibt sich algorithmisch. Im vorliegenden Fall werden $171$ Themen identifiziert, wobei $29550$ Patente keinem Thema zugeordnet sind (Abb. \ref{fig:topics}). 
+\begin{figure}[H]
+	\caption{Resultate der Themenmodellierung}
+	\includegraphics[width=.95\textwidth]{topics}
+	\label{fig:topics}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Themennamen generiert mit ''gpt-3.5-turbo'' am 04.07.2024}
+	\vspace{-1.0em}
+\end{figure}
+Für die Erzeugung von repräsentativen Themennamen werden zunächst mit Hilfe von \ac{c-TF-IDF} themenrelevante Stichwörter ermittelt, wobei nicht auf Dokumentenebene (\ac{TF-IDF}) differenziert wird, sondern auf Cluster-Ebene (\ac{c-TF-IDF}) \footcite{website:bertopic_ctfidf}\footcite{tfidf}. Anschließend werden die in Abbildung \ref{fig:topics} unter ''Name'' aufgelisteten Themenrepräsentationen mit Hilfe des OpenAI-Sprachmodells ''gpt-3.5-turbo'' erzeugt \footcite{website:bertopic_llm}. Dies wird von BERTopic unterstützt, wobei intern Anfragen mit Beigabe des Kontexts, in Form von Keywords und repräsentativen Texten zu jedem Cluster, an die OpenAI-API gesandt werden. Als Antwort wird ein passender Themenname zurückgegeben.
+
+Im nächsten Schritt wurden manuell ansprechende Hyperonyme identifiziert, so dass sich die Anzahl an möglichen Topics reduziert, wodurch folgende Analysen übersichtlicher und leichter verdaulich sind (Tab. \ref{tbl:anwendung} u. \ref{tbl:technology}). Das anwendungsspezifische Thema ''Militär'' wurde nicht direkt erkannt, da Neuerungen diesbezüglich in der Regel einer Geheimhaltung unterliegen. Es soll dennoch untersucht werden, in welchem Ausmaß Patente einen Bezug zu militärischen Zwecken aufweisen.
+\begin{table}[H]
+	\caption{Hyperonym ''Anwendung''}
+	\label{tbl:anwendung}
+	\begin{tabularx}{\textwidth}{X|X}
+		\hline
+		\textbf{Thema} & \textbf{Keywords} \\
+		\hline
+		Reinigung und Haushalt & Reinigung, Haushalt, waschen, ... \\
+		\hline
+		Landwirtschaft und Tierhaltung & Tierfütterung, Tierarztpflege, ... \\
+		\hline
+		Militär & Armee, Kampfdrohne, Militär, Waffe, ... \\
+		\hline
+		Gesundheit und Wohlbefinden & medizinisch, Wohlbefinden, ... \\
+		\hline
+		Sicherheits- und Rettungsdienste & Sicherheit, Rettung, ... \\
+		\hline
+		Küchentechnologie und Gastgewerbe & Küche, Gastgewerbe, Kochen, ... \\
+		\hline
+		Lagerung und Logistik & Etikettierung, Lagerung, Logistik, ... \\
+		\hline
+		Handwerk & Bauprozess, Handwerk, Messen, ... \\
+		\hline
+	\end{tabularx} \\
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{table}
+
+\begin{table}[H]
+	\caption{Hyperonym ''Technologie''}
+	\label{tbl:technology}
+	\begin{tabularx}{\textwidth}{X|X}
+		\hline
+		\textbf{Thema} & \textbf{Keywords} \\
+		\hline
+		Energieversorgung und Ladeinfrastruktur & Laden, Stromversorgung, ... \\
+		\hline
+		Teleoperation & Fernkommunikation, Opt-in-Anfrage, ... \\
+		\hline
+		Autonomie & Autonomie, selbstheilend, ... \\
+		\hline
+		Exoskelett & Exoskelett, Orthese, Prothese, ... \\
+		\hline
+		Form und Bewegung & Körperform, Bewegung, humanoid, ... \\
+		\hline
+		Physisches Handwerk & flexibler Greifer, Teleskoparm, ... \\
+		\hline
+		Sensorisches Handwerk & Sensor, Erkennung, Sonar, ... \\
+		\hline
+		Material & strahlungsbeständig, Wärmeableitung, ... \\
+		\hline
+	\end{tabularx} \\
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{table}
+Abschließend werden zu jedem Dokument sowohl anwendungs- als auch technologiespezifische Themen aus den Tabellen \ref{tbl:anwendung} und \ref{tbl:technology} zugeordnet. Dies erfolgt unter Anwendung der Kosinus-Ähnlichkeit zwischen Dokument-512D-Embedding und Thema-Keyword-Embedding (\ref{lst:doc2topic}). Aufgrund einer Mindestgröße der Ähnlichkeit als Bedingung können Dokumente zu 0 bis mehreren Themen zugeordnet werden. Dies ist in Anbetracht der gewählten Hyperonyme sinnvoll, da beispielsweise Patente existieren können, die sowohl zum Thema ''Exoskelett'' als auch ''Form u. Bewegung'' zuordenbar sind. Der resultierende Datenkorpus wird im CSV-Format abgespeichert und hat eine Größe von $5.6\text{MB}$.
+
+Abbildung \ref{fig:data_prep_dokukorp_analysis} fasst den Prozess zur Erstellung eines Datenkorpus für Themenanalysen zusammen. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.9\textwidth]{data_prep_dokukorp_analysis}
+	\caption{Erstellung eines Datenkorpus für Themenanalysen}
+	\label{fig:data_prep_dokukorp_analysis}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-2.0em}
+\end{figure}
+
+
+\newpage
+\section{Vergleichende Analysen}\label{sec:analysis}
+
+\subsection{Äquivalenzfaktor}\label{sec:aquiv_fakt}
+
+Aus Tabelle \ref{tbl:depatis_treffer} im Kapitel \ref{sec:data_ingestion} geht bereits hervor, dass Ostasien hinsichtlich Patentmenge weit vorne liegt. Die zu untersuchenden Regionen mit ihren bedeutendsten Vertretern unterscheiden sich jedoch auch deutlich hinsichtlich der Anzahl an Beschäftigten. Um die Intensität der Robotik-Entwicklung vergleichbarer zu machen, werden Äquivalenzfaktoren auf Basis der Beschäftigtenzahl je Region gebildet (Formel \ref{frm:beschaeftigte_aequivalenz}).
+\begin{formel}[h]
+	\caption{Durchschnittliche Beschäftigtenzahlen pro Jahr und Äquivalenzfaktoren}
+	\label{frm:beschaeftigte_aequivalenz}
+	\begin{align}
+\text{China\_avg} &= 749121\text{k} \\
+\text{USA\_avg} &= 165665\text{k} \\
+\text{EU\_avg} &= 241456\text{k} \\
+\text{Total\_avg} &= 385414\text{k} \\
+\text{Equivalence factor} &= \frac{\text{Total\_avg}}{\text{Region\_avg}} \text{.} \\
+\text{China} &= 0.51 \\
+\text{USA} &= 2.33 \\
+\text{EU} &= 1.6
+	\end{align}
+	\vspace{0.5em}
+	\normalsize{Quelle: Beschäftigtenzahlen (Alter >14 Jahre) aus ILOSTAT am 30.06.2024}
+	\vspace{-1.0em}
+\end{formel}
+Als Datenquelle für die Zahlenangaben dient \Ac{ILOSTAT} \footcite{website:ilostat}.
+
+\subsection{\ac{IPC} Analysen}\label{sec:ipc_analysis}
+
+Als Basis für \ac{IPC}-Analysen dient der in Kapitel \ref{sec:data_korp_ipc} beschriebene Datenkorpus. 
+
+Ein Blick auf die Verteilung der 8 häufigsten \ac{IPC}-Titel in Abbildung \ref{fig:ipc_verteilung} zeigt deutlich, dass der Bereich Handwerk dominiert. Dies ist wenig überraschend, da mit Robotik in diesem Zusammenhang viel körperliche Anstrengung vermieden werden kann.
+\begin{figure}[H]
+	\caption{Verteilung der 8 häufigsten \Ac{IPC}-Titel}
+	\includegraphics[width=1.\textwidth]{ipc_verteilung}
+	\label{fig:ipc_verteilung}
+		\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-2.0em}
+\end{figure}
+In Abbildung \ref{fig:ipc_topic_distr} erfolgt ein direkter interkontinentaler Vergleich von Anteilen an der Gesamtmenge je Thema. Durch die Gewichtung der Anteile mit den Äquivalenzfaktoren aus Kapitel \ref{sec:aquiv_fakt} sollen Intensitätsunterschiede deutlich gemacht werden. Es fällt auf, dass China in fast allen Bereichen anteilsmäßig führt. Bemerkenswert ist das Thema Medizin mit USA als offensichtlichem Anteilsführer. Europa ist trotz Gewichtung in allen Bereichen das Schlusslicht. 
+\begin{figure}[H]
+	\caption{Anteile je IPC-Titel}
+	\includegraphics[width=1.\textwidth]{ipc_topic_distr}
+	\label{fig:ipc_topic_distr}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-2.0em}
+\end{figure}
+
+\subsection{Analysen modellierter Themen}
+
+Auf Basis des Datenkorpus aus Kapitel \ref{sec:topic_modeling} werden Analysen bezüglich der Hyperonyme Technologie und Anwendung durchgeführt.
+
+\subsubsection{Technologie}
+
+\textbf{Analyse von Bereichsintensitäten}
+
+Der anteilsmäßige Vorsprung von China ist in den meisten Bereichen groß (Abb. \ref{fig:tech_topicdistr}). Lediglich der Bereich Teleoperation wird von den USA dominiert.
+\begin{figure}[H]
+	\caption{Anteile je Technologie-Thema}
+	\includegraphics[width=1.\textwidth]{tech_topicdistr}
+	\label{fig:tech_topicdistr}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-2.0em}
+\end{figure}
+
+\textbf{Longitudinale Schwerpunktanalyse}
+
+Der Fokus aller drei Regionen liegt auf Technologie mit Bezug zu Handwerk, Autonomie, Form und Bewegung (Abb. \ref{fig:eu_topics_tech}-\ref{fig:ch_topics_tech}), wobei dieser bei China besonders ausgeprägt ist (Abb. \ref{fig:ch_topics_tech}).
+\begin{figure}[h]
+	\caption{Technologie-Themenentwicklung von Europa}
+	\includegraphics[width=1.\textwidth]{eu_topics_tech}
+	\label{fig:eu_topics_tech}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+\end{figure}
+Bei Europa fällt auf, dass der Bereich Exoskelett eine schwankende Anzahl an patentierten Neuerungen aufweist und im Schnitt weniger Beachtung findet als in den anderen Regionen (Abb. \ref{fig:eu_topics_tech}).
+\begin{figure}[h]
+	\caption{Technologie-Themenentwicklung von USA}
+	\includegraphics[width=1.\textwidth]{usa_topics_tech}
+	\label{fig:usa_topics_tech}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+Die Themenentwicklungen von USA weisen überwiegend einen relativ deutlichen Aufwärtstrend auf und in China ist bereichsübergreifend ein sehr starker Abwärtstrend zu erkennen (Abb. \ref{fig:usa_topics_tech} u. \ref{fig:ch_topics_tech}).
+\begin{figure}[H]
+	\caption{Technologie-Themenentwicklung von China}
+	\includegraphics[width=1.\textwidth]{ch_topics_tech}
+	\label{fig:ch_topics_tech}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-1.0em}
+\end{figure}
+
+
+\subsubsection{Anwendung}
+
+\textbf{Analyse von Bereichsintensitäten}
+
+Im Falle des Hyperonyms ''Anwendung'' liegt China in allen Themenbereichen anteilsmäßig vorne, ausgenommen Gesundheit und Wohlbefinden, welches von USA dominiert wird (Abb. \ref{fig:task_topicdistr}). Diese logische Deckungsgleichheit mit der medizinischen Anteilsverteilung in Abbildung \ref{fig:ipc_topic_distr} aus dem Kapitel \ref{sec:ipc_analysis} ist ein guter Indikator für die Korrektheit der Themenmodellierung in Kapitel \ref{sec:topic_modeling}.
+\begin{figure}[H]
+	\caption{Anteile je Anwendungsbereich}
+	\includegraphics[width=1.\textwidth]{task_topicdistr}
+	\label{fig:task_topicdistr}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-2.0em}
+\end{figure}
+
+\textbf{Longitudinale Schwerpunktanalyse}
+
+Der Fokus in allen drei Regionen liegt auf Handwerk und Militär, wobei in China ein besonderer Schwerpunkt auf diesen beiden Anwendungsbereichen liegt (Abb. \ref{fig:eu_topics_tech}-\ref{fig:ch_topics_tech}).
+\begin{figure}[!h]
+	\caption{Anwendungsbereichsentwicklung von Europa}
+	\includegraphics[width=1.\textwidth]{eu_topics_task}
+	\label{fig:eu_topics_task}
+	\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+\end{figure}
+Die Anzahl an USA-Patenten mit Bezug zu den modellierten Themen steigt relativ stark an, wobei der Bereich Sicherheit und Rettung mit einer Steigerung von $375\%$ im Zeitraum von 2022-Q1 bis 2024-Q2 auffällt (Abb. \ref{fig:usa_topics_task}). Stattdessen sind die Patentmengen der Region China bereichsübergreifend stark fallend.
+\begin{figure}[h]
+	\caption{Anwendungsbereichsentwicklung von USA}
+	\includegraphics[width=1.\textwidth]{usa_topics_task}
+	\label{fig:usa_topics_task}
+		\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+	\vspace{-0.5em}
+\end{figure}
+\begin{figure}[H]
+	\caption{Anwendungsbereichsentwicklung von China}
+	\includegraphics[width=1.\textwidth]{ch_topics_task}
+	\label{fig:ch_topics_task}
+		\vspace{0.5em}
+	\raggedright
+	\normalsize{Quelle: Eigene Darstellung}
+\end{figure}
+

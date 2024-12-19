@@ -1,0 +1,63 @@
+\section{Zuordnung von Themen zu Dokumenten}\label{lst:doc2topic}
+\begin{lstlisting}
+technical_boundary = 0.1
+de_technical_boundary = 0.06
+task_boundary = 0.11
+de_task_boundary = 0.07
+
+# Function to assign suitable topics to a document
+def get_topics(row, technical=True):
+    doc_embedding = row['emb']
+    lang_de = row['lang'] == 'de'
+    if lang_de:
+        topics = de_tasks_embeddings if not technical else de_technology_embeddings
+        boundary = de_technical_boundary if technical else de_task_boundary
+    else:
+        topics = tasks_embeddings if not technical else technology_embeddings
+        boundary = technical_boundary if technical else task_boundary
+
+    topic_scores = compute_topic_scores(doc_embedding, topics)
+
+    # Sort the topics based on the scores
+    sorted_topics = sorted(topic_scores.items(), key=lambda item: item[1], reverse=True)
+
+	# assign no topic if top similarity is under treshhold
+    top_topic_score = sorted_topics[0][1]
+    if top_topic_score < boundary:
+        return []
+
+	# set top topic as the first topic
+    topic_keys = list(topics.keys())
+    topics = [topic_keys.index(sorted_topics[0][0])]
+
+    # return all topics which have similarity score within 0.015 of the top topic
+    for topic, score in sorted_topics[1:]:
+        if top_topic_score - score < 0.015:
+            topics.append(topic_keys.index(topic))
+        else:
+            break
+
+    return topics
+
+# Function to compute average similarity score for each topic
+def compute_topic_scores(doc_embedding, topics):
+    topic_scores = {}
+    for topic, keyword_embeddings in topics.items():
+        # Compute cosine similarity
+        cos_scores = util.pytorch_cos_sim(doc_embedding, keyword_embeddings).cpu().numpy()
+        
+        # Flatten the cos_scores array if necessary
+        cos_scores_flat = cos_scores.flatten()
+
+        # Get the top 2 cosine similarity scores
+        top_scores = np.sort(cos_scores_flat)[-2:]
+
+        # Calculate the mean of the top 2 scores
+        mean_scores = np.mean(top_scores)
+        
+        topic_scores[topic] = mean_scores
+        
+    return topic_scores
+\end{lstlisting}
+\vspace{-1.3em}
+\normalsize{Quelle: Eigene Darstellung}
