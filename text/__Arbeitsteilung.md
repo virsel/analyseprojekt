@@ -1,14 +1,11 @@
-1. Einleitung (Paul)
-2. Theorie (Paul + Admir)
-3. Praxis
-    1. Datenvorverarbeitung (Admin)
-    2. Modelle (Admir + Paul)
+1. 5% -> 200 Einleitung (Paul)
+2. 20% -> 800 Theorie (Paul + Admir) 
+3. 70% -> 2800 Praxis 
+    1. 40% -> 1120  Datenvorverarbeitung (Admin)
+    2. 35% -> 980 Modelle (Admir + Paul)
         Fokus:  
             Einfluss von Tweets  
             Was ist optimale Architektur?  
-            Welcher Datenmix ist am besten?
-                wilder mix
-                oder branchenspezifisch (nur technische Aktien fürs Training)
-    3. Evaluierung (Admir + Paul)
-    4. Deployment (Admir)
-4. Schluss & Fazit (Admir + Paul)
+    3. 20% -> 560 Evaluierung (Admir + Paul)
+    4. 5% -> 140 Deployment (Admir)
+4. 5% -> 200 Schluss & Fazit (Admir + Paul) 200

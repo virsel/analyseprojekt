@@ -1,17 +1,28 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'thesis_main.blg'
-[69] biber-MSWIN64:340> INFO - === 
+[67] biber-MSWIN64:340> INFO - === 
 [95] Biber.pm:419> INFO - Reading 'thesis_main.bcf'
-[165] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
-[173] Biber.pm:4419> INFO - Processing section 0
-[180] Biber.pm:4610> INFO - Looking for bibtex file 'literatur/literatur.bib' for section 0
-[218] bibtex.pm:1713> INFO - LaTeX decoding ...
-[221] bibtex.pm:1519> INFO - Found BibTeX data source 'literatur/literatur.bib'
-[247] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[247] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[162] Biber.pm:979> INFO - Found 16 citekeys in bib section 0
+[170] Biber.pm:4419> INFO - Processing section 0
+[177] Biber.pm:4610> INFO - Looking for bibtex file 'literatur/literatur.bib' for section 0
+[215] bibtex.pm:1713> INFO - LaTeX decoding ...
+[218] bibtex.pm:1519> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[248] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[248] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
 [248] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
 [248] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[252] bbl.pm:660> INFO - Writing 'thesis_main.bbl' with encoding 'UTF-8'
-[253] bbl.pm:763> INFO - Output to thesis_main.bbl
-[253] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\paul-\AppData\Local\Temp\biber_tmp_pLcg\a3880c76f34ea5bee4730f185bf8bebe_4460.utf8, line 4, warning: 10 characters of junk seen at toplevel
-[253] Biber.pm:133> INFO - WARNINGS: 1
+[253] bbl.pm:660> INFO - Writing 'thesis_main.bbl' with encoding 'UTF-8'
+[255] bbl.pm:763> INFO - Output to thesis_main.bbl
+[255] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\paul-\AppData\Local\Temp\biber_tmp_U7_B\a3880c76f34ea5bee4730f185bf8bebe_10588.utf8, line 4, warning: 10 characters of junk seen at toplevel
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'dpma_hilfe' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'wipo_ipc' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'website:bertopic_bestpractices' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'website:st_bert_models' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'umap' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'hdbscan' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'website:bertopic_ctfidf' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'tfidf' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'website:bertopic_llm' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'website:ilostat' (section 0)
+[256] Biber.pm:131> WARN - I didn't find a database entry for 'vincent2023openai' (section 0)
+[256] Biber.pm:133> INFO - WARNINGS: 12

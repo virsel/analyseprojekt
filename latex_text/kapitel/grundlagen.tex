@@ -1,12 +1,12 @@
 \newpage
-\section*{Sentiment-Analyse mit Transformer-Encoder}
+\section{Theoretische Grundlagen}\label{sec:kap2}
 
-\subsection*{Abstrakt}\label{sec:patent_info_gehalt}
+\subsection{Abstrakt}\label{sec:patent_info_gehalt}
 
 Diese Arbeit widmet sich der Forschungsfrage, inwieweit sich ein Transformer-Encoder-Modell mit verhältnismäßig wenig Parametern für eine Sentiment-Analyse eignet. Zusätzlich soll geprüft werden, wie groß der Einfluss des Umfangs an Trainingsdaten auf die Modellleistung ist. Aktuelle große Sprachmodelle nutzen Transformer-Architekturen, bei denen festgestellt wurde, dass deren Leistung besonders hervorsticht, wenn diese mit sehr vielen Daten trainiert wurden und Unmengen an lernbaren Parametern besitzen. Diese Anforderungen lassen sich nur von sehr finanzstarken Unternehmen erfüllen. Die Forschungsarbeit kann dazu beitragen, einen optimalen Punkt bei der Erreichung eines MVP-Modells (minimal funktionsfähige Iteration eines Modells) zu identifizieren. Als Leistungsrichtwert, der übertroffen werden muss, dient ein lexikonbasiertes Modell aus der ''NLTK'' Python-Bibliothek \footcite{website:VADER}.
 
 
-\subsection*{Datenaufbereitung}\label{sec:ipc}
+\subsection{Datenaufbereitung}\label{sec:ipc}
 
 Als Datengrundlage dienen $3.6 \text{Mio}$ Amazonreviews, welche auf Kaggle.com zur Verfügung gestellt werden \footcite{website:AmazonReviews}.
 
@@ -23,7 +23,7 @@ Bei der Datenaufbereitung resultieren 2 Abwandlungen der Reviews und eine Zahlen
 Bei ''review\_tokens'' handelt es sich um eine Schlagwortextraktion, bei ''review\_features'' um eine reduzierte Form von ersterem ($5\text{k}$ mögliche Schlagwörter) und bei ''feature\_vec'' um eine Zahlendarstellung von zweiterem. Zur Komplexitätsreduktion werden lediglich Zeilen mit mindestens 10 und maximal 40 Review-Features beibehalten. Falls ein Review weniger als 40 Features aufweist, wird der Zahlenvektor durch linksseitiges Padding mit $0$ passend aufgefüllt. Die Daten werden in 2 Teilen gespeichert, mit $80\%$ für das Training des Transformer-Encoders und $20\%$ zum Testen.
 
 
-\subsection*{Basis Modell}\label{sec:base_model}
+\subsection{Basis Modell}\label{sec:base_model}
 
 Das Basis Modell erreicht bei einer Anwendung auf Testdaten eine Genauigkeit von ca. $70\%$ (Abb. \ref{fig:base_model}), welche vom Transformer-Encoder-Modell übertroffen werden muss.
 
@@ -62,6 +62,3 @@ Es ergeben sich die in Abbildung \ref{fig:transfcl_perf} dargestellten Genauigke
 
 Daraus geht hervor, dass bereits wenige Trainingsdaten (XS) ausreichen, um ein lexikonbasiertes Verfahren bei einer Sentimentanalyse zu übertreffen. Außerdem wird deutlich, dass die notwendige Steigerung der Trainingsdatenmenge für eine spürbare Verbesserung der Modellleistung exponentiell mit der bereits vorhandenen Performance wächst. Dabei ist mit einem Sättigungspunkt zu rechnen, wobei man spätestens dann dazu übergehen sollte, die Modellkomplexität durch z.B. zusätzliche Schichten zu erhöhen.
 
-\subsection*{Fazit}\label{sec:fazit}
-
-Es sind nur wenige Trainingsdaten notwendig, um mithilfe der Transformer-Architektur ein brauchbares MVP-Modell umzusetzen. Liegt diese Voraussetzung vor, sollte man sich auch für diesen Weg entscheiden, da man dann mehr Potenzial zur Verbesserung des Produktes besitzt. Vor allem große Sprachmodelle wie GPT-4 von OpenAI sind der Beweis für die hervorragende Skalierbarkeit von Transformer-Modellen.

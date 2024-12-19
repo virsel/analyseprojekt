@@ -163,7 +163,89 @@
       \verb https://pytorch.org/
       \endverb
     \endentry
+    \entry{zhang2022transformer}{article}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=a300c2d360cf57bfb395be69a2f27895}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qiuyue},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a63629d92dfdff9e6a740aa3ccbe2960}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9912d78ae87e3e4c03aa245499e81f4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yunfeng},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6cb9b6f07981ff55fc5d5e0229be75e8}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Fangxun},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=317109e5efd6b04b2dcc18b15fab760a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Caiming},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=623651b638550e8d46489e886522d714}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Peide},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{c417ea141d51461ef574297982f19cb3}
+      \strng{fullhash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{bibnamehash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{authorbibnamehash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{authornamehash}{c417ea141d51461ef574297982f19cb3}
+      \strng{authorfullhash}{c43f1ea48f223527332892e74e9fff75}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Transformer-based attention network for stock movement prediction}
+      \field{volume}{202}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2022.117033
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
+      \endverb
+    \endentry
   \enddatalist
+  \missing{dpma_hilfe}
+  \missing{hdbscan}
+  \missing{tfidf}
+  \missing{umap}
+  \missing{vincent2023openai}
+  \missing{website:bertopic_bestpractices}
+  \missing{website:bertopic_ctfidf}
+  \missing{website:bertopic_llm}
+  \missing{website:ilostat}
+  \missing{website:st_bert_models}
+  \missing{wipo_ipc}
 \endrefsection
 \endinput
 
