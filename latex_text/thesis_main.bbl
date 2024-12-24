@@ -19,148 +19,201 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{website:AmazonReviews}{online}{}
+    \entry{hazourli2022financialbert}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=01dc0a608c3f385c121eacaac28b36c5}{%
-           family={Bittlingmayer},
-           familyi={B\bibinitperiod},
-           given={Adam},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{01dc0a608c3f385c121eacaac28b36c5}
-      \strng{fullhash}{01dc0a608c3f385c121eacaac28b36c5}
-      \strng{bibnamehash}{01dc0a608c3f385c121eacaac28b36c5}
-      \strng{authorbibnamehash}{01dc0a608c3f385c121eacaac28b36c5}
-      \strng{authornamehash}{01dc0a608c3f385c121eacaac28b36c5}
-      \strng{authorfullhash}{01dc0a608c3f385c121eacaac28b36c5}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Amazon Reviews for Sentiment Analysis}
-      \field{urlday}{2}
-      \field{urlmonth}{7}
-      \field{urlyear}{2024}
-      \field{year}{2019}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://www.kaggle.com/datasets/bittlingmayer/amazonreviews
-      \endverb
-      \verb{url}
-      \verb https://www.kaggle.com/datasets/bittlingmayer/amazonreviews
-      \endverb
-    \endentry
-    \entry{website:VADER}{online}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=8be118feb9932174d0f436aee008b941}{%
-           family={Hutto},
+        {{un=0,uniquepart=base,hash=efe938fb5bb195402765fca74dcb5d8e}{%
+           family={Hazourli},
            familyi={H\bibinitperiod},
-           given={C.J.},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a189b95adb850b55585b27e6a5853587}{%
-           family={Gilbert},
-           familyi={G\bibinitperiod},
-           given={E.E.},
-           giveni={E\bibinitperiod},
+           given={Ahmed\bibnamedelima Rachid},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{a60269cf20da01cca9c7ba85ad7614d7}
-      \strng{fullhash}{a60269cf20da01cca9c7ba85ad7614d7}
-      \strng{bibnamehash}{a60269cf20da01cca9c7ba85ad7614d7}
-      \strng{authorbibnamehash}{a60269cf20da01cca9c7ba85ad7614d7}
-      \strng{authornamehash}{a60269cf20da01cca9c7ba85ad7614d7}
-      \strng{authorfullhash}{a60269cf20da01cca9c7ba85ad7614d7}
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \strng{namehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{fullhash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{bibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authorbibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authornamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authorfullhash}{efe938fb5bb195402765fca74dcb5d8e}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{VADER Sentiment Analysis}
-      \field{urlday}{3}
-      \field{urlmonth}{7}
-      \field{urlyear}{2024}
-      \field{year}{2014}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://github.com/cjhutto/vaderSentiment
-      \endverb
-      \verb{url}
-      \verb https://github.com/cjhutto/vaderSentiment
+      \field{journaltitle}{Preprint on ResearchGate}
+      \field{month}{2}
+      \field{note}{CC BY 4.0 License}
+      \field{title}{FinancialBERT - A Pretrained Language Model for Financial Text Mining}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.34032.12803
       \endverb
     \endentry
-    \entry{website:nanoGPT}{online}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e91a4c2044bccdbef249eabc886ff988}{%
-           family={Karpathy},
-           familyi={K\bibinitperiod},
-           given={Andrej},
-           giveni={A\bibinitperiod},
+    \entry{Xu2020StockMovement}{article}{}
+      \name{author}{4}{}{%
+        {{un=1,uniquepart=given,hash=c90185e7e56c3b384b0c2e1e6d9f6eec}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Hongfeng},
+           giveni={H\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=4cfaba811c5f6a18df6938d492246beb}{%
+           family={Chai},
+           familyi={C\bibinitperiod},
+           given={Lei},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b7be320f4a37b5c679a3719f4908616}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Zhiming},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bc6feb32222eb9129e27d20dbc31167a}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shaozi},
+           giveni={S\bibinitperiod},
            givenun=0}}%
       }
-      \strng{namehash}{e91a4c2044bccdbef249eabc886ff988}
-      \strng{fullhash}{e91a4c2044bccdbef249eabc886ff988}
-      \strng{bibnamehash}{e91a4c2044bccdbef249eabc886ff988}
-      \strng{authorbibnamehash}{e91a4c2044bccdbef249eabc886ff988}
-      \strng{authornamehash}{e91a4c2044bccdbef249eabc886ff988}
-      \strng{authorfullhash}{e91a4c2044bccdbef249eabc886ff988}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{69173ffe033778d59a9642d2de73b7e4}
+      \strng{fullhash}{da56ffb6eb0db09bda0d16bafae2f78f}
+      \strng{bibnamehash}{da56ffb6eb0db09bda0d16bafae2f78f}
+      \strng{authorbibnamehash}{da56ffb6eb0db09bda0d16bafae2f78f}
+      \strng{authornamehash}{69173ffe033778d59a9642d2de73b7e4}
+      \strng{authorfullhash}{da56ffb6eb0db09bda0d16bafae2f78f}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{day}{3}
-      \field{month}{6}
-      \field{title}{nanoGPT}
-      \field{urlday}{3}
-      \field{urlmonth}{7}
+      \field{journaltitle}{Neurocomputing}
+      \field{title}{Stock movement predictive network via incorporative attention mechanisms based on tweet and historical prices}
+      \field{volume}{418}
+      \field{year}{2020}
+      \field{pages}{326\bibrangedash 339}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2020.07.109
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0925231220313060?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0925231220313060?via%3Dihub
+      \endverb
+    \endentry
+    \entry{xu2018StockMovement}{article}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=b507e67236cc5f6e9caaf12baba5aee9}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yumo},
+           giveni={Y\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=4850327895eea4187f7220ab102d34b6}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Shay\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=ea70b44be1920f6e8c379706bc7d047a}{%
+           family={Gurevych},
+           familyi={G\bibinitperiod},
+           given={Iryna},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e3085b34ce73d4eb1516551aa3eb4beb}{%
+           family={Miyao},
+           familyi={M\bibinitperiod},
+           given={Yusuke},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{fullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{bibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authorbibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authornamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authorfullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{editorbibnamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \strng{editornamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \strng{editorfullhash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Stock Movement Prediction from Tweets and Historical Prices}
+      \field{year}{2018}
+      \field{pages}{1970\bibrangedash 1979}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.18653/v1/P18-1183
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P18-1183
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P18-1183
+      \endverb
+    \endentry
+    \entry{website:stocknet-dataset}{online}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=b507e67236cc5f6e9caaf12baba5aee9}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yumo},
+           giveni={Y\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=c8f838ddf6c2b70e385251f590568dd5}{%
+           family={dtaylor-530},
+           familyi={d\bibinithyphendelim 5\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \strng{fullhash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \strng{bibnamehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \strng{authorbibnamehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \strng{authornamehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \strng{authorfullhash}{5d4d6d73e356fd2816cc8593a17ccf4d}
+      \field{sortinit}{X}
+      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{MIT License}
+      \field{title}{StockNet Dataset: A Comprehensive Dataset for Stock Movement Prediction from Tweets and Historical Stock Prices}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
       \field{urlyear}{2024}
-      \field{year}{2024}
+      \field{year}{2017}
       \field{dateera}{ce}
       \field{urldateera}{ce}
       \verb{urlraw}
-      \verb https://github.com/karpathy/nanoGPT
+      \verb https://github.com/yumoxu/stocknet-dataset
       \endverb
       \verb{url}
-      \verb https://github.com/karpathy/nanoGPT
-      \endverb
-    \endentry
-    \entry{website:PyTorch}{online}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=20934bb6b6fc16457bce17b3d0b7bace}{%
-           family={{PyTorch Foundation}},
-           familyi={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \strng{fullhash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \strng{bibnamehash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \strng{authorbibnamehash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \strng{authornamehash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \strng{authorfullhash}{20934bb6b6fc16457bce17b3d0b7bace}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{PyTorch}
-      \field{urlday}{4}
-      \field{urlmonth}{7}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://pytorch.org/
-      \endverb
-      \verb{url}
-      \verb https://pytorch.org/
+      \verb https://github.com/yumoxu/stocknet-dataset
       \endverb
     \endentry
     \entry{zhang2022transformer}{article}{}
@@ -235,17 +288,7 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{dpma_hilfe}
-  \missing{hdbscan}
-  \missing{tfidf}
-  \missing{umap}
   \missing{vincent2023openai}
-  \missing{website:bertopic_bestpractices}
-  \missing{website:bertopic_ctfidf}
-  \missing{website:bertopic_llm}
-  \missing{website:ilostat}
-  \missing{website:st_bert_models}
-  \missing{wipo_ipc}
 \endrefsection
 \endinput
 

@@ -99,7 +99,6 @@
 \usepackage{listings}
 
 % Configure listings
-
 \lstset{
 	basicstyle=\ttfamily,
 	numbers=left,
@@ -132,10 +131,10 @@
 
 % Formatting for code listing captions
 \captionsetup[lstlisting]{
-	font={normalsize,bf,singlespacing},
+	font={small,bf,singlespacing},
 	justification=raggedright,
 	singlelinecheck=false,
-	aboveskip=5pt,
+	aboveskip=6pt,
 	belowskip=0pt,
 	format=hang,
 	position=above
@@ -364,6 +363,11 @@ placement=htbp,
 \renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\headrulewidth}{0pt}
 
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,textfont=bf}
+
+
+
 %-----------------------------------
 % Start the document here:
 %-----------------------------------
@@ -387,7 +391,7 @@ placement=htbp,
 % Inhaltsverzeichnis
 %-----------------------------------
 % Um das Tabellen- und Abbbildungsverzeichnis zu de/aktivieren ganz oben in Documentclass schauen
-\setcounter{page}{2}
+\setcounter{page}{1}
 \addtocontents{toc}{\protect\enlargethispage{-20mm}}% Die Zeile sorgt dafür, dass das Inhaltsverzeichnisseite auf die zweite Seite gestreckt wird und somit schick aussieht. Das sollte eigentlich automatisch funktionieren. Wer rausfindet wie, kann das gern ändern.
 \setcounter{tocdepth}{4}
 \tableofcontents
@@ -398,6 +402,15 @@ placement=htbp,
 %-----------------------------------
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
+\newpage
+
+%-----------------------------------
+% Abkürzungsverzeichnis
+%-----------------------------------
+% Falls das Abkürzungsverzeichnis nicht im Inhaltsverzeichnis angezeigt werden soll
+% dann folgende Zeile auskommentieren.
+\addcontentsline{toc}{section}{\abbreHeadingName}
+\input{abkuerzungen/acronyms}
 \newpage
 	
 

@@ -29,3 +29,7 @@ stock traders on Twitter. In addition, the dataset is currently recognized
 financial data used for stock price prediction, and it has been widely
  used in many research results (Xu et al., 2020; Xu & Cohen, 2018).
  (TEAnet Kap. 5.1)
+
+ 3.2. Data preparation
+In this paper, to more conveniently compare our method with the existing approaches, we use a dataset1 collected and preprocessed in [21] for the final prediction. On this dataset, some experiments of early works and novel advances have been executed in and shows a series of relevant references [21], [47]. Therefore, this dataset can be viewed as a representative reference in stock movement prediction task and should be better suited to showing general comparison results. Besides, we follow the demarcation of the stock fields in [21] and categorize the stock into 9 industries: Basic Materials, Consumer Goods, Healthcare, Services, Utilities, Conglomerates, Financial, Industrial Goods and Technology.2 The collection of the above dataset follows the principle that the stocks with high volume may be discussed more on Twitter. Then the 88 stocks include 8 stocks in Conglomerates and top 10 stocks according to market capitalization in the each of the rest of 8 industries. Furthermore, two-year prices from 01/01/2014 to 01/01/2016 of 88 stocks are additionally incorporated into the final dataset.
+(https://www.sciencedirect.com/science/article/pii/S0925231220313060?via%3Dihub)

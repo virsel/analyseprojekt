@@ -2,6 +2,17 @@
 - Stock movement prediction has attracted the attention of both investors and researchers for decades due to its great value in seeking to maximize stock profit (Hu et al., 2018). Early approaches mainly relied on historical stock prices and time series analysis methods (Akaike, 1969). However, stock movement prediction is quite a challenging issue because of the highly volatile and nonstationary nature of the stock market.
 (https://www.sciencedirect.com/science/article/pii/S0957417422006170?via%3Dihub Kap. Einleitung)
 
+Stock markets are regarded as a fundamental component of the global economic land-
+scape, with ﬂuctuations involving the exchange of billions of dollars [
+1
+,
+2
+]. Consequently,
+precise predictions of future trends in ﬁnancial markets hold signiﬁcant value across mul-
+tiple domains. Given these attributes, the stock market has attracted heightened interest
+from investors, researchers, and institutions alike [3,4].
+(https://www.researchgate.net/publication/385328306_Deep_Convolutional_Transformer_Network_for_Stock_Movement_Prediction, Kap. Introduction)
+
 - Many methods are currently used for stock market prediction, mainly based on machine learning (ML) algorithms, which can be divided into more specific classes of algorithms as follows: traditional ML, deep learning (DL), and hybrid approaches (Lee & Kim, 2020).
 (https://www.sciencedirect.com/science/article/pii/S0957417422006170?via%3Dihub Kap. related Work)
 

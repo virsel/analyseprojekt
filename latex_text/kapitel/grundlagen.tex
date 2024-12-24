@@ -1,14 +1,37 @@
 \newpage
-\section{Theoretische Grundlagen}\label{sec:kap2}
-
-\subsection{Abstrakt}\label{sec:patent_info_gehalt}
-
-Diese Arbeit widmet sich der Forschungsfrage, inwieweit sich ein Transformer-Encoder-Modell mit verhältnismäßig wenig Parametern für eine Sentiment-Analyse eignet. Zusätzlich soll geprüft werden, wie groß der Einfluss des Umfangs an Trainingsdaten auf die Modellleistung ist. Aktuelle große Sprachmodelle nutzen Transformer-Architekturen, bei denen festgestellt wurde, dass deren Leistung besonders hervorsticht, wenn diese mit sehr vielen Daten trainiert wurden und Unmengen an lernbaren Parametern besitzen. Diese Anforderungen lassen sich nur von sehr finanzstarken Unternehmen erfüllen. Die Forschungsarbeit kann dazu beitragen, einen optimalen Punkt bei der Erreichung eines MVP-Modells (minimal funktionsfähige Iteration eines Modells) zu identifizieren. Als Leistungsrichtwert, der übertroffen werden muss, dient ein lexikonbasiertes Modell aus der ''NLTK'' Python-Bibliothek \footcite{website:VADER}.
+\section{Theoretische Grundlagen}\label{sec:theorie}
 
 
-\subsection{Datenaufbereitung}\label{sec:ipc}
 
-Als Datengrundlage dienen $3.6 \text{Mio}$ Amazonreviews, welche auf Kaggle.com zur Verfügung gestellt werden \footcite{website:AmazonReviews}.
+\subsection{Datenverständnis}\label{sec:theorie_data_understanding}
+
+---
+
+Here's the German translation:
+Im Finanzbereich werden Aktien in 9 Branchen kategorisiert: Grundstoffe, Konsumgüter, Gesundheitswesen, Dienstleistungen, Versorgungsunternehmen, Mischkonzerne, Finanzwesen, Industriegüter und Technologie. Da Aktien mit hohem Handelsvolumen tendenziell häufiger auf Twitter diskutiert werden, wählen wir die zweijährigen Kursbewegungen von 88 Aktien vom 01.01.2014 bis 01.01.2016 als Ziele aus, bestehend aus allen 8 Aktien der Mischkonzerne und den Top 10 Aktien nach Kapitalvolumen aus jeder der anderen 8 Branchen (siehe ergänzendes Material).
+
+---
+\footcite[Kap. 3]{xu2018StockMovement}
+
+
+\subsection{Aktienprognosen mit Deep Learning}\label{sec:theorie_dl}
+
+\subsubsection{LSTM für Kursdaten}\label{sec:theorie_lstm}
+
+\subsubsection{LLM für Stimmungsdaten}\label{sec:theorie_llm}
+---
+
+FinancialBERT applies domain-specific language understanding to financial text analysis. Built by ahmedrachid, this model stands alongside other financial sentiment analyzers like finbert-tone and finbert. The model was fine-tuned on the Financial PhraseBank dataset, achieving 98\% weighted average precision across sentiment categories.
+...
+
+---
+\footcite{hazourli2022financialbert}
+
+
+\subsubsection{CNN für Stimmungsdaten}\label{sec:theorie_cnn}
+
+
+
 
 \begin{figure}[H]
 	\caption{Aufbereitung von Amazon Kundenbewertungen}
@@ -19,46 +42,6 @@ Als Datengrundlage dienen $3.6 \text{Mio}$ Amazonreviews, welche auf Kaggle.com 
 	\vspace{-1.0em}
 \end{figure} 
 
-Bei der Datenaufbereitung resultieren 2 Abwandlungen der Reviews und eine Zahlendarstellung (Abb. \ref{fig:data_prep}).
-Bei ''review\_tokens'' handelt es sich um eine Schlagwortextraktion, bei ''review\_features'' um eine reduzierte Form von ersterem ($5\text{k}$ mögliche Schlagwörter) und bei ''feature\_vec'' um eine Zahlendarstellung von zweiterem. Zur Komplexitätsreduktion werden lediglich Zeilen mit mindestens 10 und maximal 40 Review-Features beibehalten. Falls ein Review weniger als 40 Features aufweist, wird der Zahlenvektor durch linksseitiges Padding mit $0$ passend aufgefüllt. Die Daten werden in 2 Teilen gespeichert, mit $80\%$ für das Training des Transformer-Encoders und $20\%$ zum Testen.
 
 
-\subsection{Basis Modell}\label{sec:base_model}
-
-Das Basis Modell erreicht bei einer Anwendung auf Testdaten eine Genauigkeit von ca. $70\%$ (Abb. \ref{fig:base_model}), welche vom Transformer-Encoder-Modell übertroffen werden muss.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.7 \textwidth]{base_model}
-	\caption{Basis Modell Performance}
-	\label{fig:base_model}
-	\raggedright
-	\vspace{-1.0em}
-\end{figure} 
-
-\subsection*{Transformer-Encoder}\label{sec:transfenc}
-
-Genaue Architekturdetails des umgesetzten Transformer-Encoders befinden sich im Anhang als Bild ''model\_architecture.png'' und orientieren sich an einer Vorlage von Andrej Karpathy \footcite{website:nanoGPT}, wobei mit dem Python-Paket ''PyTorch'' gearbeitet wird \footcite{website:PyTorch}. Als Eingabe für den Transformer-Encoder dienen die Feature-Vektoren, welche eine einheitliche Kontextlänge von 40 aufweisen. Zur Untersuchung des Einflusses der Datenmenge auf Modellleistungen werden 4 Datengrößen angewandt (Abb. \ref{fig:val_loss}).
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1. \textwidth]{val_loss}
-	\caption{Verlauf des Validierungsverlusts}
-	\label{fig:val_loss}
-	\raggedright
-	\vspace{-1.0em}
-\end{figure} 
-
-Es ergeben sich die in Abbildung \ref{fig:transfcl_perf} dargestellten Genauigkeiten.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=.7 \textwidth]{transfcl_perf}
-	\caption{Transformer-Encoder-Modell Performance}
-	\label{fig:transfcl_perf}
-	\raggedright
-	\vspace{-1.0em}
-\end{figure} 
-
-Daraus geht hervor, dass bereits wenige Trainingsdaten (XS) ausreichen, um ein lexikonbasiertes Verfahren bei einer Sentimentanalyse zu übertreffen. Außerdem wird deutlich, dass die notwendige Steigerung der Trainingsdatenmenge für eine spürbare Verbesserung der Modellleistung exponentiell mit der bereits vorhandenen Performance wächst. Dabei ist mit einem Sättigungspunkt zu rechnen, wobei man spätestens dann dazu übergehen sollte, die Modellkomplexität durch z.B. zusätzliche Schichten zu erhöhen.
 

@@ -1,7 +1,7 @@
-1. 5% -> 200 Einleitung (Paul)
-2. 20% -> 800 Theorie (Paul + Admir) 
+1. 5% -> 200 Einleitung (Paul) 210
+2. 20% -> 800 Theorie (Admir) 
 3. 70% -> 2800 Praxis 
-    1. 40% -> 1120  Datenvorverarbeitung (Admin)
+    1. 40% -> 1120  Datenvorverarbeitung (Paul) 900
     2. 35% -> 980 Modelle (Admir + Paul)
         Fokus:  
             Einfluss von Tweets  

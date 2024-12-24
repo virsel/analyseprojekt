@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.12.17)  19 DEC 2024 18:30
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.12.17)  24 DEC 2024 15:36
  restricted system commands enabled.
 **thesis_main.tex
 (./thesis_main.tex
@@ -1670,11 +1670,11 @@ Package newfloat Info: `rotating' package detected.
 )
 Package newfloat Info: New float `formel' with options ` fileext=frm, listname=
 {}, name=Formel, listname={Formelverzeichnis}, placement=htbp, ' on input line 
-259.
+258.
 \c@formel=\count465
-Package newfloat Info: float type `formel'=4 on input line 259.
+Package newfloat Info: float type `formel'=4 on input line 258.
 \c@frmdepth=\count466
-Package tocbasic Info: setting babel extension for `frm' on input line 259.
+Package tocbasic Info: setting babel extension for `frm' on input line 258.
 
 (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
@@ -1965,51 +1965,51 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip192
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 346.
-Package hyperref Info: Option `breaklinks' set `true' on input line 346.
-Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 346
+Package hyperref Info: Option `colorlinks' set `true' on input line 345.
+Package hyperref Info: Option `breaklinks' set `true' on input line 345.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 345
 .
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 346.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 345.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 37
-0.
+4.
 
 (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 370.
+(Font)              scaled to size 10.79993pt on input line 374.
 
 (./thesis_main.aux)
 \openout1 = thesis_main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 370.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 374.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-70.
+74.
 
 (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 370.
-LaTeX Font Info:    ... okay on input line 370.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 374.
+LaTeX Font Info:    ... okay on input line 374.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -2111,85 +2111,15 @@ Package biblatex Info: ... file 'thesis_main.bbl' found.
 
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
-(biblatex)                dpma_hilfe
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                hdbscan
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                tfidf
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                umap
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
 (biblatex)                vincent2023openai
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                website:bertopic_bestpractices
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                website:bertopic_ctfidf
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                website:bertopic_llm
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                website:ilostat
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                website:st_bert_models
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                wipo_ipc
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
 )
-Package biblatex Info: Reference section=0 on input line 370.
-Package biblatex Info: Reference segment=0 on input line 370.
+Package biblatex Info: Reference section=0 on input line 374.
+Package biblatex Info: Reference segment=0 on input line 374.
 Package newfloat Info: `float' package detected.
-Package hyperref Info: Link coloring ON on input line 370.
+Package hyperref Info: Link coloring ON on input line 374.
  (./thesis_main.out) (./thesis_main.out)
 \@outlinefile=\write6
 
@@ -2201,7 +2131,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 370.
+(scrartcl)           before \begin{document} on input line 374.
 
 (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-05 v1.30 PDF bookmarks (HO)
@@ -2299,29 +2229,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 {C:/Users/paul-/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}<./abbildungen/
 fomLogo.pdf>]) (./thesis_main.toc
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 20.
-Package acronym Info: Label `acro:IPC' newly defined as it shall be overridden
-although it is yet undefined on input line 31.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 31.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 31.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 36.
-
+(Font)              scaled to size 10.79993pt on input line 22.
 )
 \tf@toc=\write7
 
 \openout7 = thesis_main.toc
- [2] (./thesis_main.lof)
+
+warning  (pdf backend): ignoring duplicate destination with the name 'page.I'
+[1] (./thesis_main.lof)
 \tf@lof=\write8
 
 \openout8 = thesis_main.lof
- [3] (./skripte/kapitelUebersicht.tex
-(./kapitel/einleitung.tex
+ [2] (./abkuerzungen/acronyms.tex) [3]
+(./skripte/kapitelUebersicht.tex (./kapitel/einleitung.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 3.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -2344,342 +2264,121 @@ LaTeX Warning: Reference `'sec:kap2'' on page 1 undefined on input line 8.
 
 ) (./kapitel/grundlagen.tex [1]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 6.29996pt on input line 11.
-<./abbildungen/data_prep.png, id=116, 523.848pt x 259.077pt>
+(Font)              scaled to size 9.85492pt on input line 37.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 37.
+<./abbildungen/data_prep.png, id=115, 523.848pt x 259.077pt>
 File: ./abbildungen/data_prep.png Graphic file (type png)
 <use ./abbildungen/data_prep.png>
-Package luatex.def Info: ./abbildungen/data_prep.png  used on input line 15.
+Package luatex.def Info: ./abbildungen/data_prep.png  used on input line 38.
 (luatex.def)             Requested size: 426.79135pt x 211.07669pt.
- [2<./abbildungen/data_prep.png>]
-<./abbildungen/base_model.png, id=129, 334.851pt x 121.107pt>
-File: ./abbildungen/base_model.png Graphic file (type png)
-<use ./abbildungen/base_model.png>
-Package luatex.def Info: ./abbildungen/base_model.png  used on input line 32.
-(luatex.def)             Requested size: 298.75264pt x 108.05281pt.
-<./abbildungen/val_loss.png, id=133, 409.7709pt x 312.2064pt>
-File: ./abbildungen/val_loss.png Graphic file (type png)
-<use ./abbildungen/val_loss.png>
-Package luatex.def Info: ./abbildungen/val_loss.png  used on input line 45.
-(luatex.def)             Requested size: 426.79135pt x 325.18721pt.
- [3<./abbildungen/base_model.png>]
-<./abbildungen/transfcl_perf.png, id=144, 351.495pt x 200.604pt>
-File: ./abbildungen/transfcl_perf.png Graphic file (type png)
-<use ./abbildungen/transfcl_perf.png>
-Package luatex.def Info: ./abbildungen/transfcl_perf.png  used on input line 56
-.
-(luatex.def)             Requested size: 298.75264pt x 170.5142pt.
-) (./kapitel/umsetzung.tex [4<./abbildungen/val_loss.png><./abbildungen/transfcl
-_perf.png>] [5]
+ [2]) (./kapitel/umsetzung/data_prep.tex
+[3<./abbildungen/data_prep.png>]
 Package acronym Info: Label `acro:CRISP-DM' newly defined as it shall be overri
 dden
 although it is yet undefined on input line 3.
-
-
-Package acronym Warning: Acronym `CRISP-DM' is not defined on input line 3.
-
-
-Package acronym Warning: Acronym `CRISP-DM' is not defined on input line 3.
-
-
-LaTeX Warning: Reference `sec:depatisnet' on page 6 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'dpma_hilfe' on page 6 undefined on input line 7.
-
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.99994pt on input line 7.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
-3.
-(C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ts1phv.fd
-File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
-)
-LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 13.
-
-[6]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 24.
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 24
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 16
 .
- (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1pcr.fd
+
+(C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
+[4]
+<./abbildungen/goog_kursdaten.png, id=145, 545.03625pt x 104.64093pt>
+File: ./abbildungen/goog_kursdaten.png Graphic file (type png)
+<use ./abbildungen/goog_kursdaten.png>
+Package luatex.def Info: ./abbildungen/goog_kursdaten.png  used on input line 2
+0.
+(luatex.def)             Requested size: 426.79135pt x 81.93892pt.
+<./abbildungen/goog_tweet.png, id=147, 559.33969pt x 51.94406pt>
+File: ./abbildungen/goog_tweet.png Graphic file (type png)
+<use ./abbildungen/goog_tweet.png>
+Package luatex.def Info: ./abbildungen/goog_tweet.png  used on input line 32.
+(luatex.def)             Requested size: 426.79135pt x 39.6364pt.
+<./abbildungen/data_prep_step1.png, id=150, 662.475pt x 122.70844pt>
+File: ./abbildungen/data_prep_step1.png Graphic file (type png)
+<use ./abbildungen/data_prep_step1.png>
+Package luatex.def Info: ./abbildungen/data_prep_step1.png  used on input line 
+49.
+(luatex.def)             Requested size: 426.79135pt x 79.05363pt.
+ [5<./abbildungen/goog_kursdaten.png><./abbildungen/goog_tweet.png>]
+<./abbildungen/data_prep_step2.png, id=165, 661.72218pt x 121.95563pt>
+File: ./abbildungen/data_prep_step2.png Graphic file (type png)
+<use ./abbildungen/data_prep_step2.png>
+Package luatex.def Info: ./abbildungen/data_prep_step2.png  used on input line 
+65.
+(luatex.def)             Requested size: 426.79135pt x 78.65796pt.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 75.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 5.39996pt on input line 25.
+(Font)              scaled to size 5.39996pt on input line 76.
 
-
-LaTeX Warning: Citation 'dpma_hilfe' on page 7 undefined on input line 36.
-
+[6<./abbildungen/data_prep_step1.png><./abbildungen/data_prep_step2.png>]
 [7] [8]
+<./abbildungen/data_prep_step4.png, id=240, 721.19438pt x 87.32625pt>
+File: ./abbildungen/data_prep_step4.png Graphic file (type png)
+<use ./abbildungen/data_prep_step4.png>
+Package luatex.def Info: ./abbildungen/data_prep_step4.png  used on input line 
+148.
+(luatex.def)             Requested size: 426.79135pt x 51.67793pt.
+) (./kapitel/umsetzung/modelierung.tex [9<./abbildungen/data_prep_step4.png>]) 
+(./kapitel/umsetzung/evaluierung.tex [10]) (./kapitel/schluss.tex
+[11]
 
-LaTeX Warning: Reference `fig:data_prep_filter' on page 9 undefined on input li
-ne 83.
+LaTeX Warning: Reference `fig:eu_topics_tech' on page 12 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `fig:ch_topics_tech' on page 12 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `fig:eu_topics_task' on page 12 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `fig:ch_topics_task' on page 12 undefined on input lin
+e 3.
+
+
+LaTeX Warning: Reference `tbl:depatis_treffer' on page 12 undefined on input li
+ne 5.
+
+
+LaTeX Warning: Citation 'vincent2023openai' on page 12 undefined on input line 
+5.
+
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 5.
+
+LaTeX Warning: Reference `fig:ipc_topic_distr' on page 12 undefined on input li
+ne 7.
+
+
+LaTeX Warning: Reference `fig:tech_topicdistr' on page 12 undefined on input li
+ne 7.
+
+
+LaTeX Warning: Reference `fig:task_topicdistr' on page 12 undefined on input li
+ne 7.
 
 Package acronym Info: Label `acro:DEPATIS' newly defined as it shall be overrid
 den
-although it is yet undefined on input line 83.
-
-Package acronym Warning: Acronym `DEPATIS' is not defined on input line 83.
-
-
-Package acronym Warning: Acronym `DEPATIS' is not defined on input line 83.
-
-
-LaTeX Warning: Reference `fig:data_prep_sprache_text' on page 9 undefined on in
-put line 85.
-
-
-LaTeX Warning: Reference `fig:data_prep_sprache_text' on page 9 undefined on in
-put line 87.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 89.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ac' on input line 89.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 91.
-
-
-LaTeX Warning: Reference `fig:data_prep_sprache_text' on page 9 undefined on in
-put line 91.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 93.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 93.
-
-
-LaTeX Warning: Citation 'wipo_ipc' on page 9 undefined on input line 93.
-
-
-LaTeX Warning: Reference `fig:data_prep_dokucorp_ipcanalyse' on page 9 undefine
-d on input line 93.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 95.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 95.
-
-[9]
-
-LaTeX Warning: Reference `sec:bertopic' on page 10 undefined on input line 99.
-
-
-LaTeX Warning: Citation 'website:bertopic_bestpractices' on page 10 undefined o
-n input line 99.
-
-
-LaTeX Warning: Reference `fig:data_prep_datakorpu_topicmodel' on page 10 undefi
-ned on input line 99.
-
-
-LaTeX Warning: Citation 'website:st_bert_models' on page 10 undefined on input 
-line 101.
-
-Package acronym Info: Label `acro:UMAP' newly defined as it shall be overridden
-
-although it is yet undefined on input line 101.
-
-Package acronym Warning: Acronym `UMAP' is not defined on input line 101.
-
-
-Package acronym Warning: Acronym `UMAP' is not defined on input line 101.
-
-
-LaTeX Warning: Citation 'umap' on page 10 undefined on input line 101.
-
-Package acronym Info: Label `acro:HDBSCAN' newly defined as it shall be overrid
-den
-although it is yet undefined on input line 105.
-
-Package acronym Warning: Acronym `HDBSCAN' is not defined on input line 105.
-
-
-Package acronym Warning: Acronym `HDBSCAN' is not defined on input line 105.
-
-
-LaTeX Warning: Citation 'hdbscan' on page 10 undefined on input line 105.
-
-
-LaTeX Warning: Reference `fig:topics' on page 10 undefined on input line 105.
-
-Package acronym Info: Label `acro:c-TF-IDF' newly defined as it shall be overri
-dden
-although it is yet undefined on input line 107.
-
-Package acronym Warning: Acronym `c-TF-IDF' is not defined on input line 107.
-
-
-Package acronym Warning: Acronym `c-TF-IDF' is not defined on input line 107.
-
-Package acronym Info: Label `acro:TF-IDF' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 107.
-
-Package acronym Warning: Acronym `TF-IDF' is not defined on input line 107.
-
-
-Package acronym Warning: Acronym `TF-IDF' is not defined on input line 107.
-
-
-Package acronym Warning: Acronym `c-TF-IDF' is not defined on input line 107.
-
-
-LaTeX Warning: Citation 'website:bertopic_ctfidf' on page 10 undefined on input
- line 107.
-
-
-LaTeX Warning: Citation 'tfidf' on page 10 undefined on input line 107.
-
-
-LaTeX Warning: Reference `fig:topics' on page 10 undefined on input line 107.
-
-
-LaTeX Warning: Citation 'website:bertopic_llm' on page 10 undefined on input li
-ne 107.
-
-[10] [11]
-
-LaTeX Warning: Reference `lst:doc2topic' on page 12 undefined on input line 169
-.
-
-
-LaTeX Warning: Reference `fig:data_prep_dokukorp_analysis' on page 12 undefined
- on input line 171.
-
-[12]
-Package hyperref Info: bookmark level for unknown formel defaults to 0 on input
- line 181.
-Package acronym Info: Label `acro:ILOSTAT' newly defined as it shall be overrid
-den
-although it is yet undefined on input line 197.
-
-
-Package acronym Warning: Acronym `ILOSTAT' is not defined on input line 197.
-
-
-Package acronym Warning: Acronym `ILOSTAT' is not defined on input line 197.
-
-
-LaTeX Warning: Citation 'website:ilostat' on page 13 undefined on input line 19
-7.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 199.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ac' on input line 199.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 201.
-
-
-Package acronym Warning: Acronym `IPC' is not defined on input line 203.
-
-
-LaTeX Warning: Reference `fig:ipc_verteilung' on page 13 undefined on input lin
-e 203.
-
-
-LaTeX Warning: Reference `fig:ipc_topic_distr' on page 13 undefined on input li
-ne 205.
-
-[13]
-
-LaTeX Warning: Reference `fig:tech_topicdistr' on page 14 undefined on input li
-ne 216.
-
-
-LaTeX Warning: Reference `fig:eu_topics_tech' on page 14 undefined on input lin
-e 220.
-
-
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 14 undefined on input lin
-e 220.
-
-
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 14 undefined on input lin
-e 220.
-
-
-LaTeX Warning: Reference `fig:eu_topics_tech' on page 14 undefined on input lin
-e 222.
-
-
-LaTeX Warning: Reference `fig:usa_topics_tech' on page 14 undefined on input li
-ne 224.
-
-
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 14 undefined on input lin
-e 224.
-
-
-LaTeX Warning: Reference `fig:task_topicdistr' on page 14 undefined on input li
-ne 232.
-
-
-LaTeX Warning: Reference `fig:ipc_topic_distr' on page 14 undefined on input li
-ne 232.
-
-
-LaTeX Warning: Reference `fig:eu_topics_tech' on page 14 undefined on input lin
-e 236.
-
-
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 14 undefined on input lin
-e 236.
-
-
-LaTeX Warning: Reference `fig:usa_topics_task' on page 14 undefined on input li
-ne 238.
-
-) (./kapitel/schluss.tex [14] [15]
-
-LaTeX Warning: Reference `fig:eu_topics_tech' on page 16 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 16 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Reference `fig:eu_topics_task' on page 16 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Reference `fig:ch_topics_task' on page 16 undefined on input lin
-e 3.
-
-
-LaTeX Warning: Citation 'vincent2023openai' on page 16 undefined on input line 
-5.
-
-
-LaTeX Warning: Reference `fig:ipc_topic_distr' on page 16 undefined on input li
-ne 7.
-
-
-LaTeX Warning: Reference `fig:tech_topicdistr' on page 16 undefined on input li
-ne 7.
-
-
-LaTeX Warning: Reference `fig:task_topicdistr' on page 16 undefined on input li
-ne 7.
-
-
-Package acronym Warning: Acronym `DEPATIS' is not defined on input line 15.
-
-[16] [17])) [18]
+although it is yet undefined on input line 15.
+[12] [13])) [14]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 462.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
-(Font)              scaled to size 10.79993pt on input line 462.
+(Font)              scaled to size 10.79993pt on input line 475.
+
+
+Package caption Warning: Unused \captionsetup[table] on input line 118.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: Unused \captionsetup[formel] on input line 267.
+See the caption package documentation for explanation.
+
 \@syc=\write9
 
 \openout9 = thesis_main.syc
@@ -2687,12 +2386,11 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 
 \openout10 = thesis_main.suc
 
-
 Package glossaries Warning: No \printnoidxglossary or \printnoidxglossaries
  found. (Remove \makenoidxglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
-[19] (./thesis_main.aux)
+[15] (./thesis_main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -2709,28 +2407,27 @@ Package logreq Info: Writing requests to 'thesis_main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49002 strings out of 477259
- 100000,2373549 words of node,token memory allocated
- 1217 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 21 glue, 4 kern, 1 glyph, 59 attribute, 134 glue_sp
-ec, 30 attribute_list, 2 shape, 2 write, 2 pdf_action nodes
-   avail lists: 1:9,2:2195,3:467,4:284,5:1449,6:136,7:6593,8:59,9:2693,10:32,11:
-781,12:1
- 68674 multiletter control sequences out of 65536+600000
- 164 fonts using 10920039 bytes
- 108i,15n,102p,10905b,3564s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 49015 strings out of 477259
+ 156270,2373549 words of node,token memory allocated
+ 1133 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 17 glue, 4 kern, 1 glyph, 42 attribute, 134 glue_sp
+ec, 22 attribute_list, 2 shape, 2 write, 1 pdf_action nodes
+   avail lists: 1:11,2:3181,3:352,4:213,5:2962,6:105,7:6657,8:42,9:5810,10:32,11
+:773,12:1
+ 68645 multiletter control sequences out of 65536+600000
+ 165 fonts using 11018839 bytes
+ 108i,12n,102p,10905b,3564s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Us
-ers/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/u
-crr8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic
-/uhvb8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvet
-ic/uhvr8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helv
-etic/uhvro8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/t
-imes/utmr8a.pfb>
-Output written on thesis_main.pdf (22 pages, 979848 bytes).
+ers/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.p
+fb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a
+.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr
+8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uh
+vro8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
+mr8a.pfb>
+Output written on thesis_main.pdf (19 pages, 963152 bytes).
 
-PDF statistics: 383 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 363 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 131072)
+ 152 words of extra memory for PDF output out of 10000 (max. 100000000)
 
