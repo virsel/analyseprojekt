@@ -1,6 +1,36 @@
 \newpage
 \subsection{Modellierung}\label{sec:modellierung}
 
+In dieser Arbeit geht es darum den Einfluss von Stimmungsdaten bei Aktienprognosen zu untersuchen. Da der Fokus auf den Sentiment-Daten gelegt ist, wird von den Kursdaten lediglich der Schlusspreis einbezogen. Als Basismodell dient also ein LSTM-basiertes Netzwerk, welches Schlusspreise als Eingabe verarbeitet. Das Forschungsmodell nimmt eine Kombination aus Schlusspreis und Stimmungsdaten entgegen.
+
+Insgesamt werden $2$ Experimente durchgeführt. 
+
+Experiment $1$:    
+Diese Untersuchung analysiert den Leistungsunterschied zwischen Basis- und Forschungsmodell anhand der GOOG-Aktie.
+
+Experiment $2$:   
+Bei dieser Analyse wird der gleiche Unterschied betrachtet, jedoch unter Einbeziehung aller Aktiendaten.
+
+In den nachfolgenden Abschnitten wird zunächst auf modellübergreifende Hyperparameter eingegangen und anschließend erfolgt eine Beschreibung der Architektur von Basis- und Forschungsmodell.
+
+\subsubsection*{Generelle Hyperparameter}\label{sec:modellierung_generell_hp}
+
+- aufteilung training/validierung/testdaten  \\
+- skalierung (erst train daten, dann rest)  \\
+- zeitfenster (30 tage für kursdaten u. 10 für sent daten)   
+- verlustfunktion  
+
+
+\subsubsection*{Basismodell}\label{sec:modellierung_basis_goog}
+
+- lstm \\
+- spezifische hyper paramter optimierung mit keras
+
+\subsubsection*{Forschungsmodell}\label{sec:modellierung_forsch}
+
+- Basismodell (etwas abgewandelt) + CNN \\
+- spezifische hyper paramter optimierung mit keras \\
+- arch unterschied bei experiment 1 und 2 ?
 
 
 

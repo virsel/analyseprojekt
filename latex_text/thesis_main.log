@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.12.17)  24 DEC 2024 15:36
+This is LuaHBTeX, Version 1.17.0 (MiKTeX 23.10) (format=lualatex 2023.12.17)  31 DEC 2024 14:29
  restricted system commands enabled.
 **thesis_main.tex
 (./thesis_main.tex
@@ -1981,7 +1981,11 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.79993pt on input line 374.
 
-(./thesis_main.aux)
+(./thesis_main.aux
+
+LaTeX Warning: Label `sec:modellierung' multiply defined.
+
+)
 \openout1 = thesis_main.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 374.
@@ -1995,8 +1999,7 @@ LaTeX Font Info:    ... okay on input line 374.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 374.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
 74.
-
-(C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
+ (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 374.
@@ -2263,17 +2266,14 @@ LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 LaTeX Warning: Reference `'sec:kap2'' on page 1 undefined on input line 8.
 
 ) (./kapitel/grundlagen.tex [1]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 37.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 37.
-<./abbildungen/data_prep.png, id=115, 523.848pt x 259.077pt>
-File: ./abbildungen/data_prep.png Graphic file (type png)
-<use ./abbildungen/data_prep.png>
-Package luatex.def Info: ./abbildungen/data_prep.png  used on input line 38.
-(luatex.def)             Requested size: 426.79135pt x 211.07669pt.
- [2]) (./kapitel/umsetzung/data_prep.tex
-[3<./abbildungen/data_prep.png>]
+Package acronym Info: Label `acro:MAE' newly defined as it shall be overridden
+although it is yet undefined on input line 35.
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 35.
+Package acronym Info: Label `acro:MAPE' newly defined as it shall be overridden
+
+although it is yet undefined on input line 35.
+) (./kapitel/umsetzung/data_prep.tex [2]
 Package acronym Info: Label `acro:CRISP-DM' newly defined as it shall be overri
 dden
 although it is yet undefined on input line 3.
@@ -2283,26 +2283,30 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 16
 (C:/Users/paul-/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-[4]
-<./abbildungen/goog_kursdaten.png, id=145, 545.03625pt x 104.64093pt>
+[3]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 19.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 19.
+<./abbildungen/goog_kursdaten.png, id=182, 545.03625pt x 104.64093pt>
 File: ./abbildungen/goog_kursdaten.png Graphic file (type png)
 <use ./abbildungen/goog_kursdaten.png>
 Package luatex.def Info: ./abbildungen/goog_kursdaten.png  used on input line 2
 0.
 (luatex.def)             Requested size: 426.79135pt x 81.93892pt.
-<./abbildungen/goog_tweet.png, id=147, 559.33969pt x 51.94406pt>
+<./abbildungen/goog_tweet.png, id=184, 559.33969pt x 51.94406pt>
 File: ./abbildungen/goog_tweet.png Graphic file (type png)
 <use ./abbildungen/goog_tweet.png>
 Package luatex.def Info: ./abbildungen/goog_tweet.png  used on input line 32.
 (luatex.def)             Requested size: 426.79135pt x 39.6364pt.
-<./abbildungen/data_prep_step1.png, id=150, 662.475pt x 122.70844pt>
+<./abbildungen/data_prep_step1.png, id=187, 662.475pt x 122.70844pt>
 File: ./abbildungen/data_prep_step1.png Graphic file (type png)
 <use ./abbildungen/data_prep_step1.png>
 Package luatex.def Info: ./abbildungen/data_prep_step1.png  used on input line 
 49.
 (luatex.def)             Requested size: 426.79135pt x 79.05363pt.
- [5<./abbildungen/goog_kursdaten.png><./abbildungen/goog_tweet.png>]
-<./abbildungen/data_prep_step2.png, id=165, 661.72218pt x 121.95563pt>
+ [4<./abbildungen/goog_kursdaten.png><./abbildungen/goog_tweet.png>]
+<./abbildungen/data_prep_step2.png, id=202, 661.72218pt x 121.95563pt>
 File: ./abbildungen/data_prep_step2.png Graphic file (type png)
 <use ./abbildungen/data_prep_step2.png>
 Package luatex.def Info: ./abbildungen/data_prep_step2.png  used on input line 
@@ -2313,67 +2317,131 @@ nput line 75.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 5.39996pt on input line 76.
 
-[6<./abbildungen/data_prep_step1.png><./abbildungen/data_prep_step2.png>]
-[7] [8]
-<./abbildungen/data_prep_step4.png, id=240, 721.19438pt x 87.32625pt>
+[5<./abbildungen/data_prep_step1.png><./abbildungen/data_prep_step2.png>]
+[6] [7]
+<./abbildungen/data_prep_step4.png, id=277, 721.19438pt x 87.32625pt>
 File: ./abbildungen/data_prep_step4.png Graphic file (type png)
 <use ./abbildungen/data_prep_step4.png>
 Package luatex.def Info: ./abbildungen/data_prep_step4.png  used on input line 
 148.
 (luatex.def)             Requested size: 426.79135pt x 51.67793pt.
-) (./kapitel/umsetzung/modelierung.tex [9<./abbildungen/data_prep_step4.png>]) 
-(./kapitel/umsetzung/evaluierung.tex [10]) (./kapitel/schluss.tex
-[11]
+) (./kapitel/umsetzung/modelierung.tex [8<./abbildungen/data_prep_step4.png>]) 
+(./kapitel/umsetzung/evaluierung.tex [9]
 
-LaTeX Warning: Reference `fig:eu_topics_tech' on page 12 undefined on input lin
+Class scrartcl Warning: Incompatible usage of \@ssect detected.
+(scrartcl)              You've used the KOMA-Script implementation of \@ssect
+(scrartcl)              from within a non compatible caller, that does not
+(scrartcl)              \scr@s@ct@@nn@m@ locally.
+(scrartcl)              This could result in several error messages on input li
+ne 10.
+
+<./abbildungen/vall_loss_exp1.png, id=303, 711.1368pt x 349.7868pt>
+File: ./abbildungen/vall_loss_exp1.png Graphic file (type png)
+<use ./abbildungen/vall_loss_exp1.png>
+Package luatex.def Info: ./abbildungen/vall_loss_exp1.png  used on input line 1
+5.
+(luatex.def)             Requested size: 426.79135pt x 209.92706pt.
+
+Class scrartcl Warning: Incompatible usage of \@ssect detected.
+(scrartcl)              You've used the KOMA-Script implementation of \@ssect
+(scrartcl)              from within a non compatible caller, that does not
+(scrartcl)              \scr@s@ct@@nn@m@ locally.
+(scrartcl)              This could result in several error messages on input li
+ne 23.
+
+<./abbildungen/exp1_basisprogn.png, id=306, 641.0349pt x 363.5181pt>
+File: ./abbildungen/exp1_basisprogn.png Graphic file (type png)
+<use ./abbildungen/exp1_basisprogn.png>
+Package luatex.def Info: ./abbildungen/exp1_basisprogn.png  used on input line 
+28.
+(luatex.def)             Requested size: 426.79135pt x 242.02493pt.
+[10<./abbildungen/vall_loss_exp1.png>]
+<./abbildungen/exp1_forschprogn.png, id=315, 641.0349pt x 364.2408pt>
+File: ./abbildungen/exp1_forschprogn.png Graphic file (type png)
+<use ./abbildungen/exp1_forschprogn.png>
+Package luatex.def Info: ./abbildungen/exp1_forschprogn.png  used on input line
+ 36.
+(luatex.def)             Requested size: 426.79135pt x 242.5061pt.
+ [11<./abbildungen/exp1_basisprogn.png><./abbildungen/exp1_forschprogn.png>]
+
+Class scrartcl Warning: Incompatible usage of \@ssect detected.
+(scrartcl)              You've used the KOMA-Script implementation of \@ssect
+(scrartcl)              from within a non compatible caller, that does not
+(scrartcl)              \scr@s@ct@@nn@m@ locally.
+(scrartcl)              This could result in several error messages on input li
+ne 63.
+
+<./abbildungen/vall_loss_exp2.png, id=328, 711.1368pt x 349.7868pt>
+File: ./abbildungen/vall_loss_exp2.png Graphic file (type png)
+<use ./abbildungen/vall_loss_exp2.png>
+Package luatex.def Info: ./abbildungen/vall_loss_exp2.png  used on input line 6
+7.
+(luatex.def)             Requested size: 426.79135pt x 209.92706pt.
+[12<./abbildungen/vall_loss_exp2.png>]
+
+Class scrartcl Warning: Incompatible usage of \@ssect detected.
+(scrartcl)              You've used the KOMA-Script implementation of \@ssect
+(scrartcl)              from within a non compatible caller, that does not
+(scrartcl)              \scr@s@ct@@nn@m@ locally.
+(scrartcl)              This could result in several error messages on input li
+ne 75.
+
+<./abbildungen/exp2_basisprogn.png, id=339, 641.0349pt x 363.5181pt>
+File: ./abbildungen/exp2_basisprogn.png Graphic file (type png)
+<use ./abbildungen/exp2_basisprogn.png>
+Package luatex.def Info: ./abbildungen/exp2_basisprogn.png  used on input line 
+81.
+(luatex.def)             Requested size: 426.79135pt x 242.02493pt.
+<./abbildungen/exp2_forschprogn.png, id=340, 641.0349pt x 364.2408pt>
+File: ./abbildungen/exp2_forschprogn.png Graphic file (type png)
+<use ./abbildungen/exp2_forschprogn.png>
+Package luatex.def Info: ./abbildungen/exp2_forschprogn.png  used on input line
+ 89.
+(luatex.def)             Requested size: 426.79135pt x 242.5061pt.
+[13<./abbildungen/exp2_basisprogn.png>] [14<./abbildungen/exp2_forschprogn.png>]) (./kapitel/umsetzung/deployment.tex [15]) (./kapitel/schluss.tex [16]
+
+LaTeX Warning: Reference `fig:eu_topics_tech' on page 17 undefined on input lin
 e 3.
 
 
-LaTeX Warning: Reference `fig:ch_topics_tech' on page 12 undefined on input lin
+LaTeX Warning: Reference `fig:ch_topics_tech' on page 17 undefined on input lin
 e 3.
 
 
-LaTeX Warning: Reference `fig:eu_topics_task' on page 12 undefined on input lin
+LaTeX Warning: Reference `fig:eu_topics_task' on page 17 undefined on input lin
 e 3.
 
 
-LaTeX Warning: Reference `fig:ch_topics_task' on page 12 undefined on input lin
+LaTeX Warning: Reference `fig:ch_topics_task' on page 17 undefined on input lin
 e 3.
 
 
-LaTeX Warning: Reference `tbl:depatis_treffer' on page 12 undefined on input li
+LaTeX Warning: Reference `tbl:depatis_treffer' on page 17 undefined on input li
 ne 5.
 
 
-LaTeX Warning: Citation 'vincent2023openai' on page 12 undefined on input line 
+LaTeX Warning: Citation 'vincent2023openai' on page 17 undefined on input line 
 5.
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.99994pt on input line 5.
 
-LaTeX Warning: Reference `fig:ipc_topic_distr' on page 12 undefined on input li
+LaTeX Warning: Reference `fig:ipc_topic_distr' on page 17 undefined on input li
 ne 7.
 
 
-LaTeX Warning: Reference `fig:tech_topicdistr' on page 12 undefined on input li
+LaTeX Warning: Reference `fig:tech_topicdistr' on page 17 undefined on input li
 ne 7.
 
 
-LaTeX Warning: Reference `fig:task_topicdistr' on page 12 undefined on input li
+LaTeX Warning: Reference `fig:task_topicdistr' on page 17 undefined on input li
 ne 7.
 
-Package acronym Info: Label `acro:DEPATIS' newly defined as it shall be overrid
-den
-although it is yet undefined on input line 15.
-[12] [13])) [14]
+)) [17]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <12> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 475.
 LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
 (Font)              scaled to size 10.79993pt on input line 475.
-
-
-Package caption Warning: Unused \captionsetup[table] on input line 118.
-See the caption package documentation for explanation.
 
 
 Package caption Warning: Unused \captionsetup[formel] on input line 267.
@@ -2390,7 +2458,7 @@ Package glossaries Warning: No \printnoidxglossary or \printnoidxglossaries
  found. (Remove \makenoidxglossaries if you don't want any glossaries.)
 This document will not have a glossary.
 
-[15] (./thesis_main.aux)
+[18] (./thesis_main.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -2398,6 +2466,9 @@ L3 programming layer <2020/03/25>
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `thesis_main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
@@ -2407,27 +2478,28 @@ Package logreq Info: Writing requests to 'thesis_main.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 49015 strings out of 477259
- 156270,2373549 words of node,token memory allocated
- 1133 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 17 glue, 4 kern, 1 glyph, 42 attribute, 134 glue_sp
-ec, 22 attribute_list, 2 shape, 2 write, 1 pdf_action nodes
-   avail lists: 1:11,2:3181,3:352,4:213,5:2962,6:105,7:6657,8:42,9:5810,10:32,11
-:773,12:1
- 68645 multiletter control sequences out of 65536+600000
+ 49155 strings out of 477259
+ 156265,2373549 words of node,token memory allocated
+ 1146 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 18 glue, 4 kern, 1 glyph, 44 attribute, 134 glue_sp
+ec, 23 attribute_list, 2 shape, 2 write, 1 pdf_action nodes
+   avail lists: 1:11,2:3183,3:445,4:274,5:2962,6:134,7:6658,8:42,9:5810,10:30,11
+:513,12:1
+ 68738 multiletter control sequences out of 65536+600000
  165 fonts using 11018839 bytes
  108i,12n,102p,10905b,3564s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Us
-ers/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.p
-fb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a
-.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr
-8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uh
-vro8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/ut
-mr8a.pfb>
-Output written on thesis_main.pdf (19 pages, 963152 bytes).
+ers/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/
+ucrr8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helveti
+c/uhvb8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helve
+tic/uhvr8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/hel
+vetic/uhvro8a.pfb><C:/Users/paul-/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
+times/utmr8a.pfb>
+Output written on thesis_main.pdf (22 pages, 642187 bytes).
 
-PDF statistics: 363 PDF objects out of 1000 (max. 8388607)
- 106 named destinations out of 1000 (max. 131072)
- 152 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 479 PDF objects out of 1000 (max. 8388607)
+ 132 named destinations out of 1000 (max. 131072)
+ 192 words of extra memory for PDF output out of 10000 (max. 100000000)
 
