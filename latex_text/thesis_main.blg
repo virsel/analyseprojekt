@@ -1,21 +1,21 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'thesis_main.blg'
-[66] biber-MSWIN64:340> INFO - === 
-[93] Biber.pm:419> INFO - Reading 'thesis_main.bcf'
-[159] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
-[167] Biber.pm:4419> INFO - Processing section 0
-[174] Biber.pm:4610> INFO - Looking for bibtex file 'literatur/literatur.bib' for section 0
-[212] bibtex.pm:1713> INFO - LaTeX decoding ...
-[219] bibtex.pm:1519> INFO - Found BibTeX data source 'literatur/literatur.bib'
-[255] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[255] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[255] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[255] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[261] bbl.pm:660> INFO - Writing 'thesis_main.bbl' with encoding 'UTF-8'
-[264] bbl.pm:763> INFO - Output to thesis_main.bbl
-[264] Biber.pm:131> WARN - legacy month field 'July' in entry 'xu2018StockMovement' is not an integer - this will probably not sort properly.
-[264] Biber.pm:131> WARN - legacy month field 'February' in entry 'hazourli2022financialbert' is not an integer - this will probably not sort properly.
-[264] Biber.pm:131> WARN - legacy month field 'October' in entry 'xie2024deep' is not an integer - this will probably not sort properly.
-[264] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\paul-\AppData\Local\Temp\biber_tmp_LNby\a3880c76f34ea5bee4730f185bf8bebe_26288.utf8, line 4, warning: 10 characters of junk seen at toplevel
-[264] Biber.pm:131> WARN - I didn't find a database entry for 'vincent2023openai' (section 0)
-[264] Biber.pm:133> INFO - WARNINGS: 5
+[67] biber-MSWIN64:340> INFO - === 
+[94] Biber.pm:419> INFO - Reading 'thesis_main.bcf'
+[163] Biber.pm:979> INFO - Found 7 citekeys in bib section 0
+[171] Biber.pm:4419> INFO - Processing section 0
+[179] Biber.pm:4610> INFO - Looking for bibtex file 'literatur/literatur.bib' for section 0
+[218] bibtex.pm:1713> INFO - LaTeX decoding ...
+[226] bibtex.pm:1519> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[269] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[269] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[270] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[276] bbl.pm:660> INFO - Writing 'thesis_main.bbl' with encoding 'UTF-8'
+[279] bbl.pm:763> INFO - Output to thesis_main.bbl
+[279] Biber.pm:131> WARN - legacy month field 'July' in entry 'xu2018StockMovement' is not an integer - this will probably not sort properly.
+[279] Biber.pm:131> WARN - legacy month field 'February' in entry 'hazourli2022financialbert' is not an integer - this will probably not sort properly.
+[279] Biber.pm:131> WARN - legacy month field 'October' in entry 'xie2024deep' is not an integer - this will probably not sort properly.
+[279] Biber.pm:131> WARN - BibTeX subsystem: C:\Users\paul-\AppData\Local\Temp\biber_tmp_BRs3\a3880c76f34ea5bee4730f185bf8bebe_15280.utf8, line 4, warning: 10 characters of junk seen at toplevel
+[279] Biber.pm:131> WARN - I didn't find a database entry for 'vincent2023openai' (section 0)
+[279] Biber.pm:133> INFO - WARNINGS: 5

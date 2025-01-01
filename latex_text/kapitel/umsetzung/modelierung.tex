@@ -15,13 +15,19 @@ In den nachfolgenden Abschnitten wird zunächst auf modellübergreifende Hyperpa
 
 \subsubsection*{Generelle Hyperparameter}\label{sec:modellierung_generell_hp}
 
-- aufteilung training/validierung/testdaten  \\
-- skalierung (erst train daten, dann rest)  \\
-- zeitfenster (30 tage für kursdaten u. 10 für sent daten)   
-- verlustfunktion  
+Es gibt eine Vielzahl an Hyperparameter, welche sowohl für das Basismodell als auch für das Forschungsmodell gelten. 
+In beiden Fällen erfolgt eine Aufteilung der vorverarbeiteten Daten (Kap. \ref{sec:data_prep}) in Trainings-, Validierungs- und Testdaten. Dabei wird $20\%$ der Gesamtmenge für Tests separiert und von den restlichen $80\%$ werden $15\%$ zur Validierung verwendet.
+Erst nach diesem Schritt erfolgt die MinMax-Skalierung der Trainingsdaten mit Ausnahme der Embeddings auf das Intervall $0$ bis $1$, mit Hilfe der Python Bibliothek \texttt{sklearn}. Anschließend wird der gelernte Scaler auf Test- und Validierungsdaten angewandt. So wird eine unerwünschten Übertragung von Informationen aus Validierungs- und Testdaten in den Trainingskorpus verhindert. 
+Für Kursdaten wird ein Fenster von $30$ vergangenen Markttagen als Modelleingabe verwendet, um den Preis eines nachfolgenden Tages vorherzusagen. Dieser Wert wurde in Experimenten einer Forschungsarbeit an der Universität Shaoguan in China als Optimum ermittelt \footcite[Tabelle 3]{xie2024deep}.
+In Anlehnung an eine weitere Forschungsarbeit wird für Stimmungsdaten ein kleineres Fenster von $10$ Markttagen verwendet \footcite[Kap. 4.1]{zhang2022transformer}.
+Als Verlustfunktion dient typisch für Regressionsprobleme der \ac{MSE}, welcher sich aus Modellausgabe ($\hat{y}_i$) und tatsächlichem Preis ($y_i$) ergibt (Kap. \ref{sec:theorie_evalmetrics}, Formel \ref{frm:mse}). 
+Die Batch-Größe während des Trainings beträgt $64$.
+
 
 
 \subsubsection*{Basismodell}\label{sec:modellierung_basis_goog}
+
+D
 
 - lstm \\
 - spezifische hyper paramter optimierung mit keras

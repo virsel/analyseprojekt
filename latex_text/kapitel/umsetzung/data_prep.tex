@@ -37,7 +37,7 @@ Zu jeder Aktie liegt für jeden Tag im jeweiligen Zeitraum eine Datei mit einer 
 \end{figure}
 
 
-\subsection{Datenvorverarbeitung}
+\subsection{Datenvorverarbeitung}\label{sec:data_prep}
 
 Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten. Während des 1. Arbeitsschritts werden die Daten aller Aktien in eine \texttt{csv}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Werte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
 
@@ -71,6 +71,12 @@ Außerdem erfolgt eine Substituierung von Aktienvorkommen der Form ''\$<Kürzel>
 
 
 \subsubsection*{3. Stimmungsmetriken}
+
+--
+The maximum numbers of messages and words in a
+single message are set to 30 and 40, respectively.
+--\footcite[Kap. 5.2]{zhang2022transformer}
+
 Dieser Arbeitsschritt sieht vor, dass pro Datenzeile anhand der enthaltenen Tweet-Liste Stimmungsmetriken extrahiert werden. Zunächst erfolgt eine Ableitung der Relevanz einer Aktie pro Tag quantifiziert als Anzahl veröffentlichter Tweets (Code \ref{lst:feature_stock_relevanz}).
 \begin{lstlisting}[caption={Relevanz quantifiziert als Anzahl-Tweets}, label=lst:feature_stock_relevanz, captionpos=t]
 df['num_tweets'] = df['tweets'].apply(len)

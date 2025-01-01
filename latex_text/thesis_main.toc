@@ -31,20 +31,20 @@
 \contentsline {subsubsection}{\numberline {2.2.2}LLM f\"ur Stimmungsdaten}{2}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}CNN f\"ur Stimmungsdaten}{2}{subsubsection.2.2.3}%
 \contentsline {subsubsection}{\numberline {2.2.4}Evaluierungsmetriken}{2}{subsubsection.2.2.4}%
-\contentsline {section}{\numberline {3}Methodik}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Datenbeschaffung}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Datenvorverarbeitung}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Modellierung}{9}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Evaluierung}{10}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Experiment 1: GOOG-Aktie}{10}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Experiment 2: Technologie-Aktienmix}{12}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Limitationen}{14}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Erkenntnisse}{15}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Deployment}{16}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Fazit \& Zuk\"unftige Arbeiten}{17}{section.4}%
+\contentsline {section}{\numberline {3}Methodik}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Datenbeschaffung}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Datenvorverarbeitung}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Modellierung}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Evaluierung}{12}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Experiment 1: GOOG-Aktie}{12}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Experiment 2: Technologie-Aktienmix}{14}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Limitationen}{16}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Erkenntnisse}{17}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Deployment}{18}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Fazit \& Zuk\"unftige Arbeiten}{19}{section.4}%
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{18}{section*.34}%
+\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{20}{section*.35}%
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \contentsfinish 

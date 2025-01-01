@@ -13,8 +13,12 @@ Im Finanzbereich werden Aktien in 9 Branchen kategorisiert: Grundstoffe, Konsumg
 ---
 \footcite[Kap. 3]{xu2018StockMovement}
 
+\subsection{Datenvorverarbeitung mit Pandas}\label{sec:theorie_pandas}
+
 
 \subsection{Aktienprognosen mit Deep Learning}\label{sec:theorie_dl}
+
+\subsubsection{Modellierung mit Keras}\label{sec:theorie_keras}
 
 \subsubsection{LSTM für Kursdaten}\label{sec:theorie_lstm}
 
@@ -35,7 +39,18 @@ FinancialBERT applies domain-specific language understanding to financial text a
 - \ac{MAE}, \ac{MSE} und \ac{MAPE}  
 \footcite[Kap. 4.3]{xie2024deep}
 
+mse:
 
+\begin{formel}[h]
+	\caption{\ac{MSE}}
+	\label{frm:mse}
+	\begin{align}
+		MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
+	\end{align}
+	\vspace{0.5em}
+	\normalsize{Quelle: ...}
+	\vspace{-1.0em}
+\end{formel}
 
 
 
