@@ -19,6 +19,47 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{guan2020stockprice}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=722bca62affb316b5698a22b465ca0c0}{%
+           family={Guan},
+           familyi={G\bibinitperiod},
+           given={Yushi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=b20da602a3f9ccc9a4ace0613300059f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Peiyao},
+           giveni={P\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=2b5af236604cd7fdc03927d41de24eaf}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \strng{namehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{fullhash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{bibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{authorbibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{authornamehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{authorfullhash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{University of Toronto Publications}
+      \field{month}{1}
+      \field{title}{Stock Price Prediction with CNN-LSTM Network}
+      \field{year}{2020}
+    \endentry
     \entry{hazourli2022financialbert}{article}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=efe938fb5bb195402765fca74dcb5d8e}{%
@@ -50,6 +91,66 @@
       \field{year}{2022}
       \verb{doi}
       \verb 10.13140/RG.2.2.34032.12803
+      \endverb
+    \endentry
+    \entry{li2018hyperband}{online}{}
+      \name{author}{5}{}{%
+        {{un=1,uniquepart=given,hash=1f8dc2db3fb2bdd7a51ade713872affb}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lisha},
+           giveni={L\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=240fa0e010cb30dc1e40c10157f58276}{%
+           family={Jamieson},
+           familyi={J\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c8aac6375fc368da68554e7a98cc4ae9}{%
+           family={DeSalvo},
+           familyi={D\bibinitperiod},
+           given={Giulia},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7aef26bccf2dba53f4b3c49adfb2983e}{%
+           family={Rostamizadeh},
+           familyi={R\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
+           family={Talwalkar},
+           familyi={T\bibinitperiod},
+           given={Ameet},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{60c45ec23c5a0d5531344a38753d8d90}
+      \strng{fullhash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{bibnamehash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{authorbibnamehash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{authornamehash}{60c45ec23c5a0d5531344a38753d8d90}
+      \strng{authorfullhash}{5cff1402032f5d8014288fda8317ceda}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Journal of Machine Learning Research, Volume 18, Pages 1−52}
+      \field{title}{Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v18/16-558.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v18/16-558.html
       \endverb
     \endentry
     \entry{xie2024deep}{article}{}

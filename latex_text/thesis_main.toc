@@ -26,25 +26,29 @@
 \contentsline {section}{\numberline {1}Einleitung}{1}{section.1}%
 \contentsline {section}{\numberline {2}Theoretische Grundlagen}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Datenverst\"andnis}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Aktienprognosen mit Deep Learning}{2}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}LSTM f\"ur Kursdaten}{2}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}LLM f\"ur Stimmungsdaten}{2}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}CNN f\"ur Stimmungsdaten}{2}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Evaluierungsmetriken}{2}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2}Datenvorverarbeitung mit Pandas}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Aktienprognosen mit Deep Learning}{2}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Modellierung mit Keras}{2}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}LSTM f\"ur Kursdaten}{2}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}LLM f\"ur Stimmungsdaten}{2}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}CNN f\"ur Stimmungsdaten}{3}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Evaluierungsmetriken}{3}{subsubsection.2.3.5}%
 \contentsline {section}{\numberline {3}Methodik}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Datenbeschaffung}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Datenvorverarbeitung}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Modellierung}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Evaluierung}{12}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Experiment 1: GOOG-Aktie}{12}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Experiment 2: Technologie-Aktienmix}{14}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Limitationen}{16}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Erkenntnisse}{17}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Deployment}{18}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Fazit \& Zuk\"unftige Arbeiten}{19}{section.4}%
+\contentsline {subsection}{\numberline {3.4}Evaluierung}{14}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Experiment 1: GOOG-Aktie}{14}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Experiment 2: Technologie-Aktienmix}{16}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Limitationen}{18}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Erkenntnisse}{19}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Deployment}{20}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Fazit \& Zuk\"unftige Arbeiten}{21}{section.4}%
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{20}{section*.35}%
+\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{22}{section*.39}%
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \contentsfinish 

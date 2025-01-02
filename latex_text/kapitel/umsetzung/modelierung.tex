@@ -27,16 +27,40 @@ Die Batch-Größe während des Trainings beträgt $64$.
 
 \subsubsection*{Basismodell}\label{sec:modellierung_basis_goog}
 
-D
+Das Basismodell nimmt als Eingabe den Schlusspreis von $30$ vorangegangenen Markttagen entgegen. Um die Charakteristik der Zeitreihendaten bestmöglich zu modellieren wurde \ac{LSTM} als Hauptbestandteil des Netzwerks gewählt (Kap. \ref{sec:theorie_lstm}). So besteht das Modell zum einen aus LSTM- und vollständig verbundenen Schichten (Abb. \ref{fig:basismodell}). 
+Nachdem die Eingabe eine erste \ac{LSTM}-Ebene durchlaufen hat, folgt eine Dropout-Einheit. Dies soll für bessere Generalisierbarkeit des Modells sorgen. In Anlehnung an bereits existierende Forschungsarbeiten folgt eine zweite \ac{LSTM}-Schicht \footcite[Kap. 4.2.1]{guan2020stockprice}. Auch auf ihre Ausgabe wird eine Dropout-Operation durchgeführt. Anschließend werden die Daten an eine dichte Schicht übergeben. Ihr Zweck ist die tiefe des Modells und somit dessen Komplexität zu erhöhen, um den komplexen Mustern in den Trainingsdaten gerecht zu werden. Damit dabei nicht nur lineare, sondern auch nicht-lineare Merkmale modelliert werden können, folgt darauf die Aktivierungsfunktion \ac{ReLU}. Das Ergebnis dieser Operation wird abschließend an eine vollständig verbundene Ausgabeschicht übergeben. Deren Ausgabe stellt als Vorhersage den Schlusspreis des Folgetages (Tag $31$) in skalierter Form dar.
+\begin{figure}[h]
+	\centering
+	\caption{Basismodell}
+	\includegraphics[width=.6\textwidth]{basismodell}
+	\label{fig:basismodell}
+	\vspace{-1.0em}
+	\begin{flushleft}
+		\small{Quelle: Eigene Darstellung}
+	\end{flushleft}
+\end{figure}
+Für die Ermittlung von Neuronenanzahl in dichten Schichten, Dropout- und Lernrate wird mit Hilfe von \texttt{keras} eine automatisierte Hyperparameter-Optimierung durchgeführt (Kap. \ref{sec:theorie_keras}). Dadurch entstehen wie in Abbildung \ref{fig:basismodell} dargestellt je nach Experiment unterschiedliche Werte.
 
-- lstm \\
-- spezifische hyper paramter optimierung mit keras
+- lernrate noch herausfinden
+
 
 \subsubsection*{Forschungsmodell}\label{sec:modellierung_forsch}
+
+\begin{figure}[H]
+	\centering
+	\caption{Forschungsmodell}
+	\includegraphics[width=1.\textwidth]{forschungsmodell}
+	\label{fig:forschungsmodell}
+	\vspace{-1.0em}
+	\begin{flushleft}
+		\small{Quelle: Eigene Darstellung}
+	\end{flushleft}
+\end{figure}
 
 - Basismodell (etwas abgewandelt) + CNN \\
 - spezifische hyper paramter optimierung mit keras \\
 - arch unterschied bei experiment 1 und 2 ?
+- aufbau der eingabe
 
 
 
