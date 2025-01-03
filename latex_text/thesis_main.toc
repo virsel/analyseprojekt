@@ -30,13 +30,16 @@
 \contentsline {subsection}{\numberline {2.3}Aktienprognosen mit Deep Learning}{2}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Modellierung mit Keras}{2}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}LSTM f\"ur Kursdaten}{2}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}LLM f\"ur Stimmungsdaten}{2}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.3}LLM f\"ur Stimmungsdaten}{3}{subsubsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.4}CNN f\"ur Stimmungsdaten}{3}{subsubsection.2.3.4}%
 \contentsline {subsubsection}{\numberline {2.3.5}Evaluierungsmetriken}{3}{subsubsection.2.3.5}%
 \contentsline {section}{\numberline {3}Methodik}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Datenbeschaffung}{4}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Datenvorverarbeitung}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Modellierung}{10}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Generelle Hyperparameter}{10}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Basismodell}{11}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Forschungsmodell}{12}{subsubsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.4}Evaluierung}{14}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Experiment 1: GOOG-Aktie}{14}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Experiment 2: Technologie-Aktienmix}{16}{subsubsection.3.4.2}%
@@ -46,7 +49,9 @@
 \contentsline {section}{\numberline {4}Fazit \& Zuk\"unftige Arbeiten}{21}{section.4}%
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{22}{section*.39}%
+\contentsline {section}{\nonumberline \selectlanguage {ngerman}Quellenverzeichnis}{22}{section*.38}%
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {ngerman}{}\relax 

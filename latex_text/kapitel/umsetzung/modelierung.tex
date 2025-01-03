@@ -1,35 +1,29 @@
 \newpage
 \subsection{Modellierung}\label{sec:modellierung}
 
-In dieser Arbeit geht es darum den Einfluss von Stimmungsdaten bei Aktienprognosen zu untersuchen. Da der Fokus auf den Sentiment-Daten gelegt ist, wird von den Kursdaten lediglich der Schlusspreis einbezogen. Als Basismodell dient also ein LSTM-basiertes Netzwerk, welches Schlusspreise als Eingabe verarbeitet. Das Forschungsmodell nimmt eine Kombination aus Schlusspreis und Stimmungsdaten entgegen.
-
-Insgesamt werden $2$ Experimente durchgeführt. 
-
+In dieser Arbeit geht es darum den Einfluss von Stimmungsdaten bei Aktienprognosen zu untersuchen. Da der Fokus auf den Sentiment-Daten gelegt ist, wird von den Kursdaten lediglich der Schlusspreis einbezogen. Als Basismodell dient also ein LSTM-basiertes Netzwerk, welches Schlusspreise als Eingabe verarbeitet. Das Forschungsmodell nimmt eine Kombination aus Schlusspreis und Stimmungsdaten entgegen. \\
+Insgesamt werden $2$ Experimente durchgeführt. \\
 Experiment $1$:    
-Diese Untersuchung analysiert den Leistungsunterschied zwischen Basis- und Forschungsmodell anhand der GOOG-Aktie.
-
+Diese Untersuchung analysiert den Leistungsunterschied zwischen Basis- und Forschungsmodell anhand der GOOG-Aktie. \\
 Experiment $2$:   
-Bei dieser Analyse wird der gleiche Unterschied betrachtet, jedoch unter Einbeziehung aller Aktiendaten.
-
+Bei dieser Analyse wird der gleiche Unterschied betrachtet, jedoch unter Einbeziehung aller Aktiendaten. \\
 In den nachfolgenden Abschnitten wird zunächst auf modellübergreifende Hyperparameter eingegangen und anschließend erfolgt eine Beschreibung der Architektur von Basis- und Forschungsmodell.
 
-\subsubsection*{Generelle Hyperparameter}\label{sec:modellierung_generell_hp}
+\subsubsection{Generelle Hyperparameter}\label{sec:modellierung_generell_hp}
 
 Es gibt eine Vielzahl an Hyperparameter, welche sowohl für das Basismodell als auch für das Forschungsmodell gelten. 
 In beiden Fällen erfolgt eine Aufteilung der vorverarbeiteten Daten (Kap. \ref{sec:data_prep}) in Trainings-, Validierungs- und Testdaten. Dabei wird $20\%$ der Gesamtmenge für Tests separiert und von den restlichen $80\%$ werden $15\%$ zur Validierung verwendet.
 Erst nach diesem Schritt erfolgt die MinMax-Skalierung der Trainingsdaten mit Ausnahme der Embeddings auf das Intervall $0$ bis $1$, mit Hilfe der Python Bibliothek \texttt{sklearn}. Anschließend wird der gelernte Scaler auf Test- und Validierungsdaten angewandt. So wird eine unerwünschten Übertragung von Informationen aus Validierungs- und Testdaten in den Trainingskorpus verhindert. 
 Für Kursdaten wird ein Fenster von $30$ vergangenen Markttagen als Modelleingabe verwendet, um den Preis eines nachfolgenden Tages vorherzusagen. Dieser Wert wurde in Experimenten einer Forschungsarbeit an der Universität Shaoguan in China als Optimum ermittelt \footcite[Tabelle 3]{xie2024deep}.
-In Anlehnung an eine weitere Forschungsarbeit wird für Stimmungsdaten ein kleineres Fenster von $10$ Markttagen verwendet \footcite[Kap. 4.1]{zhang2022transformer}.
 Als Verlustfunktion dient typisch für Regressionsprobleme der \ac{MSE}, welcher sich aus Modellausgabe ($\hat{y}_i$) und tatsächlichem Preis ($y_i$) ergibt (Kap. \ref{sec:theorie_evalmetrics}, Formel \ref{frm:mse}). 
-Die Batch-Größe während des Trainings beträgt $64$.
+Die Batch-Größe während des Trainings beträgt $64$ und als Lernalgorithmus wird Adam-Optimierung eingesetzt (Kap. \ref{sec:theorie_keras}). 
+Beide Modelle werden $50$ Epochen lang trainiert, wobei immer dann eine Zwischenspeicherung erfolgt, sobald ein neuer Bestwert für die Verlustmetrik, basierend auf Validierungsdaten, erreicht wird.
 
 
-
-\subsubsection*{Basismodell}\label{sec:modellierung_basis_goog}
+\subsubsection{Basismodell}\label{sec:modellierung_basis_goog}
 
 Das Basismodell nimmt als Eingabe den Schlusspreis von $30$ vorangegangenen Markttagen entgegen. Um die Charakteristik der Zeitreihendaten bestmöglich zu modellieren wurde \ac{LSTM} als Hauptbestandteil des Netzwerks gewählt (Kap. \ref{sec:theorie_lstm}). So besteht das Modell zum einen aus LSTM- und vollständig verbundenen Schichten (Abb. \ref{fig:basismodell}). 
-Nachdem die Eingabe eine erste \ac{LSTM}-Ebene durchlaufen hat, folgt eine Dropout-Einheit. Dies soll für bessere Generalisierbarkeit des Modells sorgen. In Anlehnung an bereits existierende Forschungsarbeiten folgt eine zweite \ac{LSTM}-Schicht \footcite[Kap. 4.2.1]{guan2020stockprice}. Auch auf ihre Ausgabe wird eine Dropout-Operation durchgeführt. Anschließend werden die Daten an eine dichte Schicht übergeben. Ihr Zweck ist die tiefe des Modells und somit dessen Komplexität zu erhöhen, um den komplexen Mustern in den Trainingsdaten gerecht zu werden. Damit dabei nicht nur lineare, sondern auch nicht-lineare Merkmale modelliert werden können, folgt darauf die Aktivierungsfunktion \ac{ReLU}. Das Ergebnis dieser Operation wird abschließend an eine vollständig verbundene Ausgabeschicht übergeben. Deren Ausgabe stellt als Vorhersage den Schlusspreis des Folgetages (Tag $31$) in skalierter Form dar.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption{Basismodell}
 	\includegraphics[width=.6\textwidth]{basismodell}
@@ -39,12 +33,21 @@ Nachdem die Eingabe eine erste \ac{LSTM}-Ebene durchlaufen hat, folgt eine Dropo
 		\small{Quelle: Eigene Darstellung}
 	\end{flushleft}
 \end{figure}
-Für die Ermittlung von Neuronenanzahl in dichten Schichten, Dropout- und Lernrate wird mit Hilfe von \texttt{keras} eine automatisierte Hyperparameter-Optimierung durchgeführt (Kap. \ref{sec:theorie_keras}). Dadurch entstehen wie in Abbildung \ref{fig:basismodell} dargestellt je nach Experiment unterschiedliche Werte.
+Nachdem die Eingabe eine erste \ac{LSTM}-Ebene durchlaufen hat, folgt eine Dropout-Einheit. Dies soll für bessere Generalisierbarkeit des Modells sorgen. In Anlehnung an bereits existierende Forschungsarbeiten folgt eine zweite \ac{LSTM}-Schicht \footcite[Kap. 4.2.1]{guan2020stockprice}. Auch auf ihre Ausgabe wird eine Dropout-Operation durchgeführt. Anschließend werden die Daten an eine dichte Schicht übergeben. Ihr Zweck ist die tiefe des Modells und somit dessen Komplexität zu erhöhen, um den komplexen Mustern in den Trainingsdaten gerecht zu werden. Damit dabei nicht nur lineare, sondern auch nicht-lineare Merkmale modelliert werden können, folgt darauf die Aktivierungsfunktion \ac{ReLU}. Das Ergebnis dieser Operation wird abschließend an eine vollständig verbundene Ausgabeschicht übergeben. Deren Ausgabe stellt als Vorhersage den Schlusspreis des Folgetages (Tag $31$) in skalierter Form dar.
+Für die Ermittlung von Dropout-Rate, Neuronenanzahl in den einzelnen Schichten und Lernrate wird mit Hilfe von \texttt{keras} eine automatisierte Hyperparameter-Optimierung durchgeführt (Kap. \ref{sec:theorie_keras}). Jeder einzelne Parameter wird im Vorfeld mit einem eingrenzenden Intervall versehen. Außerdem wird die Schrittgröße, mit der ein weiterer Wert evaluiert wird vorgegeben. Während der Optimierung wird mit verschiedene Sets an Parameter-Kandidaten trainiert und die Konfiguration mit bestem Validierungsverlust wird übernommen. Dadurch entstehen wie in Abbildung \ref{fig:basismodell} dargestellt je nach Experiment unterschiedliche Parameter-Werte. Die resultierende Lernrate beträgt bei beiden Experimenten $0.000574$.
 
-- lernrate noch herausfinden
 
 
-\subsubsection*{Forschungsmodell}\label{sec:modellierung_forsch}
+\subsubsection{Forschungsmodell}\label{sec:modellierung_forsch}
+
+Das Forschungsmodell besteht Anfangs aus $2$ Zweigen, welche im Verlauf zu einem vollständig verbundenen Netzwerk zusammenführen. Der rechte Abschnitt in Abbildung \ref{fig:forschungsmodell} ist der Architektur des Basismodells sehr ähnlich. Der größte Unterschied dabei ist die Anzahl an \ac{LSTM}-Schichten. Der iterative \ac{CRISP-DM}-Prozess hat ergeben, dass im vorliegendem Fall die Verwendung eines \ac{LSTM}-Layers bessere Ergebnisse liefert.
+Zusätzlich zum Schlusspreis nimmt das Forschungsmodell im linken Eingangszweig vorverarbeitete Stimmungsdaten entgegen (Abb. \ref{fig:forschungsmodell}). Dazu gehören die drei Metriken ''positive'', ''negative'' und ''num\_tweets'', sowie der Embedding-Vektor ''tweet\_embs'', zu sehen in Abbildung \ref{fig:data_prep_step4}. Die Dimension des Eingangsvektors der Länge $771$ ergibt sich aus dem Zusammenführen der $3$ Metriken und $768$ Embedding-Werte. In Anlehnung an eine Forschungsarbeit mit ähnlicher Datengrundlage wird für die Stimmungsdaten ein kleineres Fenster von $10$ Markttagen verwendet \footcite[Kap. 4.1]{zhang2022transformer}.
+Diese mehrtägigen Sentimentdaten durchlaufen zunächst mehrere eindimensionale \ac{CNN}-Schichten. Deren Filter haben stets die Größe $3$ und werden mit der Schrittgröße $1$ ohne Padding angewandt. Daher reduziert sich die erste Dimension des Datentupels bei jeder \ac{CNN}-Schicht um den Wert $2$ (z.B. bei Exp1 von $10$ bei Eingabe, auf $6$ nach der 2. \ac{CNN}-Schicht). Die Anzahl der Filter gehört zu den variablen Hyperparameter und entspricht der 2. Dimension des \ac{CNN}-Ausgabetupels (z.B. bei Exp2 im ersten CNN $20$ Filter).
+Die Anzahl an \ac{CNN}-Schichten ergab sich aus \ac{CRISP-DM} Iterationen wobei Forschungsarbeiten mit ähnlichem Hintergrund bereits zeigten, dass 2-3 Schichten ausreichend sind \footcite[Kap. 8.2]{guan2020stockprice}. Beim Lauf der Daten durch diese Ebenen erfolgt zwischendrin jeweils zunächst die Anwendung einer nicht-linearen Aktivierungsfunktion (\ac{ELU}) und anschließend eine Dropout Operation.
+Nachdem die Daten alle \ac{CNN}-Layer durchlaufen sind, werden sie in einer Entfaltungsschicht zu einem 1-dimensionalen Vektor transformiert.
+Im nächsten Schritt erfolgt ein Zusammenführen der Ergebnisse beider Modell-Eingangszweige zu einem Vektor. Diese Vorgehensweise fand bereits Verwendung in einer wissenschaftlichen Arbeit über Aktienprognosen von Qiuyue Zhang \footcite[Kap. 4.2.1]{zhang2022transformer}.
+Die nachfolgenden Schichten in Abbildung \ref{fig:forschungsmodell} gleichen den letzten Schritten des Basismodells (Abb. \ref{fig:basismodell}). Auch die Hyperparameteroptimierung verläuft nahezu identisch, wobei in diesem Fall die Filteranzahl in jeder CNN-Schicht einen zusätzlichen Parameter darstellt.
+Die aus der Optimierung resultierende Lernrate unterscheidet sich nun je Experiment leicht (Exp1: $0.000595$, Exp2: $0.00047529998$).
 
 \begin{figure}[H]
 	\centering
@@ -57,10 +60,6 @@ Für die Ermittlung von Neuronenanzahl in dichten Schichten, Dropout- und Lernra
 	\end{flushleft}
 \end{figure}
 
-- Basismodell (etwas abgewandelt) + CNN \\
-- spezifische hyper paramter optimierung mit keras \\
-- arch unterschied bei experiment 1 und 2 ?
-- aufbau der eingabe
 
 
 

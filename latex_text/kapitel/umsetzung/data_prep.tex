@@ -41,7 +41,7 @@ Zu jeder Aktie liegt für jeden Tag im jeweiligen Zeitraum eine Datei mit einer 
 
 Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten. Während des 1. Arbeitsschritts werden die Daten aller Aktien in eine \texttt{csv}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Werte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
 
-\subsubsection*{1. Zeitliche Ausrichtung der Daten}
+\subsubsection*{1. Zeitliche Ausrichtung}
 
 In diesem Arbeitsschritt werden pro Aktie Kursdaten und Tweets zu einer \texttt{csv}-Datei zusammengefasst. Dabei werden zunächst alle Kursdaten-Einträge entfernt, dessen Erstellungsdatum außerhalb des Zeitraums liegt, für den Tweets vorliegen. Da diese Abweichung auch entgegengesetzt auftreten kann, werden auch alle Kurznachrichten gelöscht, deren Erstellungsdatum sich außerhalb des Bereichs der Kursdaten befindet. Abbildung \ref{fig:data_prep_step1} zeigt eine resultierende Datenzeile.
 \begin{figure}[H]

@@ -93,6 +93,54 @@
       \verb 10.13140/RG.2.2.34032.12803
       \endverb
     \endentry
+    \entry{kingma2015adam}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b6fbd171848aad4edf3925543f1f1522}{%
+           family={Kingma},
+           familyi={K\bibinitperiod},
+           given={Diederik\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
+           family={Ba},
+           familyi={B\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      }
+      \strng{namehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{fullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{bibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorbibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authornamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorfullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1412.6980}
+      \field{month}{12}
+      \field{note}{Published as a conference paper at the 3rd International Conference for Learning Representations, San Diego, 2015}
+      \field{title}{Adam: A Method for Stochastic Optimization}
+      \field{volume}{v9}
+      \field{year}{2014}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.48550/arXiv.1412.6980
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1412.6980
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1412.6980
+      \endverb
+    \endentry
     \entry{li2018hyperband}{online}{}
       \name{author}{5}{}{%
         {{un=1,uniquepart=given,hash=1f8dc2db3fb2bdd7a51ade713872affb}{%
@@ -151,6 +199,42 @@
       \endverb
       \verb{url}
       \verb https://jmlr.org/papers/v18/16-558.html
+      \endverb
+    \endentry
+    \entry{website:keras-adam}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=223bf2a82b36647ecfc4d214f4d21449}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={Keras},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{fullhash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{bibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authorbibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authornamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authorfullhash}{223bf2a82b36647ecfc4d214f4d21449}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Keras API documentation}
+      \field{title}{Adam Optimizer - Keras 3 API Documentation}
+      \field{urlday}{3}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://keras.io/api/optimizers/adam/
+      \endverb
+      \verb{url}
+      \verb https://keras.io/api/optimizers/adam/
       \endverb
     \endentry
     \entry{xie2024deep}{article}{}
