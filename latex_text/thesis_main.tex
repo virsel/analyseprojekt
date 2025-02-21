@@ -45,8 +45,6 @@
 % labelfont auf fett: (Tabelle x.y:, Abbildung: x.y)
 % font auf fett: eigentliche Bezeichnung der Abbildung oder Tabelle
 % Fettschrift laut Leitfaden 2018 S. 45
-\usepackage[singlelinecheck=false, labelfont=bf, font=bf]{caption}
-\usepackage{caption}
 \usepackage{enumitem}
 \usepackage{amssymb}
 \usepackage{mathptmx}
@@ -93,6 +91,9 @@
 \usepackage{mdwlist}
 \usepackage{tabularx}% für Breitenangabe
 
+
+
+
 %-----------------------------------
 % sauber formatierter Quelltext
 %-----------------------------------
@@ -114,8 +115,7 @@
 }
 
 
-\captionsetup[figure]{skip=6pt}
-\captionsetup[table]{skip=6pt}
+
 
 
 % Style for code listing
@@ -129,66 +129,34 @@
 
 \renewcommand{\lstlistingname}{Code}
 
-% Formatting for code listing captions
-\captionsetup[lstlisting]{
-	font={small,bf,singlespacing},
-	justification=raggedright,
-	singlelinecheck=false,
-	aboveskip=6pt,
-	belowskip=0pt,
-	format=hang,
-	position=above
-}
+
 
 %-----------------------------------
 %Literaturverzeichnis Einstellungen
 %-----------------------------------
 
-% Biblatex
-\usepackage{url}
-\urlstyle{same}
+\usepackage[style=ieee, mincitenames=1, maxcitenames=2, backend=biber]{biblatex}
+\usepackage{xurl}%      URLs werden so auch im Literaturverzeichnis umgebrochen %
 
-%%%% Neuer Leitfaden (2018)
-\usepackage[
-backend=biber,
-style=ext-authoryear-ibid, % Auskommentieren und nächste Zeile einkommentieren, falls "Ebd." (ebenda) nicht für sich-wiederholende Fussnoten genutzt werden soll.
-%style=ext-authoryear,
-maxcitenames=3,	% mindestens 3 Namen ausgeben bevor et. al. kommt
-maxbibnames=999,
-mergedate=false,
-date=iso,
-seconds=true, %werden nicht verwendet, so werden aber Warnungen unterdrückt.
-urldate=iso,
-innamebeforetitle,
-dashed=false,
-autocite=footnote,
-doi=false,
-useprefix=true, % 'von' im Namen beachten (beim Anzeigen)
-mincrossrefs = 1
-]{biblatex}%iso dateformat für YYYY-MM-DD
-% \usepackage[style=authoryear, backend=biber]{biblatex}
+% \citetitle: Titel mit deutschen Anführungszeichen
+\DeclareFieldFormat*{citetitle}{\glqq#1\grqq}
 
-%weitere Anpassungen für BibLaTex
-\input{skripte/modsBiblatex2018}
+% "et al." für die Abkürzung mehrerer Autoren verwenden
+\DefineBibliographyStrings{german}{%
+  andothers = {\emph{et al}\adddot}
+}
 
-%%%%% Alter Leitfaden. Ggf. Einkommentieren und Bereich hierüber auskommentieren
-%\usepackage[
-%backend=biber,
-%style=numeric,
-%citestyle=authoryear,
-%url=false,
-%isbn=false,
-%notetype=footonly,
-%hyperref=false,
-%sortlocale=de]{biblatex}
-
-%weitere Anpassungen für BibLaTex
-%\input{skripte/modsBiblatex}
-
-%%%% Ende Alter Leitfaden
+% Hier die entsprechende .bib-Datei eintragen
 
 %Bib-Datei einbinden
 \addbibresource{literatur/literatur.bib}
+
+
+
+% Keine Warnung für geteilte Bibliographien
+\BiblatexSplitbibDefernumbersWarningOff
+
+
 
 % Zeilenabstand im Literaturverzeichnis ist Einzeilig
 % siehe Leitfaden S. 14
@@ -256,34 +224,19 @@ name=Formel,
 listname={Formelverzeichnis},
 placement=htbp,
 ]{formel}
-% Formatierung der Beschriftungen für die "formel"-Umgebung
-\captionsetup[formel]{
-	font={normalsize,bf,singlespacing},
-	justification=justified,
-	singlelinecheck=false,
-	aboveskip=5pt,
-	belowskip=0pt,
-	position=above
-}
+
 
 
 
 % Customize the appearance of the list of equations
 
 
-
-
-
 \usepackage{amsmath}  % Erweiterte mathematische Umgebungen
 \usepackage{amsfonts} % Erweiterte mathematische Schriftarten
 \usepackage{amssymb}  % Erweiterte mathematische Symbole
 \usepackage{newfloat} % Paket zur Definition neuer Gleitobjekte
-\usepackage{caption}  % Anpassung der Beschriftung
 
 
-
-
-\usepackage{subcaption}
 
 %-----------------------------------
 % Glossar
@@ -363,8 +316,10 @@ placement=htbp,
 \renewcommand{\headrulewidth}{0.4pt}
 %\renewcommand{\headrulewidth}{0pt}
 
-\usepackage{caption}
-\captionsetup{font=small,labelfont=bf,textfont=bf}
+
+
+% caption setup
+\input{preamble/captions}
 
 
 
@@ -474,5 +429,8 @@ placement=htbp,
 % Beispiel: [type=book,type=article]
 \printbibliography[heading=bibintoc,title={\langde{Quellenverzeichnis}\langen{Bibliography}}]
 
+% ehrenwörtliche Erklärung
+\pagenumbering{gobble} % dies entfernt die Seitenzahl auf den nachfolgenden Seiten, hier kommt dann die EE hin, ob dreimal müssen wir noch besprechen!
+\input{kapitel/ee}
 
 \end{document}

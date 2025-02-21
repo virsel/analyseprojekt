@@ -10,15 +10,23 @@
 Im Finanzbereich werden Aktien in 9 Branchen kategorisiert: Grundstoffe, Konsumgüter, Gesundheitswesen, Dienstleistungen, Versorgungsunternehmen, Mischkonzerne, Finanzwesen, Industriegüter und Technologie. Da Aktien mit hohem Handelsvolumen tendenziell häufiger auf Twitter diskutiert werden, wählen wir die zweijährigen Kursbewegungen von 88 Aktien vom 01.01.2014 bis 01.01.2016 als Ziele aus, bestehend aus allen 8 Aktien der Mischkonzerne und den Top 10 Aktien nach Kapitalvolumen aus jeder der anderen 8 Branchen (siehe ergänzendes Material).
 
 ---
-\footcite[Kap. 3]{xu2018StockMovement}
+\autocite[Kap. 3]{xu2018StockMovement}
 
 \subsection{Datenvorverarbeitung mit Pandas}\label{sec:theorie_pandas}
 
 \subsection{Aktienprognosen mit Deep Learning}\label{sec:theorie_dl}
 
 \subsubsection{Modellierung mit Keras}\label{sec:theorie_keras}
+- hyperparameter optimisierung mit ''hyperband''
+\autocite{li2018hyperband}
+
+- lern algorithmus adam 
+\autocite{website:keras-adam}
+\autocite{kingma2015adam}
 
 \subsubsection{LSTM für Kursdaten}\label{sec:theorie_lstm}
+
+gute quelle für formeln: \autocite{guan2020stockprice}
 
 \subsubsection{LLM für Stimmungsdaten}\label{sec:theorie_llm}
 ---
@@ -27,15 +35,18 @@ FinancialBERT applies domain-specific language understanding to financial text a
 ...
 
 ---
-\footcite{hazourli2022financialbert}
+\autocite{hazourli2022financialbert}
 
 
 \subsubsection{CNN für Stimmungsdaten}\label{sec:theorie_cnn}
 
+- begründen warum filter der größe 3 gut
+gute quelle für formeln: \autocite{guan2020stockprice}
+
 \subsubsection{Evaluierungsmetriken}\label{sec:theorie_evalmetrics}
 
 - \ac{MAE}, \ac{MSE} und \ac{MAPE}  
-\footcite[Kap. 4.3]{xie2024deep}
+\autocite[Kap. 4.3]{xie2024deep}
 
 mse:
 

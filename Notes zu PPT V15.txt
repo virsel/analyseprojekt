@@ -1,0 +1,11 @@
+Präsi Notes:
+
+Slide: MatrNr Studiengang
+Slide2: 
+Slide Motivation: Disclaimer hinzufügen; Fokus der arbeit Punkt 3 ergänzenDeepLearning vielversprechend und ausbaufähig für Aktienprognosen
+Slide neu Zielsetzung: Basis vs Froschungsmodel hinzufügen
+Slide Business Understanding: Admir noch ergänzen mit Paper, ChatGPT, Aktienbörse, Gewinn, Profit über DL (KI),
+Slide Data Understanding: Tabelle mit unseren Aktien aktuallisieren und MarketCap as of 31.12.2016 hinzufügen.
+Slide DataPreparation (neue Slide) Erklärung was ist FinBERT und Embedding der Tweets (Source + Bilder)
+*** Überschrift1 auf Deutsch und Überschrift unten größer ***
+Slide Modelierung Neu Hyperparameter Optimierung von Keras
