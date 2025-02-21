@@ -1,0 +1,44 @@
+\usepackage{subcaption}%       Neueres Paket zur Unterstützung von Subfigures %
+
+%-----------------------------------------------------------------------------%
+%                                Einheitliche Formatierung für Unterschriften %
+%-----------------------------------------------------------------------------%
+\usepackage[
+	format        = hang,
+	justification = RaggedRight,
+	width         = .9\textwidth,
+	labelfont=bf,
+	textfont=normalfont
+]{caption}
+
+
+
+\captionsetup[table]{skip=6pt}
+
+
+% Formatting for code listing captions
+\captionsetup[lstlisting]{
+	font={small,bf,singlespacing},
+	justification=raggedright,
+	singlelinecheck=false,
+	aboveskip=6pt,
+	belowskip=0pt,
+	format=hang,
+	position=above
+}
+
+% Formatierung der Beschriftungen für die "formel"-Umgebung
+\captionsetup[formel]{
+	font={normalsize,bf,singlespacing},
+	justification=justified,
+	singlelinecheck=false,
+	aboveskip=5pt,
+	belowskip=0pt,
+	position=above
+}
+
+\captionsetup[figure]{
+    justification=raggedright, % Left-align caption text
+    singlelinecheck=false, % Prevent automatic centering for short captions
+    position=below % Ensure caption is below the figure
+}

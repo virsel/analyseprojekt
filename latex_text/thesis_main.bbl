@@ -18,98 +18,222 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
-    \entry{guan2020stockprice}{article}{}
-      \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=722bca62affb316b5698a22b465ca0c0}{%
-           family={Guan},
-           familyi={G\bibinitperiod},
-           given={Yushi},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=1,uniquepart=given,hash=b20da602a3f9ccc9a4ace0613300059f}{%
-           family={Li},
+  \datalist[entry]{none/global//global/global}
+    \entry{zhang2022transformer}{article}{}
+      \name{author}{6}{}{%
+        {{hash=a300c2d360cf57bfb395be69a2f27895}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qiuyue},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=a63629d92dfdff9e6a740aa3ccbe2960}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d9912d78ae87e3e4c03aa245499e81f4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yunfeng},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6cb9b6f07981ff55fc5d5e0229be75e8}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Fangxun},
+           giveni={F\bibinitperiod}}}%
+        {{hash=317109e5efd6b04b2dcc18b15fab760a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Caiming},
+           giveni={C\bibinitperiod}}}%
+        {{hash=623651b638550e8d46489e886522d714}{%
+           family={Liu},
            familyi={L\bibinitperiod},
-           given={Peiyao},
-           giveni={P\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=2b5af236604cd7fdc03927d41de24eaf}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={Cheng},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
+           given={Peide},
+           giveni={P\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+      \list{publisher}{1}{%
+        {Elsevier}%
       }
-      \strng{namehash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \strng{fullhash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \strng{bibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \strng{authorbibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \strng{authornamehash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \strng{authorfullhash}{56a92cfe50e6ea0405017e2bce6573a8}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \strng{namehash}{c417ea141d51461ef574297982f19cb3}
+      \strng{fullhash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{bibnamehash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{authorbibnamehash}{c43f1ea48f223527332892e74e9fff75}
+      \strng{authornamehash}{c417ea141d51461ef574297982f19cb3}
+      \strng{authorfullhash}{c43f1ea48f223527332892e74e9fff75}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{University of Toronto Publications}
-      \field{month}{1}
-      \field{title}{Stock Price Prediction with CNN-LSTM Network}
-      \field{year}{2020}
-    \endentry
-    \entry{hazourli2022financialbert}{article}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=efe938fb5bb195402765fca74dcb5d8e}{%
-           family={Hazourli},
-           familyi={H\bibinitperiod},
-           given={Ahmed\bibnamedelima Rachid},
-           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
-      }
-      \strng{namehash}{efe938fb5bb195402765fca74dcb5d8e}
-      \strng{fullhash}{efe938fb5bb195402765fca74dcb5d8e}
-      \strng{bibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
-      \strng{authorbibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
-      \strng{authornamehash}{efe938fb5bb195402765fca74dcb5d8e}
-      \strng{authorfullhash}{efe938fb5bb195402765fca74dcb5d8e}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Preprint on ResearchGate}
-      \field{month}{2}
-      \field{note}{CC BY 4.0 License}
-      \field{title}{FinancialBERT - A Pretrained Language Model for Financial Text Mining}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Transformer-based attention network for stock movement prediction}
+      \field{volume}{202}
       \field{year}{2022}
       \verb{doi}
-      \verb 10.13140/RG.2.2.34032.12803
+      \verb 10.1016/j.eswa.2022.117033
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
+      \endverb
+    \endentry
+    \entry{xu2018StockMovement}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b507e67236cc5f6e9caaf12baba5aee9}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yumo},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4850327895eea4187f7220ab102d34b6}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Shay\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=ea70b44be1920f6e8c379706bc7d047a}{%
+           family={Gurevych},
+           familyi={G\bibinitperiod},
+           given={Iryna},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e3085b34ce73d4eb1516551aa3eb4beb}{%
+           family={Miyao},
+           familyi={M\bibinitperiod},
+           given={Yusuke},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{fullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{bibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authorbibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authornamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{authorfullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
+      \strng{editorbibnamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \strng{editornamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \strng{editorfullhash}{49872d3e2bf9fbad3a0eb3aab98db401}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics}
+      \field{month}{7}
+      \field{title}{Stock Movement Prediction from Tweets and Historical Prices}
+      \field{year}{2018}
+      \field{pages}{1970\bibrangedash 1979}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.18653/v1/P18-1183
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/P18-1183
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/P18-1183
+      \endverb
+    \endentry
+    \entry{li2018hyperband}{online}{}
+      \name{author}{5}{}{%
+        {{hash=1f8dc2db3fb2bdd7a51ade713872affb}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Lisha},
+           giveni={L\bibinitperiod}}}%
+        {{hash=240fa0e010cb30dc1e40c10157f58276}{%
+           family={Jamieson},
+           familyi={J\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c8aac6375fc368da68554e7a98cc4ae9}{%
+           family={DeSalvo},
+           familyi={D\bibinitperiod},
+           given={Giulia},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7aef26bccf2dba53f4b3c49adfb2983e}{%
+           family={Rostamizadeh},
+           familyi={R\bibinitperiod},
+           given={Afshin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
+           family={Talwalkar},
+           familyi={T\bibinitperiod},
+           given={Ameet},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{60c45ec23c5a0d5531344a38753d8d90}
+      \strng{fullhash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{bibnamehash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{authorbibnamehash}{5cff1402032f5d8014288fda8317ceda}
+      \strng{authornamehash}{60c45ec23c5a0d5531344a38753d8d90}
+      \strng{authorfullhash}{5cff1402032f5d8014288fda8317ceda}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Journal of Machine Learning Research, Volume 18, Pages 1−52}
+      \field{title}{Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization}
+      \field{urlday}{20}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://jmlr.org/papers/v18/16-558.html
+      \endverb
+      \verb{url}
+      \verb https://jmlr.org/papers/v18/16-558.html
+      \endverb
+    \endentry
+    \entry{website:keras-adam}{online}{}
+      \name{author}{1}{}{%
+        {{hash=223bf2a82b36647ecfc4d214f4d21449}{%
+           family={Team},
+           familyi={T\bibinitperiod},
+           given={Keras},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{fullhash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{bibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authorbibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authornamehash}{223bf2a82b36647ecfc4d214f4d21449}
+      \strng{authorfullhash}{223bf2a82b36647ecfc4d214f4d21449}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Keras API documentation}
+      \field{title}{Adam Optimizer - Keras 3 API Documentation}
+      \field{urlday}{3}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://keras.io/api/optimizers/adam/
+      \endverb
+      \verb{url}
+      \verb https://keras.io/api/optimizers/adam/
       \endverb
     \endentry
     \entry{kingma2015adam}{article}{}
       \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=b6fbd171848aad4edf3925543f1f1522}{%
+        {{hash=b6fbd171848aad4edf3925543f1f1522}{%
            family={Kingma},
            familyi={K\bibinitperiod},
            given={Diederik\bibnamedelima P.},
-           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
            family={Ba},
            familyi={B\bibinitperiod},
            given={Jimmy},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+           giveni={J\bibinitperiod}}}%
       }
       \strng{namehash}{a09df9f123146b8e2c7f1134c9496932}
       \strng{fullhash}{a09df9f123146b8e2c7f1134c9496932}
@@ -117,10 +241,8 @@
       \strng{authorbibnamehash}{a09df9f123146b8e2c7f1134c9496932}
       \strng{authornamehash}{a09df9f123146b8e2c7f1134c9496932}
       \strng{authorfullhash}{a09df9f123146b8e2c7f1134c9496932}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{arXiv preprint arXiv:1412.6980}
@@ -141,139 +263,95 @@
       \verb https://arxiv.org/abs/1412.6980
       \endverb
     \endentry
-    \entry{li2018hyperband}{online}{}
-      \name{author}{5}{}{%
-        {{un=1,uniquepart=given,hash=1f8dc2db3fb2bdd7a51ade713872affb}{%
+    \entry{guan2020stockprice}{article}{}
+      \name{author}{3}{}{%
+        {{hash=722bca62affb316b5698a22b465ca0c0}{%
+           family={Guan},
+           familyi={G\bibinitperiod},
+           given={Yushi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=b20da602a3f9ccc9a4ace0613300059f}{%
            family={Li},
            familyi={L\bibinitperiod},
-           given={Lisha},
-           giveni={L\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=240fa0e010cb30dc1e40c10157f58276}{%
-           family={Jamieson},
-           familyi={J\bibinitperiod},
-           given={Kevin},
-           giveni={K\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=c8aac6375fc368da68554e7a98cc4ae9}{%
-           family={DeSalvo},
-           familyi={D\bibinitperiod},
-           given={Giulia},
-           giveni={G\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=7aef26bccf2dba53f4b3c49adfb2983e}{%
-           family={Rostamizadeh},
-           familyi={R\bibinitperiod},
-           given={Afshin},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=70e0fe957473b80f1b1b5dcb8e99d31e}{%
-           family={Talwalkar},
-           familyi={T\bibinitperiod},
-           given={Ameet},
-           giveni={A\bibinitperiod},
-           givenun=0}}%
+           given={Peiyao},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2b5af236604cd7fdc03927d41de24eaf}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{60c45ec23c5a0d5531344a38753d8d90}
-      \strng{fullhash}{5cff1402032f5d8014288fda8317ceda}
-      \strng{bibnamehash}{5cff1402032f5d8014288fda8317ceda}
-      \strng{authorbibnamehash}{5cff1402032f5d8014288fda8317ceda}
-      \strng{authornamehash}{60c45ec23c5a0d5531344a38753d8d90}
-      \strng{authorfullhash}{5cff1402032f5d8014288fda8317ceda}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \strng{namehash}{d80ccbd8333e02a61916264d4ade72e4}
+      \strng{fullhash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{bibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{authorbibnamehash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \strng{authornamehash}{d80ccbd8333e02a61916264d4ade72e4}
+      \strng{authorfullhash}{56a92cfe50e6ea0405017e2bce6573a8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Journal of Machine Learning Research, Volume 18, Pages 1−52}
-      \field{title}{Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization}
-      \field{urlday}{20}
-      \field{urlmonth}{12}
-      \field{urlyear}{2024}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://jmlr.org/papers/v18/16-558.html
-      \endverb
-      \verb{url}
-      \verb https://jmlr.org/papers/v18/16-558.html
-      \endverb
+      \field{journaltitle}{University of Toronto Publications}
+      \field{month}{1}
+      \field{title}{Stock Price Prediction with CNN-LSTM Network}
+      \field{year}{2020}
     \endentry
-    \entry{website:keras-adam}{online}{}
+    \entry{hazourli2022financialbert}{article}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=223bf2a82b36647ecfc4d214f4d21449}{%
-           family={Team},
-           familyi={T\bibinitperiod},
-           given={Keras},
-           giveni={K\bibinitperiod},
-           givenun=0}}%
+        {{hash=efe938fb5bb195402765fca74dcb5d8e}{%
+           family={Hazourli},
+           familyi={H\bibinitperiod},
+           given={Ahmed\bibnamedelima Rachid},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
       }
-      \strng{namehash}{223bf2a82b36647ecfc4d214f4d21449}
-      \strng{fullhash}{223bf2a82b36647ecfc4d214f4d21449}
-      \strng{bibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
-      \strng{authorbibnamehash}{223bf2a82b36647ecfc4d214f4d21449}
-      \strng{authornamehash}{223bf2a82b36647ecfc4d214f4d21449}
-      \strng{authorfullhash}{223bf2a82b36647ecfc4d214f4d21449}
-      \field{sortinit}{T}
-      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \strng{namehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{fullhash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{bibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authorbibnamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authornamehash}{efe938fb5bb195402765fca74dcb5d8e}
+      \strng{authorfullhash}{efe938fb5bb195402765fca74dcb5d8e}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Keras API documentation}
-      \field{title}{Adam Optimizer - Keras 3 API Documentation}
-      \field{urlday}{3}
-      \field{urlmonth}{1}
-      \field{urlyear}{2025}
-      \field{year}{2025}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://keras.io/api/optimizers/adam/
-      \endverb
-      \verb{url}
-      \verb https://keras.io/api/optimizers/adam/
+      \field{journaltitle}{Preprint on ResearchGate}
+      \field{month}{2}
+      \field{note}{CC BY 4.0 License}
+      \field{title}{FinancialBERT - A Pretrained Language Model for Financial Text Mining}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.13140/RG.2.2.34032.12803
       \endverb
     \endentry
     \entry{xie2024deep}{article}{}
       \name{author}{3}{}{%
-        {{un=0,uniquepart=base,hash=ece08e4244bff11f42899aabcdef8a41}{%
+        {{hash=ece08e4244bff11f42899aabcdef8a41}{%
            family={Xie},
            familyi={X\bibinitperiod},
            given={Li},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=475d36af00b6d917bd5a89099aaca278}{%
+           giveni={L\bibinitperiod}}}%
+        {{hash=475d36af00b6d917bd5a89099aaca278}{%
            family={Chen},
            familyi={C\bibinitperiod},
            given={Zhengming},
-           giveni={Z\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=d513fd1a5890f3ffd95a33db0d0612f9}{%
+           giveni={Z\bibinitperiod}}}%
+        {{hash=d513fd1a5890f3ffd95a33db0d0612f9}{%
            family={Yu},
            familyi={Y\bibinitperiod},
            given={Sheng},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+           giveni={S\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {MDPI}%
       }
-      \strng{namehash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
+      \strng{namehash}{0a131c480ac7248aec0f4133eb0961a3}
       \strng{fullhash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
       \strng{bibnamehash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
       \strng{authorbibnamehash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
-      \strng{authornamehash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
+      \strng{authornamehash}{0a131c480ac7248aec0f4133eb0961a3}
       \strng{authorfullhash}{0440e9b6e4837e641cfa5fcfe0ba0b78}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Electronics}
@@ -296,33 +374,26 @@
     \endentry
     \entry{Xu2020StockMovement}{article}{}
       \name{author}{4}{}{%
-        {{un=1,uniquepart=given,hash=c90185e7e56c3b384b0c2e1e6d9f6eec}{%
+        {{hash=c90185e7e56c3b384b0c2e1e6d9f6eec}{%
            family={Xu},
            familyi={X\bibinitperiod},
            given={Hongfeng},
-           giveni={H\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=4cfaba811c5f6a18df6938d492246beb}{%
+           giveni={H\bibinitperiod}}}%
+        {{hash=4cfaba811c5f6a18df6938d492246beb}{%
            family={Chai},
            familyi={C\bibinitperiod},
            given={Lei},
-           giveni={L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=6b7be320f4a37b5c679a3719f4908616}{%
+           giveni={L\bibinitperiod}}}%
+        {{hash=6b7be320f4a37b5c679a3719f4908616}{%
            family={Luo},
            familyi={L\bibinitperiod},
            given={Zhiming},
-           giveni={Z\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=bc6feb32222eb9129e27d20dbc31167a}{%
+           giveni={Z\bibinitperiod}}}%
+        {{hash=bc6feb32222eb9129e27d20dbc31167a}{%
            family={Li},
            familyi={L\bibinitperiod},
            given={Shaozi},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
+           giveni={S\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Elsevier}%
@@ -333,10 +404,8 @@
       \strng{authorbibnamehash}{da56ffb6eb0db09bda0d16bafae2f78f}
       \strng{authornamehash}{69173ffe033778d59a9642d2de73b7e4}
       \strng{authorfullhash}{da56ffb6eb0db09bda0d16bafae2f78f}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Neurocomputing}
@@ -355,79 +424,14 @@
       \verb https://www.sciencedirect.com/science/article/abs/pii/S0925231220313060?via%3Dihub
       \endverb
     \endentry
-    \entry{xu2018StockMovement}{article}{}
-      \name{author}{2}{}{%
-        {{un=1,uniquepart=given,hash=b507e67236cc5f6e9caaf12baba5aee9}{%
-           family={Xu},
-           familyi={X\bibinitperiod},
-           given={Yumo},
-           giveni={Y\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=4850327895eea4187f7220ab102d34b6}{%
-           family={Cohen},
-           familyi={C\bibinitperiod},
-           given={Shay\bibnamedelima B.},
-           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
-           givenun=0}}%
-      }
-      \name{editor}{2}{}{%
-        {{hash=ea70b44be1920f6e8c379706bc7d047a}{%
-           family={Gurevych},
-           familyi={G\bibinitperiod},
-           given={Iryna},
-           giveni={I\bibinitperiod}}}%
-        {{hash=e3085b34ce73d4eb1516551aa3eb4beb}{%
-           family={Miyao},
-           familyi={M\bibinitperiod},
-           given={Yusuke},
-           giveni={Y\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computational Linguistics}%
-      }
-      \strng{namehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{fullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{bibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{authorbibnamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{authornamehash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{authorfullhash}{518afc7d1b30cb48dd44a2ecc7bcba0a}
-      \strng{editorbibnamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
-      \strng{editornamehash}{49872d3e2bf9fbad3a0eb3aab98db401}
-      \strng{editorfullhash}{49872d3e2bf9fbad3a0eb3aab98db401}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics}
-      \field{month}{7}
-      \field{title}{Stock Movement Prediction from Tweets and Historical Prices}
-      \field{year}{2018}
-      \field{pages}{1970\bibrangedash 1979}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.18653/v1/P18-1183
-      \endverb
-      \verb{urlraw}
-      \verb https://aclanthology.org/P18-1183
-      \endverb
-      \verb{url}
-      \verb https://aclanthology.org/P18-1183
-      \endverb
-    \endentry
     \entry{website:stocknet-dataset}{online}{}
       \name{author}{2}{}{%
-        {{un=1,uniquepart=given,hash=b507e67236cc5f6e9caaf12baba5aee9}{%
+        {{hash=b507e67236cc5f6e9caaf12baba5aee9}{%
            family={Xu},
            familyi={X\bibinitperiod},
            given={Yumo},
-           giveni={Y\bibinitperiod},
-           givenun=1}}%
-        {{un=0,uniquepart=base,hash=c8f838ddf6c2b70e385251f590568dd5}{%
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c8f838ddf6c2b70e385251f590568dd5}{%
            family={dtaylor-530},
            familyi={d\bibinithyphendelim 5\bibinitperiod}}}%
       }
@@ -437,10 +441,8 @@
       \strng{authorbibnamehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
       \strng{authornamehash}{5d4d6d73e356fd2816cc8593a17ccf4d}
       \strng{authorfullhash}{5d4d6d73e356fd2816cc8593a17ccf4d}
-      \field{sortinit}{X}
-      \field{sortinithash}{1965c258adceecf23ce3d67b05113442}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{MIT License}
@@ -456,77 +458,6 @@
       \endverb
       \verb{url}
       \verb https://github.com/yumoxu/stocknet-dataset
-      \endverb
-    \endentry
-    \entry{zhang2022transformer}{article}{}
-      \name{author}{6}{}{%
-        {{un=0,uniquepart=base,hash=a300c2d360cf57bfb395be69a2f27895}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Qiuyue},
-           giveni={Q\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=a63629d92dfdff9e6a740aa3ccbe2960}{%
-           family={Qin},
-           familyi={Q\bibinitperiod},
-           given={Chao},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=d9912d78ae87e3e4c03aa245499e81f4}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Yunfeng},
-           giveni={Y\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=6cb9b6f07981ff55fc5d5e0229be75e8}{%
-           family={Bao},
-           familyi={B\bibinitperiod},
-           given={Fangxun},
-           giveni={F\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=317109e5efd6b04b2dcc18b15fab760a}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Caiming},
-           giveni={C\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=623651b638550e8d46489e886522d714}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Peide},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{location}{1}{%
-        {\selectlanguage {ngerman}o\adddot \addspace O\adddot}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{c417ea141d51461ef574297982f19cb3}
-      \strng{fullhash}{c43f1ea48f223527332892e74e9fff75}
-      \strng{bibnamehash}{c43f1ea48f223527332892e74e9fff75}
-      \strng{authorbibnamehash}{c43f1ea48f223527332892e74e9fff75}
-      \strng{authornamehash}{c417ea141d51461ef574297982f19cb3}
-      \strng{authorfullhash}{c43f1ea48f223527332892e74e9fff75}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Expert Systems with Applications}
-      \field{title}{Transformer-based attention network for stock movement prediction}
-      \field{volume}{202}
-      \field{year}{2022}
-      \verb{doi}
-      \verb 10.1016/j.eswa.2022.117033
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/abs/pii/S0957417422006170?via%3Dihub
       \endverb
     \endentry
   \enddatalist

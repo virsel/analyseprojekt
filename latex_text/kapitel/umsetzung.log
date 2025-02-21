@@ -161,7 +161,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `sec:depatisnet' on page  undefined on input line 7.
 
 ! Undefined control sequence.
-l.7 ...Effizienzsteigerung einsetzbar sind \footcite
+l.7 ...Effizienzsteigerung einsetzbar sind \autocite
                                                   [S. 10-15]{dpma_hilfe}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -172,13 +172,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.7 ...ung einsetzbar sind \footcite[S. 10-15]{dpma_
+l.7 ...ung einsetzbar sind \autocite[S. 10-15]{dpma_
                                                   hilfe}.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.7 ...nsetzbar sind \footcite[S. 10-15]{dpma_hilfe}
+l.7 ...nsetzbar sind \autocite[S. 10-15]{dpma_hilfe}
                                                   .
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -408,7 +408,7 @@ Overfull \hbox (63.0pt too wide) in paragraph at lines 34--35
  []
 
 ! Undefined control sequence.
-l.36 ...ens DEPATISnet auf 10.000 begrenzt \footcite
+l.36 ...ens DEPATISnet auf 10.000 begrenzt \autocite
                                                   [Vgl.][S. 158]{dpma_hilfe}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -419,13 +419,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.36 ...0.000 begrenzt \footcite[Vgl.][S. 158]{dpma_
+l.36 ...0.000 begrenzt \autocite[Vgl.][S. 158]{dpma_
                                                   hilfe}. Daher werden diese...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.36 ...begrenzt \footcite[Vgl.][S. 158]{dpma_hilfe}
+l.36 ...begrenzt \autocite[Vgl.][S. 158]{dpma_hilfe}
                                                   . Daher werden diese mit H...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5135,7 +5135,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.93 ...Python-Pakets namens ''wipo\_ipc'' \footcite
+l.93 ...Python-Pakets namens ''wipo\_ipc'' \autocite
                                                   {wipo_ipc} eine Titelauflö...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5146,13 +5146,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.93 ...-Pakets namens ''wipo\_ipc'' \footcite{wipo_
+l.93 ...-Pakets namens ''wipo\_ipc'' \autocite{wipo_
                                                   ipc} eine Titelauflösung ...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.93 ...ets namens ''wipo\_ipc'' \footcite{wipo_ipc}
+l.93 ...ets namens ''wipo\_ipc'' \autocite{wipo_ipc}
                                                    eine Titelauflösung von ...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5269,7 +5269,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `sec:bertopic' on page  undefined on input line 99.
 
 ! Undefined control sequence.
-l.99 ...on Parameter-Finetuning wiederholt \footcite
+l.99 ...on Parameter-Finetuning wiederholt \autocite
                                                   {website:bertopic_bestprac...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5280,13 +5280,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.99 ...uning wiederholt \footcite{website:bertopic_
+l.99 ...uning wiederholt \autocite{website:bertopic_
                                                   bestpractices}. Die Erzeug...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.99 ...lt \footcite{website:bertopic_bestpractices}
+l.99 ...lt \autocite{website:bertopic_bestpractices}
                                                   . Die Erzeugung von Embedd...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5350,7 +5350,7 @@ prachmodellbestmglicheErgebnisseerreichtwerden:$
  []
 
 ! Undefined control sequence.
-l.101 ...multilingual-cased-v1'' verwendet \footcite
+l.101 ...multilingual-cased-v1'' verwendet \autocite
                                                   {website:st_bert_models}. ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5361,13 +5361,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.101 ...-cased-v1'' verwendet \footcite{website:st_
+l.101 ...-cased-v1'' verwendet \autocite{website:st_
                                                   bert_models}. Dieses erzeu...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.101 ...verwendet \footcite{website:st_bert_models}
+l.101 ...verwendet \autocite{website:st_bert_models}
                                                   . Dieses erzeugt eine Vekt...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -5377,7 +5377,7 @@ deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
 l.101 ...zeugt. Dies erfolgt durch Anwendung von \ac
-                                                  {UMAP}\footcite{umap}, wob...
+                                                  {UMAP}\autocite{umap}, wob...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5385,7 +5385,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.101 ...olgt durch Anwendung von \ac{UMAP}\footcite
+l.101 ...olgt durch Anwendung von \ac{UMAP}\autocite
                                                   {umap}, wobei Darstellunge...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5493,7 +5493,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.105 ...afür wird \ac{HDBSCAN} verwendet \footcite
+l.105 ...afür wird \ac{HDBSCAN} verwendet \autocite
                                                   {hdbscan}. Als Mindestgrö...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5565,7 +5565,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.107 ...nziert wird, sondern auf Cluster-Ebene (\ac
-                                                  {c-TF-IDF}) \footcite{webs...
+                                                  {c-TF-IDF}) \autocite{webs...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5573,7 +5573,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.107 ...auf Cluster-Ebene (\ac{c-TF-IDF}) \footcite
+l.107 ...auf Cluster-Ebene (\ac{c-TF-IDF}) \autocite
                                                   {website:bertopic_ctfidf}\...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5584,14 +5584,14 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
 $
-l.107 ...(\ac{c-TF-IDF}) \footcite{website:bertopic_
-                                                  ctfidf}\footcite{tfidf}. A...
+l.107 ...(\ac{c-TF-IDF}) \autocite{website:bertopic_
+                                                  ctfidf}\autocite{tfidf}. A...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.107 ...TF-IDF}) \footcite{website:bertopic_ctfidf}
-                                                  \footcite{tfidf}. Anschlie...
+l.107 ...TF-IDF}) \autocite{website:bertopic_ctfidf}
+                                                  \autocite{tfidf}. Anschlie...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -5599,7 +5599,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.107 ...\footcite{website:bertopic_ctfidf}\footcite
+l.107 ...\autocite{website:bertopic_ctfidf}\autocite
                                                   {tfidf}. Anschließend wer...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5622,7 +5622,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `fig:topics' on page  undefined on input line 107.
 
 ! Undefined control sequence.
-l.107 ...modells ''gpt-3.5-turbo'' erzeugt \footcite
+l.107 ...modells ''gpt-3.5-turbo'' erzeugt \autocite
                                                   {website:bertopic_llm}. Di...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -11776,7 +11776,7 @@ or  <return>  to continue without it.
 
 ! Undefined control sequence.
 l.197 ...atenquelle für die Zahlenangaben dient \Ac
-                                                  {ILOSTAT} \footcite{websit...
+                                                  {ILOSTAT} \autocite{websit...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -11784,7 +11784,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.197 ... Zahlenangaben dient \Ac{ILOSTAT} \footcite
+l.197 ... Zahlenangaben dient \Ac{ILOSTAT} \autocite
                                                   {website:ilostat}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have

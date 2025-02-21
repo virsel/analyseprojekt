@@ -1,7 +1,7 @@
 \newpage
 \subsection{Evaluierung}\label{sec:evaluierung}
 
-Wie bereits in Kapitel \ref{sec:modellierung} erwähnt wurden 2 Experimente durchgeführt. Zur Evaluierung werden verschiedene Metriken und Diagramme betrachtet. Dazu gehört zum einen der \ac{MSE} als gewählte Verlustfunktion (Loss) während des Trainings, welcher anhand von Evaluierungsdaten berechnet wird und zum anderen ein Prognosediagramm und die Metriken \ac{MAE}, \ac{MSE} und \ac{MAPE} (Kap. \ref{sec:theorie_evalmetrics}), welche sich anhand von Testdaten ergeben.
+Wie bereits in Kapitel \ref{sec:modellierung} erwähnt wurden 2 Experimente durchgeführt. Zur Evaluierung werden verschiedene Metriken und Diagramme betrachtet. Dazu gehört zum einen der \ac{MSE} als gewählte Verlustfunktion (Loss) während des Trainings, welcher anhand von Evaluierungsdaten berechnet wird und zum anderen ein Prognosediagramm und die Metriken \ac{MAE}, \ac{MSE} und \ac{MAPE} (Kap. \ref{sec:theorie_evalmetrics}), welche sich bei der Verwendung von Testdaten ergeben.
 In den nachfolgenden Abschnitten werden die Ergebnisse aufgeführt und analysiert. Im Anschluss daran erfolgt eine kritische Betrachtung der Limitationen und abschließend werden gewonnene Erkenntnisse zusammengefasst. 
 
 \subsubsection{Experiment 1: GOOG-Aktie}\label{sec:evaluierung_exp1}
@@ -11,40 +11,31 @@ In Experiment $1$ wird das Basismodell mit dem Forschungsmodell verglichen, wobe
 
 In Abbildung \ref{fig:vall_loss_exp1} wird der berechnete Verlust beider Modelle gegenüber gestellt.
 \begin{figure}[H]
-	\caption{Verlust-Vergleich von Basis- und Forschungsmodell}
 	\includegraphics[width=1.\textwidth]{vall_loss_exp1}
+	\caption{Verlust-Vergleich von Basis- und Forschungsmodell, berechnet anhand von Validierungsdaten der GOOG-Aktie}
 	\label{fig:vall_loss_exp1}
-	\raggedright
-	\normalsize{Quelle: Eigene Darstellung}
-	\vspace{-1.0em}
 \end{figure}
 Die beiden Varianten weisen einen sehr ähnlichen Verlust-Kurvenverlauf auf. Es ist jedoch klar zu erkennen, dass die multimodale Variante leicht bessere Werte erreicht. Ihr Bestwert beträgt $2.14*10^{-2}$, welcher um $4,9\%$ geringer ausfällt als beim Vergleichsmodell.
 
 \paragraph*{Prognose-Metriken} 
 
-In Abbildung \ref{fig:exp1_basisprogn} und \ref{fig:exp1_forschprogn} wird der tatsächliche Preis mit der Modellvorhersage verglichen.
+In Abbildung \ref{fig:exp1_basisprogn} und \ref{fig:exp1_forschprogn} wird der tatsächliche Preis mit der Modellvorhersage verglichen. Die Berechnung der Modellvorhersage erfolgt schrittweise, wobei zur Berechnung des Preises eines Folgetages Realdaten der Vergangenheit an das jeweilige Modell übergeben werden. Demnach erfolgt technisch gesehen keine Langzeitprognose, sondern Tagesprognosen die auf echten Erfahrungswerten basieren.
 \begin{figure}[H]
-	\caption{Basismodell - Echte vs Vorhergesagte Preise}
 	\includegraphics[width=1.\textwidth]{exp1_basisprogn}
+	\caption{Basismodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp1_basisprogn}
-	\raggedright
-	\normalsize{Quelle: Eigene Darstellung}
-	\vspace{-1.0em}
 \end{figure}
 \begin{figure}[H]
-	\caption{Forschungsmodell - Echte vs Vorhergesagte Preise}
 	\includegraphics[width=1.\textwidth]{exp1_forschprogn}
+	\caption{Forschungsmodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp1_forschprogn}
-	\raggedright
-	\normalsize{Quelle: Eigene Darstellung}
-	\vspace{-1.0em}
 \end{figure}
-Auf Basis der Diagramme ist eine Verbesserung nur schwer erkennbar. Ein Anhaltspunkt ist beispielsweise die Abweichung im Zeitraum ''22-12-2015'' bis ''29-12-2015''. In Abbildung \ref{fig:exp1_forschprogn} gibt es in diesem Bereich einen deutlichen geringeren Anteil an Graufläche, als es bei Abbildung \ref{fig:exp1_basisprogn} der Fall ist.
+Auf Basis der Diagramme ist eine Verbesserung nur schwer erkennbar. Ein Anhaltspunkt ist beispielsweise die Abweichung im Zeitraum ''22-12-2015'' bis ''29-12-2015''. In Abbildung \ref{fig:exp1_forschprogn} gibt es in diesem Bereich einen deutlich geringeren Anteil an Graufläche, als es bei Abbildung \ref{fig:exp1_basisprogn} der Fall ist.
 
 Anhand der Metrik-Tabelle \ref{tbl:exp1_model_metrics} werden Qualitätsunterschiede deutlicher.
 \begin{table}[H]
 	\centering
-	\caption{Metrik-Vergleich}
+	\caption{Metrik-Vergleich zwischen Basis- und Forschungsmodell}
 	\label{tbl:exp1_model_metrics}
 	\begin{tabular}{lccc}
 		\hline
@@ -55,7 +46,7 @@ Anhand der Metrik-Tabelle \ref{tbl:exp1_model_metrics} werden Qualitätsuntersch
 		\hline
 	\end{tabular}
 \end{table}
-Die Validierungsmetriken des Forschungsmodells weisen demnach eine messbare Verbesserung nach.
+Die Validierungsmetriken des Forschungsmodells weisen demnach eine messbare Verbesserung im Vergleich zum Basismodell auf.
 
 \subsubsection{Experiment 2: Technologie-Aktienmix}\label{sec:evaluierung_exp2}
 In Experiment $2$ werden Basis- und Forschungsmodell anhand von Daten mehrerer Aktien der Technologie-Branche trainiert.
@@ -63,12 +54,9 @@ In Experiment $2$ werden Basis- und Forschungsmodell anhand von Daten mehrerer A
 \paragraph*{Verlust-Metrik} 
 In Abbildung \ref{fig:vall_loss_exp2} wird der berechnete Verlust beider Modelle gegenüber gestellt.
 \begin{figure}[H]
-	\caption{Verlust-Vergleich von Basis- und Forschungsmodell}
 	\includegraphics[width=1.\textwidth]{vall_loss_exp2}
+	\caption{Verlust-Vergleich von Basis- und Forschungsmodelll, berechnet anhand der Validierungsdaten von Technologieaktien}
 	\label{fig:vall_loss_exp2}
-	\raggedright
-	\normalsize{Quelle: Eigene Darstellung}
-	\vspace{-1.0em}
 \end{figure}
 Bereits das Basismodell weist deutlich bessere Verlust-Werte auf als beide Modelle aus Experiment $1$. Die multimodale Variante benötigt nun zur Erreichung des Bestwerts mehr Trainingsepochen als das Vergleichsmodell und weist erneut ein leicht besseres Ergebnis auf. Ihr minimaler Verlust beträgt $3.2*10^{-3}$ und ist somit um $5,9\%$ kleiner als beim Basismodell.
 
