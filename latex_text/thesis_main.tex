@@ -322,6 +322,9 @@ placement=htbp,
 % caption setup
 \input{preamble/captions}
 
+% für python code einbindung
+\input{preamble/python_code}
+
 
 %-----------------------------------
 % Start the document here:
@@ -366,8 +369,12 @@ placement=htbp,
 % dann folgende Zeile auskommentieren.
 \addcontentsline{toc}{section}{\abbreHeadingName}
 \input{abkuerzungen/acronyms}
-\newpage
-	
+
+%-----------------------------------
+% Codeverzeichnis
+%-----------------------------------
+\lstlistoflistings
+\newpage	
 
 %-----------------------------------
 % Sperrvermerk
