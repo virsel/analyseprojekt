@@ -1,15 +1,15 @@
 \newpage
 \subsection{Evaluierung}\label{sec:evaluierung}
 
-Wie bereits in Kapitel \ref{sec:modellierung} erwähnt wurden 2 Experimente durchgeführt. Zur Evaluierung werden verschiedene Metriken und Diagramme betrachtet. Dazu gehört zum einen der \ac{MSE} als gewählte Verlustfunktion (Loss) während des Trainings, welcher anhand von Evaluierungsdaten berechnet wird und zum anderen ein Prognosediagramm und die Metriken \ac{MAE}, \ac{MSE} und \ac{MAPE} (Kap. \ref{sec:theorie_evalmetrics}), welche sich bei der Verwendung von Testdaten ergeben.
-In den nachfolgenden Abschnitten werden die Ergebnisse aufgeführt und analysiert. Im Anschluss daran erfolgt eine kritische Betrachtung der Limitationen und abschließend werden gewonnene Erkenntnisse zusammengefasst. 
+Wie bereits in Kapitel \ref{sec:modellierung} erwähnt, wurden 2 Experimente durchgeführt. Zur Evaluierung werden verschiedene Metriken und Diagramme betrachtet. Dazu gehören zum einen der \ac{MSE} als gewählte Verlustfunktion (Loss) während des Trainings, welcher anhand von skalierten Evaluierungsdaten berechnet wird und zum anderen ein Prognosediagramm und die Metriken \ac{MAE}, \ac{MSE} und \ac{MAPE} (Kap. \ref{sec:theorie_evalmetrics}), welche sich bei der Verwendung von Testdaten ergeben. Für diese Metrik-Berechnungen und das Prognosediagramm werden nicht-skalierte Preise verwendet.
+In den nachfolgenden Abschnitten werden die Ergebnisse aufgeführt und analysiert. Im Anschluss daran erfolgt eine Zusammenfassung der gewonnenen Erkenntnisse. 
 
 \subsubsection{Experiment 1: GOOG-Aktie}\label{sec:evaluierung_exp1}
 In Experiment $1$ wird das Basismodell mit dem Forschungsmodell verglichen, wobei lediglich Daten der GOOG-Aktie berücksichtigt werden. 
 
 \paragraph*{Verlust-Metrik} 
 
-In Abbildung \ref{fig:vall_loss_exp1} wird die berechnete Verlust-Entwicklung während des Trainings beider Modelle gegenüber gestellt.
+In Abbildung \ref{fig:vall_loss_exp1} wird die berechnete Verlustentwicklung während des Trainings beider Modelle gegenübergestellt.
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{vall_loss_exp1}
 	\caption{Experiment 1: Verlust-Vergleich von Basis- und Forschungsmodell, berechnet anhand von Validierungsdaten der GOOG-Aktie}
@@ -19,15 +19,15 @@ Die beiden Varianten weisen einen sehr ähnlichen Verlust-Kurvenverlauf auf. Es 
 
 \paragraph*{Prognose-Metriken} 
 
-In Abbildung \ref{fig:exp1_basisprogn} und \ref{fig:exp1_forschprogn} wird der tatsächliche Preis mit der Modellvorhersage verglichen. Die Berechnung der Modellvorhersage erfolgt schrittweise, wobei zur Berechnung des Preises eines Folgetages Realdaten der Vergangenheit an das jeweilige Modell übergeben werden. Demnach erfolgt technisch gesehen keine Langzeitprognose, sondern Tagesprognosen die auf echten Erfahrungswerten basieren.
+In den Abbildungen \ref{fig:exp1_basisprogn} und \ref{fig:exp1_forschprogn} wird der tatsächliche Preis mit der Modellvorhersage verglichen. Die Berechnung der Modellvorhersage erfolgt schrittweise, wobei zur Berechnung des Preises eines Folgetages Realdaten der Vergangenheit an das jeweilige Modell übergeben werden. Demnach erfolgt technisch gesehen keine Langzeitprognose, sondern Tagesprognosen, die auf echten Erfahrungswerten basieren.
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{exp1_basisprogn}
-	\caption{Experiment 1: Basismodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
+	\caption{Experiment 1: Basismodell - echter vs. vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp1_basisprogn}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{exp1_forschprogn}
-	\caption{Experiment 1: Forschungsmodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
+	\caption{Experiment 1: Forschungsmodell - echter vs. vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp1_forschprogn}
 \end{figure}
 Auf Basis der Diagramme ist eine Verbesserung nur schwer erkennbar. Ein Anhaltspunkt ist beispielsweise die Abweichung im Zeitraum ''22-12-2015'' bis ''29-12-2015''. In Abbildung \ref{fig:exp1_forschprogn} gibt es in diesem Bereich einen deutlich geringeren Anteil an Graufläche, als es bei Abbildung \ref{fig:exp1_basisprogn} der Fall ist.
@@ -52,26 +52,26 @@ Die Metriken des Forschungsmodells weisen eine messbare Verbesserung im Vergleic
 In Experiment $2$ werden Basis- und Forschungsmodell anhand von Daten mehrerer Aktien der Technologie-Branche trainiert und anschließend anhand von Daten der GOOG-Aktie hinsichtlich Prognose-Qualität getestet.
 
 \paragraph*{Verlust-Metrik} 
-In Abbildung \ref{fig:vall_loss_exp2} wird die berechnete Verlust-Entwicklung während des Trainings beider Modelle gegenüber gestellt.
+In Abbildung \ref{fig:vall_loss_exp2} wird die berechnete Verlustentwicklung während des Trainings beider Modelle gegenübergestellt.
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{vall_loss_exp2}
-	\caption{Experiment 2: Verlust-Vergleich von Basis- und Forschungsmodelll, berechnet anhand der Validierungsdaten von Technologieaktien}
+	\caption{Experiment 2: Verlustvergleich von Basis- und Forschungsmodell, berechnet anhand der Validierungsdaten von Technologieaktien}
 	\label{fig:vall_loss_exp2}
 \end{figure}
-Bereits das Basismodell weist deutlich bessere Verlust-Werte auf als beide Modelle aus Experiment $1$. Die multimodale Variante benötigt nun zur Erreichung des Bestwerts mehr Trainingsepochen als das Vergleichsmodell und weist erneut ein leicht besseres Ergebnis auf. Ihr minimaler Verlust beträgt $3.2*10^{-3}$ und ist somit um $5,9\%$ kleiner als beim Basismodell.
+Bereits das Basismodell weist deutlich bessere Verlustwerte auf als beide Modelle aus Experiment $1$. Das multimodale Forschungsmodell benötigt nun zur Erreichung des Bestwerts mehr Trainingsepochen als das Vergleichsmodell und weist erneut ein leicht besseres Ergebnis auf. Ihr minimaler Verlust beträgt $3.2*10^{-3}$ und ist somit um $5,9\%$ kleiner als beim Basismodell.
 
 \paragraph*{Prognose-Metriken} 
 
 Aufgrund der Tatsache, dass die Modelle in diesem Experiment mit Daten mehrerer Aktien trainiert werden, lässt sich für jede involvierte Aktie ein Prognosediagramm erstellen. Für die Vergleichbarkeit mit Experiment $1$ erfolgt eine Fokussierung auf die GOOG-Aktie.
-In Abbildung \ref{fig:exp2_basisprogn} und \ref{fig:exp2_forschprogn} wird daher erneut, bezogen auf die GOOG-Aktie, der echte Preis mit Tagesprognosen verglichen.
+In den Abbildungen \ref{fig:exp2_basisprogn} und \ref{fig:exp2_forschprogn} wird daher erneut, bezogen auf die GOOG-Aktie, der echte Preis mit Tagesprognosen verglichen.
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{exp2_basisprogn}
-	\caption{Experiment 2: Basismodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
+	\caption{Experiment 2: Basismodell - echter vs. vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp2_basisprogn}
 \end{figure}
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{exp2_forschprogn}
-	\caption{Experiment 2: Forschungsmodell - echter vs vorhergesagter Preis basierend auf Tagesprognosen}
+	\caption{Experiment 2: Forschungsmodell - echter vs. vorhergesagter Preis basierend auf Tagesprognosen}
 	\label{fig:exp2_forschprogn}
 \end{figure}
 Beim direkten Vergleich beider Diagramme fällt auf, dass in Diagramm \ref{fig:exp2_basisprogn} die Positionen vorhergesagter Preise deutlich stärker in vertikaler Richtung abweichen als in Abbildung \ref{fig:exp2_forschprogn}. Das Forschungsmodell überzeugt also mit Preisvorhersagen nahe am echten Wert.
@@ -89,16 +89,12 @@ Mit Hilfe der Metrik-Tabelle \ref{tbl:exp2_model_metrics} werden Qualitätsunter
 		\hline
 	\end{tabular}
 \end{table}
-Wie bereits durch die Verlust-Metrik angedeutet, erreicht das Basismodell bessere Werte als beide Modelle aus Experiment $1$. Dies spiegelt sich noch deutlicher in den Testmetriken aus Tabelle \ref{tbl:exp2_model_metrics} wieder. Darüberhinaus konnte auch in diesem Fall mit Hilfe des Forschungsmodells das Ergebnis des Basismodells übertroffen werden.
-
-\subsubsection{Limitationen}\label{sec:evaluierung_limits}
-Das Ziel von Aktienprognosen mit Hilfe von Deep Learning besteht natürlich darin, anhand von Modellausgaben auf lange Sicht am Aktienmarkt Gewinne zu realisieren. Die Modelle aus Experiment $1$ sind, aufgrund der hohen Anforderung an den Umfang der Trainingsdaten, lediglich auf bereits langjährig etablierte Aktien anwendbar. Experiment $2$ lässt sich in einer nachfolgenden Arbeit dahingehend erweitern, dass Daten etablierter und neuer Aktien gemischt für das Training verwendet werden. Doch in beiden Fällen ist für eine optimale Vorhersage das Bestehen der Aktie seid 30 Markttagen in die Vergangenheit notwendig. 
-Eine weitreichendere Limitation besteht darin, dass die Preisvorhersagen eine Trägheit aufweisen. Das heißt, dass in Phasen von Preisanstieg höchstwahrscheinlich auch ein weiterer Anstieg prognostiziert wird. Die Modelle weisen deutlich Schwierigkeiten bei der Vorhersage von Richtungsänderungen auf. Doch genau diese Fähigkeit ist für ein erfolgreiches Handeln am Aktienmarkt wichtig. 
-Eine weitere substanzielle Limitation besteht darin, dass lediglich der Preis eines Folgetages anhand von echten Preisen 30 vorangegangener Markttage vorhergesagt wurde. Die Modelle wurden nicht auf mehrtägige Prognosen getestet.  
+Wie bereits durch die Verlustmetrik angedeutet, erreicht das Basismodell bessere Werte als beide Modelle aus Experiment $1$. Dies spiegelt sich noch deutlicher in den Testmetriken aus Tabelle \ref{tbl:exp2_model_metrics} wider. Darüber hinaus konnte auch in diesem Fall mit Hilfe des Forschungsmodells das Ergebnis des Basismodells übertroffen werden.
 
 \subsubsection{Erkenntnisse}\label{sec:evaluierung_insights}
-Anhand der Experimente dieser Arbeit lassen sich nützliche Erkenntnisse Ableiten.
-Im Vergleich zum Basismodell aus Experiment $1$ konnten Verbesserungen sowohl durch Integrierung von Stimmungsdaten (Exp. $1$ Forschungsmodell) als auch Aktienbündel (Exp $2$ Basismodell) erzielt werden. Zweiteres brachte jedoch den größeren Erfolg. Eine tiefgründige Extraktion von Informationen bezüglich komplexer Beziehungen zwischen Wertpapieren kann daher als sehr gewinnbringend für Aktienprognosen eingestuft werden. 
+Anhand der durchgeführten Experimente lassen sich nützliche Erkenntnisse ableiten, welche in diesem Abschnitt zusammengefasst werden.
+Es können zwei Strategien abgeleitet werden, welche eine Verbesserung der Aktienprognose-Qualität ermöglichen. Zum einen die Integration von Stimmungsdaten und zum anderen die Verwendung von Aktienbündeln. Die Verwendung von mehreren Aktien zur Modellierung von Aktienpreisen hat sich als sehr effektiv erwiesen. So konnte die \ac{MSE}-Metrik der Tabelle \ref{tbl:exp1_model_metrics} in Tabelle \ref{tbl:exp2_model_metrics} beim Basismodell um $47,5\%$ und beim Forschungsmodell um $46,2\%$ verbessert werden. Auch die Strategie der Integration von Stimmungsdaten zeigte sich als gewinnbringend. So konnte die \ac{MSE}-Metrik des Basismodells aus Experiment $1$ mit Hilfe des Forschungsmodells um $28,3\%$ verbessert werden und in Experiment $2$ um $26,5\%$.
+Den größten Effekt hatte damit die Einbindung von Daten mehrerer Aktien und somit kann eine tiefgründige Extraktion von Informationen bezüglich komplexer Beziehungen zwischen Wertpapieren als sehr gewinnbringend für Aktienprognosen eingestuft werden.
 Bei zusätzlicher Hinzunahme von Stimmungsdaten wurden die Ergebnisse noch weiter verbessert (Exp $2$ Forschungsmodell).
 
 
