@@ -36,6 +36,7 @@
 \usepackage[a4paper, left=4cm, right=2cm, top=4cm, bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{colortbl}
+
 \usepackage[capposition=top]{floatrow}
 \usepackage{array}
 \usepackage{float}      %Positionierung von Abb. und Tabellen mit [H] erzwingen
@@ -321,6 +322,8 @@ placement=htbp,
 % caption setup
 \input{preamble/captions}
 
+% für python code einbindung
+\input{preamble/python_code}
 
 
 %-----------------------------------
@@ -366,8 +369,12 @@ placement=htbp,
 % dann folgende Zeile auskommentieren.
 \addcontentsline{toc}{section}{\abbreHeadingName}
 \input{abkuerzungen/acronyms}
-\newpage
-	
+
+%-----------------------------------
+% Codeverzeichnis
+%-----------------------------------
+\lstlistoflistings
+\newpage	
 
 %-----------------------------------
 % Sperrvermerk
@@ -427,8 +434,11 @@ placement=htbp,
 % noch weitere Arten von Zusammenfassungen eines Literaturverzeichnisse zu
 % erzeugen.
 % Beispiel: [type=book,type=article]
-\printbibliography[heading=bibintoc,title={\langde{Quellenverzeichnis}\langen{Bibliography}}]
+% \printbibliography[heading=bibintoc,title={\langde{Quellenverzeichnis}\langen{Bibliography}}]
 
+\printbibliography[nottype=misc, heading=bibintoc, nottype=online]
+\printbibliography[keyword=extra, title={Sonstige Quellen}]
+\newpage
 % ehrenwörtliche Erklärung
 \pagenumbering{gobble} % dies entfernt die Seitenzahl auf den nachfolgenden Seiten, hier kommt dann die EE hin, ob dreimal müssen wir noch besprechen!
 \input{kapitel/ee}

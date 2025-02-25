@@ -13,7 +13,7 @@ Es gibt jedoch auch Abweichungen, wie im Fall der Aktie ''BABA'', bei der Kursda
 Im Rahmen dieser Arbeit werden lediglich Aktien der Branche Technologie einbezogen (Kap. \ref{sec:theorie_data_understanding}), welche im entsprechenden Zeitraum unter den Top-10-Aktien nach Handelsvolumen vorkommen. 
 
 \subsubsection*{Kursdaten}\label{sec:data_ingestion_stockdata}
-Zu jeder Aktie liegt eine \ac{csv}-Datei vor. In Abbildung \ref{fig:goog_kursdaten} werden die inkludierten Metriken dargestellt.
+Zu jeder Aktie liegt eine \ac{CSV}-Datei vor. In Abbildung \ref{fig:goog_kursdaten} werden die inkludierten Metriken dargestellt.
 \newpage
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{goog_kursdaten}
@@ -33,11 +33,11 @@ Zu jeder Aktie liegt für jeden Tag im jeweiligen Zeitraum eine Datei mit einer 
 
 \subsection{Datenvorverarbeitung}\label{sec:data_prep}
 
-Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten. Während des 1. Arbeitsschritts werden die Daten aller Aktien in einer \ac{csv}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Füllwerte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
+Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten. Während des 1. Arbeitsschritts werden die Daten aller Aktien in einer \ac{CSV}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Füllwerte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
 
 \subsubsection*{1. Zeitliche Ausrichtung}
 
-In diesem Arbeitsschritt werden pro Aktie Kursdaten und Tweets zu einer \ac{csv}-Datei zusammengefasst. Dabei werden zunächst alle Kursdaten-Einträge entfernt, deren Erstellungsdatum außerhalb des Zeitraums liegt, für den Tweets vorliegen. Da diese Abweichung auch entgegengesetzt auftreten kann, werden auch alle Kurznachrichten gelöscht, deren Erstellungsdatum sich außerhalb des Zeitraums der Kursdaten befindet. Abbildung \ref{fig:data_prep_step1} zeigt eine resultierende Datenzeile.
+In diesem Arbeitsschritt werden pro Aktie Kursdaten und Tweets zu einer \ac{CSV}-Datei zusammengefasst. Dabei werden zunächst alle Kursdaten-Einträge entfernt, deren Erstellungsdatum außerhalb des Zeitraums liegt, für den Tweets vorliegen. Da diese Abweichung auch entgegengesetzt auftreten kann, werden auch alle Kurznachrichten gelöscht, deren Erstellungsdatum sich außerhalb des Zeitraums der Kursdaten befindet. Abbildung \ref{fig:data_prep_step1} zeigt eine resultierende Datenzeile.
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{data_prep_step1}
 	\caption{GOOG-Datenzeile mit vereinigten Kurs- und Tweetdaten}
@@ -107,18 +107,18 @@ Zusätzlich zu Stimmungsmetriken soll pro Tweet-Liste ein repräsentativer Embed
 Dazu werden zunächst alle Tweets zu einem Text zusammengefasst, wobei das Sonderzeichen ''[SEP]'' als Bindeglied dient. Anschließend wird dem String das Zeichen ''[CLS]'' vorangestellt. Dies ist eine, seitens des zugrundeliegenden ''BERT''-Modells, empfohlene Vorgehensweise für Klassifikationsaufgaben, weshalb das Folgemodell ''FinancialBERT'' auch mit dieser Methode optimiert wurde \autocite[Kap. 5.3]{hazourli2022financialbert}.
 Anschließend wird der kombinierte Text zu einer Token-ID-Liste umgewandelt (Code \ref{lst:feature_tweettokens}). 
 \begin{lstlisting}[caption={Umwandlung von Tweets zu Token-IDs}, label=lst:feature_tweettokens, captionpos=t]
-	# Verbinden der Tweets mit Special-Token zu einem Text
-	text = ' [SEP] '.join(tweet_list)
-	# Klassifikations-Sonderzeichen voranstellen
-	text = '[CLS] ' + text
-	
-	# Text zu Token-IDs umwandeln
-	inputs = tokenizer(
-	text, 
-	padding=True, 
-	truncation=True, 
-	return_tensors="pt"
-	)
+# Verbinden der Tweets mit Special-Token zu einem Text
+text = ' [SEP] '.join(tweet_list)
+# Klassifikations-Sonderzeichen voranstellen
+text = '[CLS] ' + text
+
+# Text zu Token-IDs umwandeln
+inputs = tokenizer(
+text, 
+padding=True, 
+truncation=True, 
+return_tensors="pt"
+)
 \end{lstlisting}
 
 Die Argumente \texttt{padding} und \texttt{truncation} in Zeile $8-9$ von Code \ref{lst:feature_tweettokens} stellen sicher, dass falls das Resultat die maximale Kontextlänge von $512$ Token unter- respektive überschreitet, entweder mit einem Sonderzeichen aufgefüllt wird oder ein entsprechendes Zuschneiden auf 512 IDs erfolgt.
@@ -126,7 +126,7 @@ Im letzten Schritt werden die Tokens an das Sprachmodell übergeben, welches mit
 Während des iterativen \ac{CRISP-DM}-Prozesses hat sich herausgestellt, dass ein Zuschneiden der IDs bei Längenüberschreitung für eingesetzte neuronale Netzwerke (Kap. \ref{sec:modellierung}) besser funktioniert als das Aufteilen in Chunks mit anschließender Durchschnittsberechnung der Teil-Embeddings.
 
 \subsubsection*{Ergebnis}
-Der resultierende Datenkorpus ist im \ac{csv}-Format gespeichert und enthält eine Kombination aus Kurs- und Stimmungsdaten von 10 Aktien verteilt auf $5470$ Zeilen (\ref{fig:data_prep_step4}).
+Der resultierende Datenkorpus ist im \ac{CSV}-Format gespeichert und enthält eine Kombination aus Kurs- und Stimmungsdaten von 10 Aktien verteilt auf $5470$ Zeilen (\ref{fig:data_prep_step4}).
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{data_prep_step4}
 	\caption{GOOG-Datenzeile im Datenkorpus}
