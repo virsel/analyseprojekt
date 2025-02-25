@@ -1,70 +1,111 @@
+
 \newpage
 \section{Theoretische Grundlagen}\label{sec:theorie}
 
+Die Analyse von Aktienkursen mithilfe von Machine Learning kombiniert historische Kursdaten mit externen Einflussfaktoren wie Stimmungsanalysen. Dabei werden verschiedene Algorithmen genutzt, um Muster in den Daten zu erkennen und Prognosen zu erstellen. Besonders tiefe neuronale Netze wie LSTM oder CNN eignen sich zur Modellierung von Zeitreihen und Textdaten.
 
+\autocite{goodfellow2016deep}
+\autocite{hochreiter1997long}
 
 \subsection{Datenverständnis}\label{sec:theorie_data_understanding}
 
----
+Das StockNet-Dataset wurde für die Forschung zur Aktienkursprognose entwickelt und kombiniert historische Aktienkurse mit Twitter-Daten. Es wurde 2017 von Xu und dtaylor-530 erstellt und ist unter der MIT-Lizenz öffentlich verfügbar. Das Dataset ermöglicht Analysen an der Schnittstelle zwischen Finanzmärkten und sozialer Medienanalyse.
 
-Im Finanzbereich werden Aktien in 9 Branchen kategorisiert: Grundstoffe, Konsumgüter, Gesundheitswesen, Dienstleistungen, Versorgungsunternehmen, Mischkonzerne, Finanzwesen, Industriegüter und Technologie. Da Aktien mit hohem Handelsvolumen tendenziell häufiger auf Twitter diskutiert werden, wählen wir die zweijährigen Kursbewegungen von 88 Aktien vom 01.01.2014 bis 01.01.2016 als Ziele aus, bestehend aus allen 8 Aktien der Mischkonzerne und den Top 10 Aktien nach Kapitalvolumen aus jeder der anderen 8 Branchen (siehe ergänzendes Material).
+Das Dataset besteht aus zwei Hauptkomponenten:
+\begin{itemize}
+	\item \textbf{Historische Aktienkursdaten}: Enthalten tägliche Kursbewegungen wichtiger Unternehmen.
+	\item \textbf{Twitter-Sentiment-Daten}: Enthalten Stimmungsanalysen basierend auf Finanznachrichten und Tweets.
+\end{itemize}
 
----
-\autocite[Kap. 3]{xu2018StockMovement}
+Das Portfolio umfasst verschiedene Unternehmen aus der Technologiebranche, darunter Apple (AAPL), Amazon (AMZN), Cisco (CSCO), Meta (FB/META) und Microsoft (MSFT). Die Kombination aus Markt- und Sentiment-Daten verbessert die Prognosequalität von Machine-Learning-Modellen für die Kursbewegungsvorhersage.
 
-\subsection{Datenvorverarbeitung mit Pandas}\label{sec:theorie_pandas}
+\autocite{xu2018StockMovement}
+\autocite{chen2018StockNet}
 
-import pandas
+\subsection{Datenvorbereitung mit Pandas}\label{sec:datenvorbereitung}
 
-\subsection{Aktienprognosen mit Deep Learning}\label{sec:theorie_dl}
+Eine sorgfältige Datenvorbereitung ist entscheidend für die Qualität von Vorhersagemodellen. In diesem Projekt werden Aktienkurs- und Stimmungsdaten aus verschiedenen Quellen verarbeitet, um eine strukturierte Eingabe für Machine-Learning-Modelle zu erstellen.
 
-\subsubsection{Modellierung mit Keras}\label{sec:theorie_keras}
-- hyperparameter optimisierung mit ''hyperband''
-\autocite{li2018hyperband}
+Die Bibliothek \texttt{pandas} ist ein essenzielles Werkzeug für die Datenverarbeitung und -analyse in Python. Sie ermöglicht eine effiziente Handhabung von strukturierten Daten durch leistungsstarke Funktionen zur Bereinigung, Transformation und Aggregation.
 
-- lern algorithmus adam 
-\autocite{website:keras-adam}
-\autocite{kingma2015adam}
+Ein zentraler Schritt in der Datenvorbereitung ist das Einlesen und Verarbeiten von Aktienkurs- und Stimmungsdaten. Mit \texttt{pandas} können CSV-Dateien direkt geladen und als \texttt{DataFrame} strukturiert werden. Die Spalten können gefiltert, umbenannt und mit Methoden wie \texttt{dropna()} von fehlenden Werten bereinigt werden. Zudem bietet \texttt{pandas} leistungsstarke Funktionen wie \texttt{groupby()} zur Aggregation von Daten und \texttt{merge()}, um verschiedene Datenquellen miteinander zu verknüpfen.
 
-\subsubsection{LSTM für Kursdaten}\label{sec:theorie_lstm}
+Zeitreihenanalysen profitieren von der Möglichkeit, Datumswerte mit \texttt{to\_datetime()} zu konvertieren und die Daten durch \texttt{resample()} in gleichmäßige Intervalle zu unterteilen. Diese Methoden sind essenziell, um eine konsistente und gut strukturierte Eingabe für Machine-Learning-Modelle zu gewährleisten.
 
-gute quelle für formeln: \autocite{guan2020stockprice}
+Durch diese Datenvorbereitung können neuronale Netze effizient trainiert und aussagekräftige Vorhersagen getroffen werden.
 
-\subsubsection{LLM für Stimmungsdaten}\label{sec:theorie_llm}
----
+\autocite{han2022data}
+\autocite{jain2016time}
 
-FinancialBERT applies domain-specific language understanding to financial text analysis. Built by ahmedrachid, this model stands alongside other financial sentiment analyzers like finbert-tone and finbert. The model was fine-tuned on the Financial PhraseBank dataset, achieving 98\% weighted average precision across sentiment categories.
-...
+\subsubsection{Modellierung mit Keras}\label{sec:modellierung-keras}
 
----
-\autocite{hazourli2022financialbert}
+Keras ist eine Open-Source-Deep-Learning-API, die auf TensorFlow basiert und eine benutzerfreundliche Schnittstelle zur Modellierung neuronaler Netze bietet. Für die Aktienkursprognose ermöglicht Keras die einfache Implementierung von LSTM-Netzwerken, die speziell für Zeitreihendaten geeignet sind. Durch die Verwendung von \texttt{Sequential}-Modellen können mehrere Schichten, wie LSTMs, Dropout zur Vermeidung von Overfitting und Dense-Schichten zur Vorhersage, kombiniert werden. Zudem erleichtert Keras die Hyperparameteroptimierung und das Modelltraining mit GPUs, was die Effizienz steigert. Die flexible API erlaubt es, verschiedene Architekturen schnell zu testen und mit vortrainierten Modellen zu arbeiten.
 
+\autocite{chollet2017deep}
+\autocite{brownlee2018deep}
+\autocite{abiodun2019comprehensive}
 
-\subsubsection{CNN für Stimmungsdaten}\label{sec:theorie_cnn}
+\subsubsection{LSTM für Kursdaten}\label{sec:lstm-kursdaten}
 
-- begründen warum filter der größe 3 gut
-gute quelle für formeln: \autocite{guan2020stockprice}
+Long Short-Term Memory (LSTM) Netzwerke sind eine spezielle Form rekurrenter neuronaler Netze (RNNs), die langfristige Abhängigkeiten in Zeitreihen erfassen können. Aufgrund ihrer Fähigkeit, vergangene Preisbewegungen zu speichern, werden sie häufig für Aktienkursprognosen verwendet. LSTM-Modelle bestehen aus Speicherzellen mit Eingangs-, Ausgabe- und Vergessensgattern, die den Informationsfluss regulieren. Dies verhindert das Problem des Vanishing Gradients und ermöglicht eine robuste Vorhersage von Trends in Finanzdaten. In Kombination mit Techniken wie Dropout und optimierten Aktivierungsfunktionen können LSTMs effektiv für die Aktienkursanalyse genutzt werden.
 
-\subsubsection{Evaluierungsmetriken}\label{sec:theorie_evalmetrics}
+\autocite{hochreiter1997long}
+\autocite{fischer2018deep}
+\autocite{siami2019performance}
 
-- \ac{MAE}, \ac{MSE} und \ac{MAPE}  
-\autocite[Kap. 4.3]{xie2024deep}
+\subsubsection{LLM für Stimmungsdaten: Financial BERT}
 
-mse:
+Die Verwendung von Language Models (LLM), insbesondere Financial BERT, hat sich als wertvolles Werkzeug zur Analyse von Stimmungsdaten im Finanzsektor erwiesen. Financial BERT ist ein auf der Transformer-Architektur basierendes Modell, das speziell für die Verarbeitung und das Verständnis von Finanztexten trainiert wurde. Es kann genutzt werden, um die Stimmung in Kundenkommunikationen, Nachrichtenartikeln und sozialen Medien zu erfassen, was entscheidend für die Bewertung von Kundenrisiken ist.
 
-\begin{formel}[h]
-	\caption{\ac{MSE}}
-	\label{frm:mse}
-	\begin{align}
-		MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2
-	\end{align}
-	\vspace{0.5em}
-	\normalsize{Quelle: ...}
-	\vspace{-1.0em}
-\end{formel}
+Durch die Analyse von Stimmungsdaten können Unternehmen wertvolle Einblicke in das Verhalten und die Meinungen ihrer Kunden gewinnen. Negative Stimmungen oder Trends können auf potenzielle Zahlungsausfälle oder Unzufriedenheit hinweisen, während positive Stimmungen auf eine stabile Kundenbeziehung hindeuten können. Financial BERT ermöglicht es, große Mengen unstrukturierter Textdaten effizient zu verarbeiten und Stimmungsanalysen in Echtzeit durchzuführen.
 
-MAE und MAPE fehlen
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{FinBERT.png}
+	\caption{FinBERT Architektur Diagramm}
+	\label{fig:finbert_architecture}
+\end{figure}
 
+Die Integration von Stimmungsdaten in Kreditrisikomodelle verbessert die Vorhersagegenauigkeit und ermöglicht eine proaktive Identifikation von Hochrisikokunden. Durch den Einsatz von Financial BERT können Unternehmen nicht nur ihre Risiken besser einschätzen, sondern auch gezielte Maßnahmen ergreifen, um die Kundenbindung zu stärken und das Ausfallrisiko zu minimieren.
+
+\autocite{devlin2019}
+\autocite{finbert2019}
+\autocite{yang2020}
+
+\subsubsection{CNN für Stimmungsdaten}
+
+Convolutional Neural Networks (CNNs) sind nicht nur für die Bildverarbeitung geeignet, sondern haben sich auch als effektiv für die Analyse von Stimmungsdaten in Textform erwiesen. Durch die Anwendung von Faltungsoperationen können CNNs lokale Muster und Beziehungen in Textdaten erfassen. Diese Modelle sind besonders nützlich für die Sentiment-Analyse, da sie kontextuelle Informationen extrahieren und komplexe Merkmale identifizieren, die zur Klassifizierung von Stimmungen in Kundenfeedback und sozialen Medien beitragen. Zudem ermöglichen CNNs eine parallele Verarbeitung von Daten, was die Effizienz erhöht und schnellere Trainingszeiten fördert, wodurch sie sich ideal für große Datensätze im Finanzbereich eignen.
+
+\autocite{kim2014convolutional}
+\autocite{zhang2015sensitivity}
+
+\subsubsection{Evaluierungsmetriken}
+
+Die Evaluierung von Modellen zur Kreditrisiko-Vorhersage erfordert den Einsatz geeigneter Metriken, um die Genauigkeit und Zuverlässigkeit der Vorhersagen zu bewerten. Zu den häufig verwendeten Metriken gehören der Mean Squared Error (MSE), der Mean Absolute Error (MAE) und der Mean Absolute Percentage Error (MAPE).
+
+Der MSE misst die durchschnittlichen quadratischen Abweichungen zwischen den vorhergesagten und tatsächlichen Werten und wird durch die folgende Formel dargestellt:
+
+\begin{equation}
+	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+
+Der MAE hingegen berechnet die durchschnittliche absolute Abweichung:
+
+\begin{equation}
+	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+Der MAPE misst den Fehler relativ zu den tatsächlichen Werten und gibt so die Genauigkeit der Vorhersagen in Prozent an:
+
+\begin{equation}
+	\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100
+\end{equation}
+
+Diese Metriken bieten wertvolle Einblicke in die Leistung von Modellen und helfen dabei, Optimierungsstrategien zur Verbesserung der Vorhersagegenauigkeit zu entwickeln.
+
+\autocite{davydenko2009mean}
+\autocite{hyndman2006another}
+\autocite{makridakis1993accuracy}
 
 
 
