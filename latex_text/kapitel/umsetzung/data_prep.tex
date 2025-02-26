@@ -3,7 +3,7 @@
 Die Umsetzung erfolgt in logischen Schritten und orientiert sich dabei am Prozessmodell \ac{CRISP-DM}.  
 
 \subsection{Datenbeschaffung}\label{sec:data_ingestion}
-Aufgrund dessen, dass Aktienprognosen mit multimodalen Daten ein sehr belebtes Forschungsfeld sind, gibt es bereits viele sinnvoll zusammengestellte Datensätze. Um diesen Vorteil auszuschöpfen, wird ein anerkannter Finanzdatensatz gewählt, welcher in mehreren Wissenschaftsarbeiten zum Einsatz kam \autocite{xu2018StockMovement}\autocite{Xu2020StockMovement}\autocite{zhang2022transformer}. Die Daten werden auf GitHub unter der MIT-Lizenz zur Verfügung gestellt \autocite{website:stocknet-dataset}. 
+Aufgrund dessen, dass Aktienprognosen mit multimodalen Daten ein sehr belebtes Forschungsfeld sind, gibt es bereits viele sinnvoll zusammengestellte Datensätze. Um diesen Vorteil auszuschöpfen, wird ein anerkannter Finanzdatensatz gewählt, welcher in mehreren Wissenschaftsarbeiten zum Einsatz kam \autocite{xu2018StockMovement}\autocite{Xu2020StockMovement}\autocite{zhang2022transformer}.
 
 Der Datensatz umfasst Kursdaten und Tweets zu 88 Aktien, wobei jeweils eine Rohfassung und eine vorverarbeitete Variante bereitgestellt wird. In dieser Arbeit wird in beiden Fällen die Rohfassung verwendet. 
 
@@ -33,7 +33,7 @@ Zu jeder Aktie liegt für jeden Tag im jeweiligen Zeitraum eine Datei mit einer 
 
 \subsection{Datenvorverarbeitung}\label{sec:data_prep}
 
-Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten. Während des 1. Arbeitsschritts werden die Daten aller Aktien in einer \ac{CSV}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Füllwerte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
+Die Datenvorverarbeitung erfolgt logisch in $4$ Teilschritten und wird mit der Python-Bibliothek \texttt{pandas} durchgeführt (Kap. \ref{sec:datenvorbereitung_pandas}). Während des 1. Arbeitsschritts werden die Daten aller Aktien in einer \ac{CSV}-Datei zusammengefasst, wobei zur Unterscheidung eine zusätzliche Datenspalte mit Marktkürzel als Füllwerte hinzugefügt wird (Abb. \ref{fig:data_prep_step1}, Spalte ''stock'').
 
 \subsubsection*{1. Zeitliche Ausrichtung}
 
@@ -65,7 +65,7 @@ Dieser Arbeitsschritt sieht vor, dass pro Datenzeile anhand der enthaltenen Twee
 df['num_tweets'] = df['tweets'].apply(len)
 \end{lstlisting}
 
-Anschließend wird für jede Tweet-Liste eine durchschnittliche Quantifizierung der Metriken ''positiv'' und ''negative'' berechnet. Hierfür wird das vortrainierte Sprachmodell ''FinancialBERT'' eingesetzt (Kap. \ref{sec:theorie_llm}). Die genaue Funktionsweise ist im Code \ref{lst:feature_sent} beschrieben.
+Anschließend wird für jede Tweet-Liste eine durchschnittliche Quantifizierung der Metriken ''positiv'' und ''negative'' berechnet. Hierfür wird das vortrainierte Sprachmodell ''FinancialBERT'' eingesetzt (Kap. \ref{sec:data_prep_finbert}). Die genaue Funktionsweise ist im Code \ref{lst:feature_sent} beschrieben.
 \begin{lstlisting}[caption={Stimmung quantifiziert als Positiv/Negativ-Score}, label=lst:feature_sent, captionpos=t]
 # Initialisierung des Sprachmodells
 model = BertForSequenceClassification.from_pretrained("<Pfad>")
@@ -99,7 +99,7 @@ def comp_sent(texts):
 		'negative': res[1]
 	}
 \end{lstlisting}
-Zusammenfassend wird für jede Tweet-Liste ein Durchschnittswert für die Metriken ''positiv'' und ''negative'' berechnet. Diese Werte werden in den Datenkorpus eingefügt (Abb. \ref{fig:data_prep_step4}).
+Das Ergebnis dieser Operationen wird strukturiert als Spalten \texttt{num\_tweets}, \texttt{positive} und \texttt{negative} in den Datenkorpus eingefügt (Abb. \ref{fig:data_prep_step4}).
 
 
 \subsubsection*{4. Stimmung-Embeddings}
@@ -120,7 +120,6 @@ truncation=True,
 return_tensors="pt"
 )
 \end{lstlisting}
-
 Die Argumente \texttt{padding} und \texttt{truncation} in Zeile $8-9$ von Code \ref{lst:feature_tweettokens} stellen sicher, dass falls das Resultat die maximale Kontextlänge von $512$ Token unter- respektive überschreitet, entweder mit einem Sonderzeichen aufgefüllt wird oder ein entsprechendes Zuschneiden auf 512 IDs erfolgt.
 Im letzten Schritt werden die Tokens an das Sprachmodell übergeben, welches mit berechneten Embeddings antwortet.
 Während des iterativen \ac{CRISP-DM}-Prozesses hat sich herausgestellt, dass ein Zuschneiden der IDs bei Längenüberschreitung für eingesetzte neuronale Netzwerke (Kap. \ref{sec:modellierung}) besser funktioniert als das Aufteilen in Chunks mit anschließender Durchschnittsberechnung der Teil-Embeddings.

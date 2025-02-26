@@ -1,26 +1,16 @@
 \newpage
 \subsection{Deployment}\label{sec:modellierung}
 
-Das Deployment von Machine-Learning-Modellen ist ein entscheidender Schritt, um die entwickelten Modelle in der Praxis anzuwenden und deren Nutzen zu maximieren. Bei der Vorhersage von Aktienkursen spielt die Implementierung von Modellen eine zentrale Rolle. Der Prozess umfasst mehrere Phasen, von der Vorbereitung der Produktionsumgebung bis hin zur Überwachung der Modellleistung.
+Das Deployment von \ac{DL}-Modellen ist ein entscheidender Schritt, um die entwickelten Modelle in der Praxis anzuwenden und deren Nutzen zu maximieren. Bei der Vorhersage von Aktienkursen spielt die Bereitstellung von Modellen eine zentrale Rolle. Der Prozess umfasst mehrere Phasen, von der Vorbereitung der Produktionsumgebung bis hin zur Überwachung der Modellleistung. Zur Komplexitätsreduktion wird daher im Folgenden nur kurz auf die wichtigsten Aspekte eingegangen.
 
 Zunächst ist es wichtig, ein stabiles und skalierbares Infrastruktur-Setup zu schaffen. Cloud-basierte Plattformen wie AWS, Google Cloud oder Microsoft Azure bieten flexible Lösungen, die es Unternehmen ermöglichen, ihre Modelle in einer sicheren und skalierbaren Umgebung zu betreiben. Diese Plattformen unterstützen auch die Integration von Datenquellen in Echtzeit, was für die kontinuierliche Aktualisierung und Verbesserung der Modelle entscheidend ist.
 
-Nach der Bereitstellung müssen die Modelle regelmäßig überwacht werden, um sicherzustellen, dass sie unter verschiedenen Bedingungen konsistent funktionieren. Dies beinhaltet die Überwachung von Metriken wie der Genauigkeit der Vorhersagen sowie der Verteilung der Daten, um sicherzustellen, dass das Modell nicht unter dem Problem des "drift" leidet, bei dem sich die zugrunde liegenden Datenmuster im Laufe der Zeit ändern.
+Nach der Bereitstellung muss das entwickelte Forschungsmodell regelmäßig überwacht werden, um sicherzustellen, dass es unter verschiedenen Bedingungen konsistent funktioniert. Dies beinhaltet die Überwachung von Metriken wie der Genauigkeit der Vorhersagen sowie der Verteilung der Daten, um sicherzustellen, dass das Modell nicht unter dem Problem des ''drift'' leidet, bei dem sich die zugrunde liegenden Datenmuster im Laufe der Zeit ändern.
 
-Ein weiterer wichtiger Aspekt ist die kontinuierliche Verbesserung der Modelle. Durch den Einsatz von Feedback-Schleifen und dem Sammeln von neuen Daten aus der Produktion können Unternehmen ihre Modelle anpassen und optimieren. Zudem sollten regelmäßige Retrainings eingeplant werden, um die Leistungsfähigkeit der Modelle aufrechtzuerhalten.
+Ein weiterer wichtiger Aspekt ist die kontinuierliche Verbesserung des Modells. Durch den Einsatz von Feedback-Schleifen und das Sammeln von neuen Daten aus der Finanzwelt können Unternehmen das Modell anpassen und optimieren.
 
-Insgesamt ist ein effektives Deployment von Machine-Learning-Modellen nicht nur entscheidend für den Erfolg bei der Aktienkursprognose, sondern auch für die langfristige Wettbewerbsfähigkeit im Finanzsektor.
+Insgesamt ist ein effektives Deployment von \ac{DL}-Modellen nicht nur entscheidend für den Erfolg bei der Aktienkursprognose, sondern auch für die langfristige Wettbewerbsfähigkeit im Finanzsektor \autocite{mason2018machine}\autocite{chen2019model}\cite{microsoft2020}.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{many-models-machine-learning-azure-spark}
-	\caption{Architektur für das Management vieler Modelle mit Apache Spark in Azure}
-	\label{fig:ml_deployment_architecture}
-\end{figure}
-
-\autocite{mason2018machine}
-\autocite{chen2019model}
-\cite{microsoft2020}
 
 
 

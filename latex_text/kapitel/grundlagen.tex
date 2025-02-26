@@ -2,10 +2,7 @@
 \newpage
 \section{Theoretische Grundlagen}\label{sec:theorie}
 
-Die Analyse von Aktienkursen mithilfe von Machine Learning kombiniert historische Kursdaten mit externen Einflussfaktoren wie Stimmungsanalysen. Dabei werden verschiedene Algorithmen genutzt, um Muster in den Daten zu erkennen und Prognosen zu erstellen. Besonders tiefe neuronale Netze wie LSTM oder CNN eignen sich zur Modellierung von Zeitreihen und Textdaten.
-
-\autocite{goodfellow2016deep}
-\autocite{hochreiter1997long}
+Die Analyse von Aktienkursen mithilfe von \ac{DL} kombiniert historische Kursdaten mit externen Einflussfaktoren wie Stimmungsanalysen. Dabei werden verschiedene Algorithmen genutzt, um Muster in den Daten zu erkennen und Prognosen zu erstellen. Besonders tiefe neuronale Netze wie \ac{LSTM} oder \ac{CNN} eignen sich zur Modellierung von Zeitreihen und Textdaten \autocite{goodfellow2016deep}\autocite{hochreiter1997long}.
 
 \subsection{Datenverständnis}\label{sec:theorie_data_understanding}
 
@@ -17,95 +14,83 @@ Das Dataset besteht aus zwei Hauptkomponenten:
 	\item \textbf{Twitter-Sentiment-Daten}: Enthalten Stimmungsanalysen basierend auf Finanznachrichten und Tweets.
 \end{itemize}
 
-Das Portfolio umfasst verschiedene Unternehmen aus der Technologiebranche, darunter Apple (AAPL), Amazon (AMZN), Cisco (CSCO), Meta (FB/META) und Microsoft (MSFT). Die Kombination aus Markt- und Sentiment-Daten verbessert die Prognosequalität von Machine-Learning-Modellen für die Kursbewegungsvorhersage.
+Das Portfolio umfasst verschiedene Unternehmen aus der Technologiebranche, darunter Apple (AAPL), Amazon (AMZN), Cisco (CSCO), Meta (FB/META) und Microsoft (MSFT) \autocite{xu2018StockMovement}\autocite{chen2018StockNet}.
 
-\autocite{xu2018StockMovement}
-\autocite{chen2018StockNet}
 
-\subsection{Datenvorbereitung mit Pandas}\label{sec:datenvorbereitung}
+\subsection{Datenvorbereitung mit Pandas}\label{sec:datenvorbereitung_pandas}
 
-Eine sorgfältige Datenvorbereitung ist entscheidend für die Qualität von Vorhersagemodellen. In diesem Projekt werden Aktienkurs- und Stimmungsdaten aus verschiedenen Quellen verarbeitet, um eine strukturierte Eingabe für Machine-Learning-Modelle zu erstellen.
+Eine sorgfältige Datenvorbereitung ist entscheidend für die Qualität von Vorhersagemodellen. In diesem Projekt werden Aktienkurs- und Stimmungsdaten aus verschiedenen Dateien verarbeitet, um eine strukturierte Eingabe für \ac{DL}-Modelle zu erstellen.
 
 Die Bibliothek \texttt{pandas} ist ein essenzielles Werkzeug für die Datenverarbeitung und -analyse in Python. Sie ermöglicht eine effiziente Handhabung von strukturierten Daten durch leistungsstarke Funktionen zur Bereinigung, Transformation und Aggregation.
 
-Ein zentraler Schritt in der Datenvorbereitung ist das Einlesen und Verarbeiten von Aktienkurs- und Stimmungsdaten. Mit \texttt{pandas} können CSV-Dateien direkt geladen und als \texttt{DataFrame} strukturiert werden. Die Spalten können gefiltert, umbenannt und mit Methoden wie \texttt{dropna()} von fehlenden Werten bereinigt werden. Zudem bietet \texttt{pandas} leistungsstarke Funktionen wie \texttt{groupby()} zur Aggregation von Daten und \texttt{merge()}, um verschiedene Datenquellen miteinander zu verknüpfen.
+Ein zentraler Schritt in der Datenvorbereitung ist das Einlesen und Verarbeiten von Aktienkurs- und Stimmungsdaten. Mit \texttt{pandas} können \ac{CSV}-Dateien direkt geladen und als \texttt{DataFrame} strukturiert werden. Die Spalten können gefiltert, umbenannt und mit Methoden wie \texttt{dropna()} von fehlenden Werten bereinigt werden. Zudem bietet \texttt{pandas} leistungsstarke Funktionen wie \texttt{groupby()} zur Aggregation von Daten und \texttt{merge()}, um verschiedene Datensätze miteinander zu verknüpfen.
 
-Zeitreihenanalysen profitieren von der Möglichkeit, Datumswerte mit \texttt{to\_datetime()} zu konvertieren und die Daten durch \texttt{resample()} in gleichmäßige Intervalle zu unterteilen. Diese Methoden sind essenziell, um eine konsistente und gut strukturierte Eingabe für Machine-Learning-Modelle zu gewährleisten.
+Zeitreihenanalysen profitieren von der Möglichkeit, Datumswerte mit \texttt{to\_datetime()} zu konvertieren und die Daten durch \texttt{resample()} in gleichmäßige Intervalle zu unterteilen. Diese Methoden sind essenziell, um eine konsistente und gut strukturierte Eingabe für \ac{DL}-Modelle zu gewährleisten \autocite{han2022data}\autocite{jain2016time}.
 
-Durch diese Datenvorbereitung können neuronale Netze effizient trainiert und aussagekräftige Vorhersagen getroffen werden.
+\subsection{Modellierung mit Keras}\label{sec:modellierung-keras}
 
-\autocite{han2022data}
-\autocite{jain2016time}
+Keras ist eine Open-Source-Deep-Learning-API, die auf TensorFlow basiert und eine benutzerfreundliche Schnittstelle zur Modellierung neuronaler Netze bietet. Für die Aktienkursprognose ermöglicht Keras die einfache Implementierung von \ac{LSTM}-Netzwerken, die speziell für Zeitreihendaten geeignet sind. Durch die Verwendung von \texttt{Sequential}-Modellen können mehrere Elemente, wie \acp{LSTM}, Dropout zur Vermeidung von Overfitting und Dense-Schichten zur Vorhersage, kombiniert werden. Zudem erleichtert Keras die Hyperparameteroptimierung und das Modelltraining mit GPUs, was die Effizienz steigert. Die flexible API erlaubt es, verschiedene Architekturen schnell zu testen und mit vortrainierten Modellen zu arbeiten \autocite{chollet2017deep}\autocite{brownlee2018deep}\autocite{abiodun2019comprehensive}.
 
-\subsubsection{Modellierung mit Keras}\label{sec:modellierung-keras}
+\subsection{\acs{LSTM} für Kursdaten}\label{sec:theorie_lstm}
 
-Keras ist eine Open-Source-Deep-Learning-API, die auf TensorFlow basiert und eine benutzerfreundliche Schnittstelle zur Modellierung neuronaler Netze bietet. Für die Aktienkursprognose ermöglicht Keras die einfache Implementierung von LSTM-Netzwerken, die speziell für Zeitreihendaten geeignet sind. Durch die Verwendung von \texttt{Sequential}-Modellen können mehrere Schichten, wie LSTMs, Dropout zur Vermeidung von Overfitting und Dense-Schichten zur Vorhersage, kombiniert werden. Zudem erleichtert Keras die Hyperparameteroptimierung und das Modelltraining mit GPUs, was die Effizienz steigert. Die flexible API erlaubt es, verschiedene Architekturen schnell zu testen und mit vortrainierten Modellen zu arbeiten.
+\ac{LSTM}-Netzwerke sind eine spezielle Form von \acp{RNN}, die langfristige Abhängigkeiten in Zeitreihen erfassen können. Aufgrund ihrer Fähigkeit, vergangene Preisbewegungen zu speichern, werden sie häufig für Aktienkursprognosen verwendet. \ac{LSTM}-Modelle bestehen aus Speicherzellen mit Eingangs-, Ausgabe- und Vergessensgattern, die den Informationsfluss regulieren. Dies verhindert das Problem des Vanishing Gradients und ermöglicht eine robuste Vorhersage von Trends in Finanzdaten. In Kombination mit Techniken wie Dropout und optimierten Aktivierungsfunktionen können \acp{LSTM} effektiv für die Aktienkursanalyse genutzt werden \autocite{hochreiter1997long}\autocite{fischer2018deep}\autocite{siami2019performance}.
 
-\autocite{chollet2017deep}
-\autocite{brownlee2018deep}
-\autocite{abiodun2019comprehensive}
 
-\subsubsection{LSTM für Kursdaten}\label{sec:lstm-kursdaten}
+\subsection{Sprachmodell für Stimmungsdaten: Financial BERT}\label{sec:data_prep_finbert}
 
-Long Short-Term Memory (LSTM) Netzwerke sind eine spezielle Form rekurrenter neuronaler Netze (RNNs), die langfristige Abhängigkeiten in Zeitreihen erfassen können. Aufgrund ihrer Fähigkeit, vergangene Preisbewegungen zu speichern, werden sie häufig für Aktienkursprognosen verwendet. LSTM-Modelle bestehen aus Speicherzellen mit Eingangs-, Ausgabe- und Vergessensgattern, die den Informationsfluss regulieren. Dies verhindert das Problem des Vanishing Gradients und ermöglicht eine robuste Vorhersage von Trends in Finanzdaten. In Kombination mit Techniken wie Dropout und optimierten Aktivierungsfunktionen können LSTMs effektiv für die Aktienkursanalyse genutzt werden.
+Die Verwendung von Language Models, insbesondere Financial BERT, hat sich als wertvolles Werkzeug zur Analyse von Stimmungsdaten im Finanzsektor erwiesen. Financial BERT ist ein auf der Transformer-Architektur basierendes Modell, das speziell für die Verarbeitung und das Verständnis von Finanztexten trainiert wurde. Es kann genutzt werden, um die Stimmung in Kundenkommunikationen, Nachrichtenartikeln und sozialen Medien zu erfassen, was die Vorhersage von Kursbewegungen unterstützen kann.
 
-\autocite{hochreiter1997long}
-\autocite{fischer2018deep}
-\autocite{siami2019performance}
-
-\subsubsection{LLM für Stimmungsdaten: Financial BERT}
-
-Die Verwendung von Language Models (LLM), insbesondere Financial BERT, hat sich als wertvolles Werkzeug zur Analyse von Stimmungsdaten im Finanzsektor erwiesen. Financial BERT ist ein auf der Transformer-Architektur basierendes Modell, das speziell für die Verarbeitung und das Verständnis von Finanztexten trainiert wurde. Es kann genutzt werden, um die Stimmung in Kundenkommunikationen, Nachrichtenartikeln und sozialen Medien zu erfassen, was entscheidend für die Bewertung von Kundenrisiken ist.
-
-Durch die Analyse von Stimmungsdaten können Unternehmen wertvolle Einblicke in das Verhalten und die Meinungen ihrer Kunden gewinnen. Negative Stimmungen oder Trends können auf potenzielle Zahlungsausfälle oder Unzufriedenheit hinweisen, während positive Stimmungen auf eine stabile Kundenbeziehung hindeuten können. Financial BERT ermöglicht es, große Mengen unstrukturierter Textdaten effizient zu verarbeiten und Stimmungsanalysen in Echtzeit durchzuführen.
+Durch die Analyse von Stimmungsdaten können wertvolle Einblicke in das Verhalten und die Meinungen von Stakeholdern gewonnen werden. Positive Stimmungen oder Trends können auf potenzielle Kursanstiege hinweisen, während negative Stimmungen auf einen Kursabfall hindeuten können. Financial BERT ermöglicht es, große Mengen unstrukturierter Textdaten effizient zu verarbeiten und Stimmungsanalysen in Echtzeit durchzuführen.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{FinBERT_.png}
-	\caption{FinBERT Architektur Diagramm}
+	\caption{FinBERT: Beispielausgabe mit neutralem Ergebnis bei Eingabe von Tweets}
 	\label{fig:finbert_architecture}
 \end{figure}
 
-Die Integration von Stimmungsdaten in Kreditrisikomodelle verbessert die Vorhersagegenauigkeit und ermöglicht eine proaktive Identifikation von Hochrisikokunden. Durch den Einsatz von Financial BERT können Unternehmen nicht nur ihre Risiken besser einschätzen, sondern auch gezielte Maßnahmen ergreifen, um die Kundenbindung zu stärken und das Ausfallrisiko zu minimieren.
+Abbildung \ref{fig:finbert_architecture} zeigt anhand eines Beispiels, wie eine Ausgabe des Modells bei der Eingabe von Tweets aussehen kann. Bei der Quantifizierung der Stimmung wird zwischen den Klassen \texttt{positiv}, \texttt{neutral} und \texttt{negativ} unterschieden. Diese Informationen können genutzt werden, um die Stimmungslage in Bezug auf bestimmte Unternehmen oder Branchen zu analysieren und in die Aktienkursprognose einzubeziehen. Zusätzlich zur Ausgabe von quantifizierten Stimmungsklassen lassen sich auch Embeddings ausgeben, deren tiefere Semantik ein Stimmungsbild über die Texteingabe darstellt \autocite{devlin2019}\autocite{finbert2019}\autocite{yang2020}.
 
-\autocite{devlin2019}
-\autocite{finbert2019}
-\autocite{yang2020}
+\subsection{\acs{CNN} für Stimmungsdaten}
 
-\subsubsection{CNN für Stimmungsdaten}
+\acp{CNN} sind nicht nur für die Bildverarbeitung geeignet, sondern haben sich auch als effektiv für die Analyse von Stimmungsdaten in Textform erwiesen. Durch die Anwendung von Faltungsoperationen können \acp{CNN} lokale Muster und Beziehungen in vorverarbeiteten Textdaten erfassen. Diese Modelle sind besonders nützlich für die Sentiment-Analyse, da sie kontextuelle Informationen extrahieren und komplexe Muster in Zeiträumen identifizieren, die zur Klassifizierung von Stimmungen in Kundenfeedback und sozialen Medien beitragen. Zudem ermöglichen \acp{CNN} eine parallele Verarbeitung von Daten, was die Effizienz erhöht und schnellere Trainingszeiten fördert, wodurch sie sich ideal für große Datensätze im Finanzbereich eignen \autocite{kim2014convolutional}\autocite{zhang2015sensitivity}.
 
-Convolutional Neural Networks (CNNs) sind nicht nur für die Bildverarbeitung geeignet, sondern haben sich auch als effektiv für die Analyse von Stimmungsdaten in Textform erwiesen. Durch die Anwendung von Faltungsoperationen können CNNs lokale Muster und Beziehungen in Textdaten erfassen. Diese Modelle sind besonders nützlich für die Sentiment-Analyse, da sie kontextuelle Informationen extrahieren und komplexe Merkmale identifizieren, die zur Klassifizierung von Stimmungen in Kundenfeedback und sozialen Medien beitragen. Zudem ermöglichen CNNs eine parallele Verarbeitung von Daten, was die Effizienz erhöht und schnellere Trainingszeiten fördert, wodurch sie sich ideal für große Datensätze im Finanzbereich eignen.
+\subsection{Evaluierungsmetriken}\label{sec:theorie_evalmetrics}
 
-\autocite{kim2014convolutional}
-\autocite{zhang2015sensitivity}
+Die Evaluierung von Modellen zur Aktienprognose erfordert den Einsatz geeigneter Metriken, um die Genauigkeit und Zuverlässigkeit der Vorhersagen zu bewerten. Zu den häufig verwendeten Metriken gehören der \ac{MSE}, der \ac{MAE} und der \ac{MAPE}.
 
-\subsubsection{Evaluierungsmetriken}
+Der \ac{MSE} misst die durchschnittlichen quadratischen Abweichungen zwischen den vorhergesagten und tatsächlichen Werten und wird durch die folgende Formel dargestellt:
 
-Die Evaluierung von Modellen zur Kreditrisiko-Vorhersage erfordert den Einsatz geeigneter Metriken, um die Genauigkeit und Zuverlässigkeit der Vorhersagen zu bewerten. Zu den häufig verwendeten Metriken gehören der Mean Squared Error (MSE), der Mean Absolute Error (MAE) und der Mean Absolute Percentage Error (MAPE).
-
-Der MSE misst die durchschnittlichen quadratischen Abweichungen zwischen den vorhergesagten und tatsächlichen Werten und wird durch die folgende Formel dargestellt:
-
-\begin{equation}
+\begin{formel}[h]
+	\caption{\ac{MSE}. Quelle: \autocite{davydenko2009mean}}
+	\label{frm:mse}
+	\begin{align}
 	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\end{equation}
+	\end{align}
+\end{formel}
 
-Der MAE hingegen berechnet die durchschnittliche absolute Abweichung:
+Der \ac{MAE} hingegen berechnet die durchschnittliche absolute Abweichung:
 
-\begin{equation}
+\begin{formel}[h]
+	\caption{\ac{MAE}. Quelle: \autocite{hyndman2006another}}
+	\label{frm:MAE}
+	\begin{align}
 	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
-\end{equation}
+	\end{align}
+\end{formel}
 
-Der MAPE misst den Fehler relativ zu den tatsächlichen Werten und gibt so die Genauigkeit der Vorhersagen in Prozent an:
+Der MAPE misst den Fehler relativ zu den tatsächlichen Werten und gibt so die Ungenauigkeit der Vorhersagen in Prozent an:
 
-\begin{equation}
-	\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100
-\end{equation}
+\begin{formel}[h]
+	\caption{\ac{MAPE}. Quelle: \autocite{makridakis1993accuracy}}
+	\label{frm:MAPE}
+	\begin{align}
+	\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right|
+	\end{align}
+\end{formel}
 
-Diese Metriken bieten wertvolle Einblicke in die Leistung von Modellen und helfen dabei, Optimierungsstrategien zur Verbesserung der Vorhersagegenauigkeit zu entwickeln.
+Diese Metriken bieten wertvolle Einblicke in die Leistung von Modellen und helfen dabei, Optimierungsstrategien zur Verbesserung der Vorhersagegenauigkeit zu entwickeln \autocite{davydenko2009mean}\autocite{hyndman2006another}\autocite{makridakis1993accuracy}.
 
-\autocite{davydenko2009mean}
-\autocite{hyndman2006another}
-\autocite{makridakis1993accuracy}
 
 
 
