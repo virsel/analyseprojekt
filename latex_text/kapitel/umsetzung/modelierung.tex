@@ -4,9 +4,9 @@
 In dieser Arbeit geht es darum, den Einfluss von Stimmungsdaten auf Aktienprognosen zu untersuchen. Da der Fokus auf den Sentiment-Daten gelegt ist, wird von den Kursdaten lediglich der Schlusspreis einbezogen. Als Basismodell dient also ein \ac{LSTM}-basiertes Netzwerk, welches Schlusspreise als Eingabe verarbeitet. Das Forschungsmodell nimmt eine Kombination aus Schlusspreis und Stimmungsdaten entgegen. \\
 Insgesamt werden $2$ Experimente durchgeführt. \\
 \textbf{Experiment $1$:}    
-Diese Untersuchung analysiert den Leistungsunterschied zwischen Basis- und Forschungsmodell anhand der GOOG-Aktie. \\
+Diese Untersuchung analysiert den Leistungsunterschied zwischen Basis- und Forschungsmodell basierend auf Trainings mit Daten der GOOG-Aktie. \\
 \textbf{Experiment $2$:}   
-Bei dieser Analyse werden erneut beide Modelle verglichen, jedoch unter Einbeziehung aller Aktiendaten. \\
+Bei dieser Analyse werden erneut beide Modelle verglichen, jedoch werden für Trainings die Daten aller Aktien verwendet. \\
 In den nachfolgenden Abschnitten wird zunächst auf modellübergreifende Hyperparameter eingegangen und anschließend erfolgt eine Beschreibung der Architektur von Basis- und Forschungsmodell.
 
 \subsubsection{Generelle Hyperparameter}\label{sec:modellierung_generell_hp}
@@ -16,7 +16,7 @@ In beiden Fällen erfolgt eine Aufteilung der vorverarbeiteten Daten (Kap. \ref{
 Erst nach diesem Schritt erfolgt die MinMax-Skalierung der Trainingsdaten mit Ausnahme der Embeddings auf das Intervall $0$ bis $1$, mit Hilfe der Python-Bibliothek \texttt{sklearn} \autocite{website:ScikitLearn}. Anschließend wird der gelernte Scaler auf Test- und Validierungsdaten angewandt. So wird eine unerwünschte Übertragung von Informationen aus Validierungs- und Testdaten in den Trainingskorpus verhindert. 
 Für Kursdaten wird ein Fenster von $30$ vergangenen Markttagen als Modelleingabe verwendet, um den Preis eines nachfolgenden Tages vorherzusagen. Dieser Wert wurde in Experimenten einer Forschungsarbeit an der Universität Shaoguan in China als Optimum ermittelt \autocite[Tabelle 3]{xie2024deep}.
 Als Verlustfunktion dient typisch für Regressionsprobleme der \ac{MSE}, welcher sich aus Modellausgabe ($\hat{y}_i$) und tatsächlichem Preis ($y_i$) ergibt (Kap. \ref{sec:theorie_evalmetrics}, Formel \ref{frm:mse}). 
-Die Batch-Größe während des Trainings beträgt $64$ und als Lernalgorithmus wird Adam-Optimierung eingesetzt. 
+Die Batch-Größe während des Trainings beträgt $64$ und als Lernalgorithmus wird Adam-Optimierung eingesetzt \autocite{website:keras-adam}. 
 Beide Modelle werden $50$ Epochen lang trainiert, wobei immer dann eine Zwischenspeicherung erfolgt, sobald ein neuer Bestwert für die Verlustmetrik, basierend auf Validierungsdaten, erreicht wird.
 
 

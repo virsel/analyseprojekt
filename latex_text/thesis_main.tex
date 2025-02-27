@@ -140,12 +140,16 @@
 \usepackage{xurl}%      URLs werden so auch im Literaturverzeichnis umgebrochen %
 
 % \citetitle: Titel mit deutschen Anführungszeichen
-\DeclareFieldFormat*{citetitle}{\glqq#1\grqq}
+% \DeclareFieldFormat*{citetitle}{\glqq#1\grqq}
+\DeclareFieldFormat{citetitle}{#1}
+
 
 % "et al." für die Abkürzung mehrerer Autoren verwenden
 \DefineBibliographyStrings{german}{%
   andothers = {\emph{et al}\adddot}
 }
+
+
 
 % Hier die entsprechende .bib-Datei eintragen
 
@@ -437,6 +441,7 @@ placement=htbp,
 % \printbibliography[heading=bibintoc,title={\langde{Quellenverzeichnis}\langen{Bibliography}}]
 
 \printbibliography[nottype=misc, heading=bibintoc, nottype=online]
+\newpage
 \printbibliography[keyword=extra, title={Sonstige Quellen}]
 \newpage
 % ehrenwörtliche Erklärung

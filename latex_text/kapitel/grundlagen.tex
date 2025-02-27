@@ -6,12 +6,12 @@ Die Analyse von Aktienkursen mithilfe von \ac{DL} kombiniert historische Kursdat
 
 \subsection{Datenverständnis}\label{sec:theorie_data_understanding}
 
-Das StockNet-Dataset wurde für die Forschung zur Aktienkursprognose entwickelt und kombiniert historische Aktienkurse mit Twitter-Daten. Es wurde 2017 von Xu und dtaylor-530 erstellt und ist unter der MIT-Lizenz öffentlich verfügbar. Das Dataset ermöglicht Analysen an der Schnittstelle zwischen Finanzmärkten und sozialer Medienanalyse.
+Das StockNet-Dataset wurde für die Forschung zur Aktienkursprognose entwickelt und kombiniert historische Aktienkurse mit Twitter-Daten. Es wurde 2017 von Yumo Xu und Shay B. Cohen erstellt und ist unter der MIT-Lizenz öffentlich verfügbar. Das Dataset ermöglicht Analysen an der Schnittstelle zwischen Finanzmärkten und sozialer Medien.
 
 Das Dataset besteht aus zwei Hauptkomponenten:
 \begin{itemize}
 	\item \textbf{Historische Aktienkursdaten}: Enthalten tägliche Kursbewegungen wichtiger Unternehmen.
-	\item \textbf{Twitter-Sentiment-Daten}: Enthalten Stimmungsanalysen basierend auf Finanznachrichten und Tweets.
+	\item \textbf{Twitter-Sentiment-Daten}: Enthalten Tweets basierend auf Finanzereignissen.
 \end{itemize}
 
 Das Portfolio umfasst verschiedene Unternehmen aus der Technologiebranche, darunter Apple (AAPL), Amazon (AMZN), Cisco (CSCO), Meta (FB/META) und Microsoft (MSFT) \autocite{xu2018StockMovement}\autocite{chen2018StockNet}.
@@ -19,17 +19,18 @@ Das Portfolio umfasst verschiedene Unternehmen aus der Technologiebranche, darun
 
 \subsection{Datenvorbereitung mit Pandas}\label{sec:datenvorbereitung_pandas}
 
-Eine sorgfältige Datenvorbereitung ist entscheidend für die Qualität von Vorhersagemodellen. In diesem Projekt werden Aktienkurs- und Stimmungsdaten aus verschiedenen Dateien verarbeitet, um eine strukturierte Eingabe für \ac{DL}-Modelle zu erstellen.
+Eine sorgfältige Datenvorbereitung ist entscheidend für die Qualität von Vorhersagemodellen. In diesem Projekt werden Aktienkurs- und Tweetdaten aus verschiedenen Dateien verarbeitet, um eine strukturierte Eingabe für \ac{DL}-Modelle zu erstellen.
 
 Die Bibliothek \texttt{pandas} ist ein essenzielles Werkzeug für die Datenverarbeitung und -analyse in Python. Sie ermöglicht eine effiziente Handhabung von strukturierten Daten durch leistungsstarke Funktionen zur Bereinigung, Transformation und Aggregation.
 
-Ein zentraler Schritt in der Datenvorbereitung ist das Einlesen und Verarbeiten von Aktienkurs- und Stimmungsdaten. Mit \texttt{pandas} können \ac{CSV}-Dateien direkt geladen und als \texttt{DataFrame} strukturiert werden. Die Spalten können gefiltert, umbenannt und mit Methoden wie \texttt{dropna()} von fehlenden Werten bereinigt werden. Zudem bietet \texttt{pandas} leistungsstarke Funktionen wie \texttt{groupby()} zur Aggregation von Daten und \texttt{merge()}, um verschiedene Datensätze miteinander zu verknüpfen.
+Ein zentraler Schritt in der Datenvorbereitung ist das Einlesen und Verarbeiten von Aktienkurs- und Tweetdaten. Mit \texttt{pandas} können \ac{CSV}-Dateien direkt geladen und als \texttt{DataFrame} strukturiert werden. Die Spalten können gefiltert, umbenannt und mit Methoden wie \texttt{dropna()} von fehlenden Werten bereinigt werden. Zudem bietet \texttt{pandas} leistungsstarke Funktionen wie \texttt{groupby()} zur Aggregation von Daten und \texttt{merge()}, um verschiedene Datensätze miteinander zu verknüpfen.
 
-Zeitreihenanalysen profitieren von der Möglichkeit, Datumswerte mit \texttt{to\_datetime()} zu konvertieren und die Daten durch \texttt{resample()} in gleichmäßige Intervalle zu unterteilen. Diese Methoden sind essenziell, um eine konsistente und gut strukturierte Eingabe für \ac{DL}-Modelle zu gewährleisten \autocite{han2022data}\autocite{jain2016time}.
+Zeitreihenanalysen profitieren von der Möglichkeit, Datumswerte mit \texttt{to\_datetime()} zu konvertieren und die Daten durch \texttt{resample()} in gleichmäßige Intervalle zu unterteilen. Diese Methoden sind essenziell, um eine konsistente und gut strukturierte Eingabe für \ac{DL}-Modelle zu gewährleisten \autocite{article_pandas}.
+% \autocite{han2022data}  \autocite{jain2016time} hat nichts mit pandas zu tun
 
 \subsection{Modellierung mit Keras}\label{sec:modellierung-keras}
 
-Keras ist eine Open-Source-Deep-Learning-API, die auf TensorFlow basiert und eine benutzerfreundliche Schnittstelle zur Modellierung neuronaler Netze bietet. Für die Aktienkursprognose ermöglicht Keras die einfache Implementierung von \ac{LSTM}-Netzwerken, die speziell für Zeitreihendaten geeignet sind. Durch die Verwendung von \texttt{Sequential}-Modellen können mehrere Elemente, wie \acp{LSTM}, Dropout zur Vermeidung von Overfitting und Dense-Schichten zur Vorhersage, kombiniert werden. Zudem erleichtert Keras die Hyperparameteroptimierung und das Modelltraining mit GPUs, was die Effizienz steigert. Die flexible API erlaubt es, verschiedene Architekturen schnell zu testen und mit vortrainierten Modellen zu arbeiten \autocite{chollet2017deep}\autocite{brownlee2018deep}\autocite{abiodun2019comprehensive}.
+Keras ist eine Open-Source-Deep-Learning-API, die auf TensorFlow basiert und eine benutzerfreundliche Schnittstelle zur Modellierung neuronaler Netze bietet. Für die Aktienkursprognose ermöglicht Keras die einfache Implementierung von \ac{LSTM}-Netzwerken, die speziell für Zeitreihendaten geeignet sind. Durch die Verwendung von \texttt{Sequential}-Modellen können mehrere Elemente, wie \acp{LSTM}, Dropout zur Vermeidung von Overfitting und Dense-Schichten zur Vorhersage, kombiniert werden. Zudem erleichtert Keras die Hyperparameteroptimierung und das Modelltraining mit GPUs, was die Effizienz steigert. Die flexible API erlaubt es, verschiedene Architekturen schnell zu testen und mit vortrainierten Modellen zu arbeiten \autocite{heaton2022applicationsdeepneuralnetworks}.
 
 \subsection{\acs{LSTM} für Kursdaten}\label{sec:theorie_lstm}
 
@@ -44,7 +45,7 @@ Durch die Analyse von Stimmungsdaten können wertvolle Einblicke in das Verhalte
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{FinBERT_.png}
+	\includegraphics[width=1.0\textwidth]{finbert}
 	\caption{FinBERT: Beispielausgabe mit neutralem Ergebnis bei Eingabe von Tweets}
 	\label{fig:finbert_architecture}
 \end{figure}
@@ -53,7 +54,7 @@ Abbildung \ref{fig:finbert_architecture} zeigt anhand eines Beispiels, wie eine 
 
 \subsection{\acs{CNN} für Stimmungsdaten}
 
-\acp{CNN} sind nicht nur für die Bildverarbeitung geeignet, sondern haben sich auch als effektiv für die Analyse von Stimmungsdaten in Textform erwiesen. Durch die Anwendung von Faltungsoperationen können \acp{CNN} lokale Muster und Beziehungen in vorverarbeiteten Textdaten erfassen. Diese Modelle sind besonders nützlich für die Sentiment-Analyse, da sie kontextuelle Informationen extrahieren und komplexe Muster in Zeiträumen identifizieren, die zur Klassifizierung von Stimmungen in Kundenfeedback und sozialen Medien beitragen. Zudem ermöglichen \acp{CNN} eine parallele Verarbeitung von Daten, was die Effizienz erhöht und schnellere Trainingszeiten fördert, wodurch sie sich ideal für große Datensätze im Finanzbereich eignen \autocite{kim2014convolutional}\autocite{zhang2015sensitivity}.
+\acp{CNN} sind nicht nur für die Bildverarbeitung geeignet, sondern haben sich auch als effektiv für die Analyse von Textembeddings erwiesen. Durch die Anwendung von Faltungsoperationen können \acp{CNN} lokale Muster und Beziehungen in vorverarbeiteten Textdaten erfassen. Diese Modelle sind besonders nützlich für die Sentiment-Analyse, da sie kontextuelle Informationen extrahieren und komplexe Muster in Zeiträumen identifizieren, die zur Klassifizierung von Stimmungen in Kundenfeedback und sozialen Medien beitragen. Zudem ermöglichen \acp{CNN} eine parallele Verarbeitung von Daten, was die Effizienz erhöht und schnellere Trainingszeiten fördert, wodurch sie sich ideal für große Datensätze im Finanzbereich eignen \autocite{kim2014convolutional}\autocite{zhang2015sensitivity}.
 
 \subsection{Evaluierungsmetriken}\label{sec:theorie_evalmetrics}
 
@@ -62,7 +63,7 @@ Die Evaluierung von Modellen zur Aktienprognose erfordert den Einsatz geeigneter
 Der \ac{MSE} misst die durchschnittlichen quadratischen Abweichungen zwischen den vorhergesagten und tatsächlichen Werten und wird durch die folgende Formel dargestellt:
 
 \begin{formel}[h]
-	\caption{\ac{MSE}. Quelle: \autocite{davydenko2009mean}}
+	\caption{\ac{MSE}. Quelle: \autocite{wallach1989mse}}
 	\label{frm:mse}
 	\begin{align}
 	\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
@@ -72,7 +73,7 @@ Der \ac{MSE} misst die durchschnittlichen quadratischen Abweichungen zwischen de
 Der \ac{MAE} hingegen berechnet die durchschnittliche absolute Abweichung:
 
 \begin{formel}[h]
-	\caption{\ac{MAE}. Quelle: \autocite{hyndman2006another}}
+	\caption{\ac{MAE}. Quelle: \autocite{willmott2005mae}}
 	\label{frm:MAE}
 	\begin{align}
 	\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
@@ -82,14 +83,14 @@ Der \ac{MAE} hingegen berechnet die durchschnittliche absolute Abweichung:
 Der MAPE misst den Fehler relativ zu den tatsächlichen Werten und gibt so die Ungenauigkeit der Vorhersagen in Prozent an:
 
 \begin{formel}[h]
-	\caption{\ac{MAPE}. Quelle: \autocite{makridakis1993accuracy}}
+	\caption{\ac{MAPE}. Quelle: \autocite{myttenaere2016mape}}
 	\label{frm:MAPE}
 	\begin{align}
 	\text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right|
 	\end{align}
 \end{formel}
 
-Diese Metriken bieten wertvolle Einblicke in die Leistung von Modellen und helfen dabei, Optimierungsstrategien zur Verbesserung der Vorhersagegenauigkeit zu entwickeln \autocite{davydenko2009mean}\autocite{hyndman2006another}\autocite{makridakis1993accuracy}.
+Diese Metriken bieten wertvolle Einblicke in die Leistung von Modellen und helfen dabei, Optimierungsstrategien zur Verbesserung der Vorhersagegenauigkeit zu entwickeln \autocite{hyndman2006another}\autocite{makridakis1993accuracy}.
 
 
 

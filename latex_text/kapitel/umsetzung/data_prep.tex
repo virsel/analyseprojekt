@@ -1,16 +1,15 @@
 \newpage
 \section{Methodik}
-Die Umsetzung erfolgt in logischen Schritten und orientiert sich dabei am Prozessmodell \ac{CRISP-DM}.  
 
 \subsection{Datenbeschaffung}\label{sec:data_ingestion}
-Aufgrund dessen, dass Aktienprognosen mit multimodalen Daten ein sehr belebtes Forschungsfeld sind, gibt es bereits viele sinnvoll zusammengestellte Datensätze. Um diesen Vorteil auszuschöpfen, wird ein anerkannter Finanzdatensatz gewählt, welcher in mehreren Wissenschaftsarbeiten zum Einsatz kam \autocite{xu2018StockMovement}\autocite{Xu2020StockMovement}\autocite{zhang2022transformer}.
+Aufgrund dessen, dass Aktienprognosen mit multimodalen Daten ein sehr belebtes Forschungsfeld sind, gibt es bereits viele sinnvoll zusammengestellte Datensätze. Um diesen Vorteil auszuschöpfen, wird ein anerkannter Finanzdatensatz gewählt, welcher in mehreren Wissenschaftsarbeiten zum Einsatz kam  (Kap. \ref{sec:theorie_data_understanding})\autocite{xu2018StockMovement}\autocite{Xu2020StockMovement}\autocite{zhang2022transformer}.
 
 Der Datensatz umfasst Kursdaten und Tweets zu 88 Aktien, wobei jeweils eine Rohfassung und eine vorverarbeitete Variante bereitgestellt wird. In dieser Arbeit wird in beiden Fällen die Rohfassung verwendet. 
 
 Vom Initial-Beschaffer wird angegeben, dass sich die Daten auf den Zeitraum 01.01.2014 bis 01.01.2016 beziehen \autocite[Kap. 3]{xu2018StockMovement}.
 Es gibt jedoch auch Abweichungen, wie im Fall der Aktie ''BABA'', bei der Kursdaten für den Bereich 19.09.2014 bis 09.01.2017 vorliegen.
 
-Im Rahmen dieser Arbeit werden lediglich Aktien der Branche Technologie einbezogen (Kap. \ref{sec:theorie_data_understanding}), welche im entsprechenden Zeitraum unter den Top-10-Aktien nach Handelsvolumen vorkommen. 
+Im Rahmen dieser Arbeit werden lediglich Aktien der Branche Technologie einbezogen, welche im entsprechenden Zeitraum unter den Top-10-Aktien nach Handelsvolumen vorkommen. 
 
 \subsubsection*{Kursdaten}\label{sec:data_ingestion_stockdata}
 Zu jeder Aktie liegt eine \ac{CSV}-Datei vor. In Abbildung \ref{fig:goog_kursdaten} werden die inkludierten Metriken dargestellt.
@@ -47,7 +46,7 @@ Alle Tweets, die außerhalb von Markttagen entstanden sind, werden dem nächstm�
 
 
 \subsubsection*{2. Textbereinigung}
-Um die Tweets für eine Weiterverarbeitung durch ein großes Sprachmodell vorzubereiten, werden mehrere Bereinigungen durchgeführt. Dabei wird darauf geachtet, dass keinerlei semantische Informationen verloren gehen. Stopp-Wörter wie beispielsweise ''und'' werden daher nicht entfernt.
+Um die Tweets für eine Weiterverarbeitung durch ein Sprachmodell vorzubereiten, werden mehrere Bereinigungen durchgeführt. Dabei wird darauf geachtet, dass keinerlei semantische Informationen verloren gehen. Stopp-Wörter wie beispielsweise ''und'' werden daher nicht entfernt.
 In Abbildung \ref{fig:data_prep_step1} ist zu erkennen, dass in Tweets häufig URLs eingebunden sind. Diese werden mit ''URL'' maskiert.
 Des Weiteren treten regelmäßig Referenzierungen mit Hilfe von ''@'' auf. Diese stellen einen Verweis auf Entitäten wie beispielsweise Personen oder Unternehmen dar und werden mit der Maskierung ''AT\_ENTITY'' ersetzt. 
 Außerdem erfolgt eine Substituierung von Aktienvorkommen der Form ''\$GOOG'' mit ''GOOG stock''. Denn es wird angenommen, dass für ein Sprachmodell die Semantik des Zeichens ''\$'' in diesem Zusammenhang weniger klar ist als die des Begriffs ''stock''. In Abbildung \ref{fig:data_prep_step2} ist die bereinigte Form der Tweets-Spalte aus Abbildung \ref{fig:data_prep_step1} zu sehen.
@@ -120,7 +119,7 @@ truncation=True,
 return_tensors="pt"
 )
 \end{lstlisting}
-Die Argumente \texttt{padding} und \texttt{truncation} in Zeile $8-9$ von Code \ref{lst:feature_tweettokens} stellen sicher, dass falls das Resultat die maximale Kontextlänge von $512$ Token unter- respektive überschreitet, entweder mit einem Sonderzeichen aufgefüllt wird oder ein entsprechendes Zuschneiden auf 512 IDs erfolgt.
+Die Argumente \texttt{padding} und \texttt{truncation} in Zeile 9-10 von Code \ref{lst:feature_tweettokens} stellen sicher, dass falls das Resultat die maximale Kontextlänge von $512$ Token unter- respektive überschreitet, entweder mit einem Sonderzeichen aufgefüllt wird oder ein entsprechendes Zuschneiden auf 512 Token-IDs erfolgt.
 Im letzten Schritt werden die Tokens an das Sprachmodell übergeben, welches mit berechneten Embeddings antwortet.
 Während des iterativen \ac{CRISP-DM}-Prozesses hat sich herausgestellt, dass ein Zuschneiden der IDs bei Längenüberschreitung für eingesetzte neuronale Netzwerke (Kap. \ref{sec:modellierung}) besser funktioniert als das Aufteilen in Chunks mit anschließender Durchschnittsberechnung der Teil-Embeddings.
 
@@ -128,7 +127,7 @@ Während des iterativen \ac{CRISP-DM}-Prozesses hat sich herausgestellt, dass ei
 Der resultierende Datenkorpus ist im \ac{CSV}-Format gespeichert und enthält eine Kombination aus Kurs- und Stimmungsdaten von 10 Aktien verteilt auf $5470$ Zeilen (\ref{fig:data_prep_step4}).
 \begin{figure}[H]
 	\includegraphics[width=1.\textwidth]{data_prep_step4}
-	\caption{GOOG-Datenzeile im Datenkorpus}
+	\caption{Resultierende GOOG-Datenzeile im Datenkorpus nach Datenvorverarbeitung}
 	\label{fig:data_prep_step4}
 \end{figure}
 
